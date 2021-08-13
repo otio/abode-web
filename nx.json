@@ -27,6 +27,13 @@
     ]
   },
   "projects": {
+    "studio": {
+      "tags": []
+    },
+    "studio-e2e": {
+      "tags": [],
+      "implicitDependencies": ["studio"]
+    },
     "web": {
       "tags": []
     },

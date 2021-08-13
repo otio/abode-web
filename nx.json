@@ -1,7 +1,7 @@
 {
   "npmScope": "abode-web",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "develop"
   },
   "implicitDependencies": {
     "package.json": {
@@ -27,13 +27,6 @@
     ]
   },
   "projects": {
-    "studio": {
-      "tags": []
-    },
-    "studio-e2e": {
-      "tags": [],
-      "implicitDependencies": ["studio"]
-    },
     "web": {
       "tags": []
     },

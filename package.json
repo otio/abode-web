@@ -46,6 +46,7 @@
     "@nrwl/tao": "12.7.0",
     "@nrwl/web": "12.7.0",
     "@nrwl/workspace": "12.7.0",
+    "@sanity/cli": "^2.15.0",
     "@testing-library/react": "11.2.6",
     "@types/jest": "26.0.24",
     "@types/node": "14.14.33",

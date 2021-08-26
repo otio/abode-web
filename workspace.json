@@ -1,6 +1,43 @@
 {
   "version": 2,
   "projects": {
+    "studio": {
+      "root": "apps/studio",
+      "sourceRoot": "apps/studio",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build ../../dist/apps/studio",
+            "cwd": "apps/studio",
+            "outputPath": "dist/apps/studio"
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn start",
+            "cwd": "apps/studio",
+            "outputPath": "dist/apps/studio"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/studio"],
+          "options": {
+            "jestConfig": "apps/web/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/studio/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
     "web": {
       "root": "apps/web",
       "sourceRoot": "apps/web",

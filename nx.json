@@ -33,6 +33,9 @@
     "web-e2e": {
       "tags": [],
       "implicitDependencies": ["web"]
+    },
+    "studio": {
+      "tags": []
     }
   }
 }

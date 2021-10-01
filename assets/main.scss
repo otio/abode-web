@@ -1,0 +1,27 @@
+// This is the project stylesheet
+
+// Colors
+$black: rgba(35, 31, 32, 1);
+$secondary-darkmode: rgba(255, 0, 0, 1);
+$secondary-light: rgba(255, 255, 255, 1);
+$transparent-black: rgba(0, 0, 0, 0.04);
+
+// Typographies
+@mixin hanuman-24-bold {
+  font-family: 'Hanuman';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 56px;
+}
+@mixin hanuman-96-bold {
+  font-family: 'Hanuman';
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 110px;
+}
+@mixin source-serif-pro-38-regular {
+  font-family: 'Source Serif Pro';
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 40px;
+}

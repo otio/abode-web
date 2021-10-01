@@ -1,7 +1,16 @@
 <template>
-  <Tutorial/>
+  <div>
+    <HeroSection></HeroSection>
+  </div>
 </template>
 
 <script>
-export default {}
+import HeroSection from '../components/home/HeroSection.vue'
+export default {
+  components: {
+    HeroSection,
+  },
+}
 </script>
+
+<style lang="scss"></style>

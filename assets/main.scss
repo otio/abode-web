@@ -2,25 +2,111 @@
 
 // Colors
 $black: rgba(35, 31, 32, 1);
+$black-1: rgba(0, 0, 0, 1);
+$black-primary: rgba(35, 35, 35, 1);
+$black-secondary: rgba(57, 64, 64, 1);
+$grayscale-off-white: rgba(252, 252, 252, 1);
+$grey-secondary: rgba(157, 173, 173, 1);
+$lavender-blush: rgba(255, 239, 239, 1);
 $secondary-darkmode: rgba(255, 0, 0, 1);
 $secondary-light: rgba(255, 255, 255, 1);
 $transparent-black: rgba(0, 0, 0, 0.04);
+$transparent-white-smoke: rgba(239, 240, 246, 0.1);
+$white-smoke: rgba(250, 243, 243, 1);
 
 // Typographies
+@mixin hanuman-20-bold {
+  font-family: "Hanuman";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+}
 @mixin hanuman-24-bold {
-  font-family: 'Hanuman';
+  font-family: "Hanuman";
   font-size: 24px;
   font-weight: 700;
   line-height: 56px;
 }
+@mixin hanuman-24-bold-line32 {
+  font-family: "Hanuman";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@mixin hanuman-48-bold {
+  font-family: "Hanuman";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@mixin hanuman-55-bold {
+  font-family: "Hanuman";
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@mixin hanuman-60-regular {
+  font-family: "Hanuman";
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 50px;
+}
+@mixin hanuman-64-regular {
+  font-family: "Hanuman";
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 88px;
+}
 @mixin hanuman-96-bold {
-  font-family: 'Hanuman';
+  font-family: "Hanuman";
   font-size: 96px;
   font-weight: 700;
   line-height: 110px;
 }
+@mixin inter-16-regular {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin inter-16-semibold {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+@mixin inter-24-bold {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+@mixin inter-24-regular {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-30-regular {
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 56px;
+}
+@mixin roboto-35-regular {
+  font-family: "Roboto";
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 52px;
+}
+@mixin roboto-56-bold {
+  font-family: "Roboto";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+}
 @mixin source-serif-pro-38-regular {
-  font-family: 'Source Serif Pro';
+  font-family: "Source Serif Pro";
   font-size: 38px;
   font-weight: 400;
   line-height: 40px;

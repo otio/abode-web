@@ -2,39 +2,34 @@
   <section class="hero">
     <div class="hero-nav">
       <div class="nav-content">
+        <!-- TODO: Switch logo to SVG file -->
         <img
           alt=""
           class="nav-logo"
-          src="https://via.placeholder.com/183.29x85.07"
+          src="~/static/nav-logo.png"
         />
         <div class="nav-menu">
-          <p class="nav-link">Selling</p>
-          <p class="nav-link">Buying</p>
-          <p class="nav-link">Team</p>
-          <p class="nav-link">Resources</p>
+          <p class="sell-house">Selling</p>
+          <p class="sell-house">Buying</p>
+          <p class="sell-house">Team</p>
+          <p class="sell-house">Resources</p>
         </div>
       </div>
     </div>
     <div class="heading">
-      <p class="heading-text">{{ headingText }}</p>
-      <p class="chaser-text">{{ chaserText }}</p>
+      <p class="heading-text">
+        Abode San Francisco Real Estate
+      </p>
+      <p class="chaser-text">
+        Competence, Exclusivity and Passion
+      </p>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "Hero",
-  props: {
-    chaserText: {
-      type: String,
-      default: "Competence, Exclusivity and Passion"
-    },
-    headingText: {
-      type: String,
-      default: "Abode San Francisco Real Estate"
-    }
-  }
+  name: "Hero"
 };
 </script>
 
@@ -43,19 +38,19 @@ export default {
 .hero {
   background-size: 100% 100%;
   background-position: center;
-  background-image: url("https://via.placeholder.com/1922x1080");
-  padding: 0 1px 570px;
+  background-image: url("~assets/image/palace-of-fine-arts-1920w.png");
+  padding: 0 0 570px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .hero-nav {
   background-color: $transparent-white-smoke;
-  margin-bottom: 70px;
-  padding: 34.96px 127.85px 34.97px 127.86px;
+  margin-bottom: 75px;
+  padding: 35px 138.71px 29.93px 117px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .nav-content {
   display: flex;
@@ -73,20 +68,17 @@ export default {
   justify-content: space-between;
   flex: 1;
 }
-.nav-link {
+.sell-house {
   color: $black;
   text-align: center;
   letter-spacing: 1px;
   @include hanuman-24-bold;
 }
 .heading {
-  height: 55.88%;
-  padding: 0 419px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: stretch;
 }
 .heading-text {
   max-width: 1082px;

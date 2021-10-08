@@ -1,15 +1,11 @@
 <template>
-  <div class="meet-team">
-    <img
-      alt=""
-      class="team-heading"
-      src="https://static.overlay-tech.com/assets/2cc75b74-ee5a-4c19-82cb-942d167c3e7c.svg"
-    />
+  <section class="section-space meet-team">
+    <MeetTeamHeading></MeetTeamHeading>
     <div class="team-content">
       <img
         alt=""
         class="portrait-right"
-        src="https://static.overlay-tech.com/assets/654e0f76-7538-40c8-a879-6ec09ad63b52.png"
+        src="~/static/team-intro-photo.png"
       />
       <div class="team-intro-text">
         <div class="text-section">
@@ -29,19 +25,20 @@
           </p>
         </div>
         <button class="meet-team-button">
-    <p class="button-text">MEET THE TEAM</p>
-  </button>
+          <p class="button-text">MEET THE TEAM</p>
+        </button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-// import { MeetTeamButton } from "./MeetTeamButton";
-
+import MeetTeamHeading from './MeetTeamHeading'
 export default {
   name: "MeetTeam",
-  // components: { MeetTeamButton }
+  components: {
+    MeetTeamHeading
+  }
 };
 </script>
 
@@ -52,6 +49,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 10rem;
 }
 .team-heading {
   height: 153px;
@@ -98,15 +96,13 @@ export default {
   @include roboto-30-regular;
 }
 .meet-team-button {
-  height: 72px;
-  width: 224px;
-}
-.meet-team-button {
   background-color: $secondary-darkmode;
   border-radius: 3px;
   padding: 20px 32px;
   display: flex;
   align-items: center;
+  // height: 32px;
+  width: 15rem;
   cursor: pointer;
 }
 .button-text {

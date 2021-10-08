@@ -1,5 +1,5 @@
 <template>
-  <div class="featured-listing">
+  <section class="section-space featured-listing">
     <img
       alt=""
       class="section-divider-top"
@@ -57,7 +57,7 @@
       class="section-divider-bottom"
       src="https://static.overlay-tech.com/assets/7f31a6c6-becd-4cf6-a014-a5b150d9318c.png"
     />
-  </div>
+  </section>
 </template>
 
 <script>

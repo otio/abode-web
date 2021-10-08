@@ -1,5 +1,5 @@
 <template>
-  <div class="marketing-house-email">
+  <section class="section-space marketing-house-email">
     <div class="marketing-section">
       <p class="market-house-cta">
         Marketing that sells your house
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -32,10 +32,11 @@ export default {
 .marketing-house-email {
   background-size: 100% 100%;
   background-position: center;
-  background-image: url("https://via.placeholder.com/1917x525");
+  background-image: url("~static/market-house-bg.png");
   padding: 89px 414.35px 88px 404.37px;
   display: flex;
   align-items: center;
+  margin: 7rem 0;
 }
 .marketing-section {
   width: calc(100% - 175.72px);

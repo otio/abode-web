@@ -3,6 +3,7 @@
     <HeroSection></HeroSection>
     <MeetTeam></MeetTeam>
     <FeaturedListing></FeaturedListing>
+    <RealScoutSimple></RealScoutSimple>
     <ClientReviews></ClientReviews>
     <AreasServed></AreasServed>
     <MarketingHouseEmail></MarketingHouseEmail>
@@ -13,7 +14,8 @@
 <script>
 import HeroSection from '../components/home/HeroSection'
 import MeetTeam from '../components/home/MeetTeam'
-import FeaturedListing from '../components/home/FeaturedListing'
+import FeaturedListing from '../components/home/FeaturedListing' 
+import RealScoutSimple from '../components/home/RealScoutSimple' 
 import ClientReviews from '../components/home/ClientReviews'
 import AreasServed from '../components/home/AreasServed'
 import MarketingHouseEmail from '../components/home/MarketingHouseEmail'
@@ -23,6 +25,7 @@ export default {
     HeroSection,
     MeetTeam,
     FeaturedListing,
+    RealScoutSimple,
     ClientReviews,
     AreasServed,
     MarketingHouseEmail,
@@ -31,4 +34,8 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.section-space {
+  margin: 2.5rem 0rem
+}
+</style>

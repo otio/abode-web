@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="cta">
       <img
         alt=""
@@ -117,7 +117,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -133,6 +133,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5rem;
 }
 .cta {
   margin-bottom: 56px;

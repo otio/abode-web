@@ -1,5 +1,5 @@
 <template>
-  <div class="areas-served">
+  <section class="section-space areas-served">
     <img
       alt=""
       class="divider"
@@ -22,7 +22,7 @@
             class="area-image"
             src="https://static.overlay-tech.com/assets/effef6d8-b4bb-4435-bf01-938a1bf65976.png"
           />
-          <p class="area-label">Sunset</p>
+          <p class="area-label">Noe Valley</p>
         </div>
         <div class="neighborhood">
           <img
@@ -30,11 +30,11 @@
             class="area-image"
             src="https://static.overlay-tech.com/assets/451f768e-2d96-4e62-a053-d0e669488519.png"
           />
-          <p class="area-label">Sunset</p>
+          <p class="area-label">Bernal Heights</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

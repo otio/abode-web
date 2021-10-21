@@ -1,21 +1,6 @@
 <template>
   <section class="hero">
-    <div class="hero-nav">
-      <div class="nav-content">
-        <!-- TODO: Switch logo to SVG file -->
-        <img
-          alt=""
-          class="nav-logo"
-          src="~/static/nav-logo.png"
-        />
-        <div class="nav-menu">
-          <p class="sell-house">Selling</p>
-          <p class="sell-house">Buying</p>
-          <p class="sell-house">Team</p>
-          <p class="sell-house">Resources</p>
-        </div>
-      </div>
-    </div>
+    
     <div class="heading">
       <p class="heading-text">
         Abode San Francisco Real Estate
@@ -33,12 +18,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~/assets/main.scss";
 .hero {
   background-size: 100% 100%;
   background-position: center;
-  background-image: url("~assets/image/palace-of-fine-arts-1920w.png");
+  // background-image: url("~assets/image/palace-of-fine-arts-1920w.png");
+  background-image: url("~assets/image/palace-of-fine-arts-raw-1920w-v2.png");
   padding: 0 0 570px;
   display: flex;
   flex-direction: column;

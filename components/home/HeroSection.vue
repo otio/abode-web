@@ -24,7 +24,7 @@ export default {
   background-size: 100% 100%;
   background-position: center;
   // background-image: url("~assets/image/palace-of-fine-arts-1920w.png");
-  background-image: url("~assets/image/palace-of-fine-arts-raw-1920w-v2.png");
+  background-image: url("~assets/image/san-francisco-downtown-skyline.jpg");
   padding: 0 0 570px;
   display: flex;
   flex-direction: column;

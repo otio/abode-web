@@ -1,17 +1,17 @@
 <template>
    <section>
       <header>
-        <HeroSection></HeroSection>
+
       </header>
-        <Nuxt />S
+        <Nuxt />
    </section>
 </template>
 
 <script>
-import HeroSection from '../components/home/HeroSection'
+// import HeroSection from '../components/home/HeroSection'
 export default {
    components: {
-    HeroSection,
+    // HeroSection,
    }
 }
 </script>

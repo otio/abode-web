@@ -1,6 +1,6 @@
 <template>
   <main>
-    <!-- <HeroSection></HeroSection> -->
+    <HeroSection></HeroSection>
     <!-- <MeetTeam></MeetTeam>
     <FeaturedListing></FeaturedListing>
     <RealScoutSimple></RealScoutSimple>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import HeroSection from '../components/home/HeroSection'
+import HeroSection from '../components/home/HeroSection'
 // import MeetTeam from '../components/home/MeetTeam'
 // import FeaturedListing from '../components/home/FeaturedListing' 
 // import RealScoutSimple from '../components/home/RealScoutSimple' 
@@ -22,7 +22,7 @@
 // import Footer from '../components/home/Footer'
 export default {
   components: {
-    // HeroSection,
+    HeroSection,
     // MeetTeam,
     // FeaturedListing,
     // RealScoutSimple,

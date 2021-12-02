@@ -1,10 +1,10 @@
 <template>
  <div class="hero-section">
+  <HeroNav />
    <HeroHd />
   <!-- <div class="hero-hd">
     Include here the component "HeroHd"
   </div> -->
-  <HeroNav />
   <!-- <div class="hero-nav">
     Include here the component "HeroNav"
   </div> -->
@@ -32,6 +32,8 @@ export default {
 .hero-nav {
   position: absolute;
   left: 0;
-  top: calc(50% - 80px / 2);
+  top: 0;
+  z-index: 100;
+  /* top: calc(50% - 80px / 2); */
 }
 </style>

@@ -46,7 +46,7 @@ export default {
   top: 0;
 }
 .heading {
-  width: calc(100% - 838px);
+  width: calc(100% - 827px);
   padding: 0 0 254px;
   display: flex;
   flex-direction: column;
@@ -59,6 +59,7 @@ export default {
   color: var(--fire-brick);
   align-self: stretch;
   text-align: center;
+  margin-bottom: 17rem;
   text-shadow: 0 0 32px var(--transparent-black);
   font-family: var(--acme-gothic-96-regular-family);
   font-size: var(--acme-gothic-96-regular-size);
@@ -69,9 +70,9 @@ export default {
   color: var(--white);
   align-self: stretch;
   text-align: center;
-  position: absolute;
-  left: 0;
-  bottom: -36px;
+  /* position: absolute; */
+  /* left: 0; */
+  /* bottom: -36px; */
   letter-spacing: 4px;
   font-family: var(--acme-gothic-36-semi-bold-family);
   font-size: var(--acme-gothic-36-semi-bold-size);

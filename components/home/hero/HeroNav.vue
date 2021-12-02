@@ -1,30 +1,30 @@
 <template>
   <div class="hero-nav">
-  <div class="nav-logo">
-    <div class="abode-letters">
+    <div class="nav-logo">
+      <div class="abode-letters">
+        <img
+          alt=""
+          class="vector"
+          src="https://static.overlay-tech.com/assets/5638ad55-010d-48bf-bb38-e68acd32c489.svg"
+        /><img
+          alt=""
+          class="bode-small"
+          src="https://static.overlay-tech.com/assets/3cb49eb1-1953-4bde-8f02-12649c179a3a.svg"
+        />
+      </div>
       <img
         alt=""
-        class="vector"
-        src="https://static.overlay-tech.com/assets/5638ad55-010d-48bf-bb38-e68acd32c489.svg"
-      /><img
-        alt=""
-        class="bode-small"
-        src="https://static.overlay-tech.com/assets/3cb49eb1-1953-4bde-8f02-12649c179a3a.svg"
+        class="real-estate"
+        src="https://static.overlay-tech.com/assets/a6fc117c-537d-4f41-9461-f07e987f3248.svg"
       />
     </div>
-    <img
-      alt=""
-      class="real-estate"
-      src="https://static.overlay-tech.com/assets/a6fc117c-537d-4f41-9461-f07e987f3248.svg"
-    />
-  </div>
-  <div class="nav-menu">
-    <p class="nav-link">Buying</p>
-    <p class="nav-link">Rentals</p>
-    <p class="nav-link">Team</p>
-    <p class="nav-link">Resources</p>
-    <p class="nav-link">Selling</p>
-  </div>
+    <div class="nav-menu">
+      <p class="nav-link">Buying</p>
+      <p class="nav-link">Rentals</p>
+      <p class="nav-link">Team</p>
+      <p class="nav-link">Resources</p>
+      <p class="nav-link">Selling</p>
+    </div>
 </div>
 </template>
 
@@ -38,8 +38,10 @@ export default {
 
 .hero-nav {
   background-color: var(--transparent-white-smoke);
+  width: 100%;
   padding: 32.46px 117px 32.47px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }

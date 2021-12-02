@@ -1,35 +1,35 @@
 <template>
   <main>
     <HeroSection></HeroSection>
-    <MeetTeam></MeetTeam>
+    <!-- <MeetTeam></MeetTeam>
     <FeaturedListing></FeaturedListing>
     <RealScoutSimple></RealScoutSimple>
     <ClientReviews></ClientReviews>
     <AreasServed></AreasServed>
     <MarketingHouseEmail></MarketingHouseEmail>
-    <Footer></Footer>
+    <Footer></Footer> -->
   </main>
 </template>
 
 <script>
 import HeroSection from '../components/home/HeroSection'
-import MeetTeam from '../components/home/MeetTeam'
-import FeaturedListing from '../components/home/FeaturedListing' 
-import RealScoutSimple from '../components/home/RealScoutSimple' 
-import ClientReviews from '../components/home/ClientReviews'
-import AreasServed from '../components/home/AreasServed'
-import MarketingHouseEmail from '../components/home/MarketingHouseEmail'
-import Footer from '../components/home/Footer'
+// import MeetTeam from '../components/home/MeetTeam'
+// import FeaturedListing from '../components/home/FeaturedListing' 
+// import RealScoutSimple from '../components/home/RealScoutSimple' 
+// import ClientReviews from '../components/home/ClientReviews'
+// import AreasServed from '../components/home/AreasServed'
+// import MarketingHouseEmail from '../components/home/MarketingHouseEmail'
+// import Footer from '../components/home/Footer'
 export default {
   components: {
     HeroSection,
-    MeetTeam,
-    FeaturedListing,
-    RealScoutSimple,
-    ClientReviews,
-    AreasServed,
-    MarketingHouseEmail,
-    Footer
+    // MeetTeam,
+    // FeaturedListing,
+    // RealScoutSimple,
+    // ClientReviews,
+    // AreasServed,
+    // MarketingHouseEmail,
+    // Footer
   },
 }
 </script>

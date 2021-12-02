@@ -1,6 +1,10 @@
 <template>
-  <section class="hero">
-    
+  <div class="hero-hd">
+    <img
+      alt=""
+      class="bg-mask"
+      src="~/assets/image/san-francisco-downtown-skyline.jpg"
+    />
     <div class="heading">
       <p class="heading-text">
         Abode San Francisco Real Estate
@@ -9,76 +13,53 @@
         Competence, Exclusivity and Passion
       </p>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Hero"
+  name: "HeroHd"
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/main.scss";
-.hero {
-  background-size: 100% 100%;
-  background-position: center;
-  // background-image: url("~assets/image/palace-of-fine-arts-1920w.png");
-  background-image: url("~assets/image/san-francisco-downtown-skyline.jpg");
-  padding: 0 0 570px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+<style lang="scss" scoped>
+.hero-hd {
+  background: linear-gradient(
+    180deg,
+    $white 0%,
+    $transparent-white 73%
+  );
 }
-.hero-nav {
-  background-color: $transparent-white-smoke;
-  margin-bottom: 75px;
-  padding: 35px 138.71px 29.93px 117px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.nav-content {
-  display: flex;
-  align-items: center;
-  width: 1664.29px;
-}
-.nav-logo {
-  width: 183.29px;
-  height: 85.07px;
-  margin-right: 825px;
-}
-.nav-menu {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex: 1;
-}
-.sell-house {
-  color: $black;
-  text-align: center;
-  letter-spacing: 1px;
-  @include hanuman-24-bold;
+.bg-mask {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
 }
 .heading {
+  width: calc(100% - 838px);
+  padding: 0 0 254px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 419px;
+  top: 190px;
 }
 .heading-text {
-  max-width: 1082px;
-  color: $secondary-darkmode;
+  color: $fire-brick;
+  align-self: stretch;
   text-align: center;
-  margin-bottom: 25px;
   text-shadow: 0 0 32px $transparent-black;
-  @include hanuman-96-bold;
+  @include acme-gothic-96-regular;
 }
 .chaser-text {
-  width: 1082px;
-  color: $black;
+  color: $white;
+  align-self: stretch;
   text-align: center;
-  letter-spacing: 1px;
-  @include source-serif-pro-38-regular;
+  position: absolute;
+  left: 0;
+  bottom: -36px;
+  letter-spacing: 4px;
+  @include acme-gothic-51-semi-bold;
 }
 </style>

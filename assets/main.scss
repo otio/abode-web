@@ -1,13 +1,20 @@
 // This is the project stylesheet
 
 // Colors
+$black: rgba(35, 31, 32, 1);
 $fire-brick: rgba(205, 24, 21, 1);
 $transparent-black: rgba(0, 0, 0, 0.04);
 $transparent-white: rgba(255, 255, 255, 0);
+$transparent-white-smoke: rgba(239, 240, 246, 0.1);
 $white: rgba(255, 255, 255, 1);
 
-
 // Typographies
+@mixin acme-gothic-36-semi-bold {
+  font-family: "Acme Gothic";
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+}
 @mixin acme-gothic-51-semi-bold {
   font-family: "Acme Gothic";
   font-size: 51px;
@@ -19,4 +26,10 @@ $white: rgba(255, 255, 255, 1);
   font-size: 96px;
   font-weight: 400;
   line-height: 110px;
+}
+@mixin hanuman-30-bold {
+  font-family: "Hanuman";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 56px;
 }

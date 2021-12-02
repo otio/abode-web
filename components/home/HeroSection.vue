@@ -1,65 +1,37 @@
 <template>
-  <div class="hero-hd">
-    <img
-      alt=""
-      class="bg-mask"
-      src="~/assets/image/san-francisco-downtown-skyline.jpg"
-    />
-    <div class="heading">
-      <p class="heading-text">
-        Abode San Francisco Real Estate
-      </p>
-      <p class="chaser-text">
-        Competence, Exclusivity and Passion
-      </p>
-    </div>
-  </div>
+ <div class="hero-section">
+   <HeroHd />
+  <!-- <div class="hero-hd">
+    Include here the component "HeroHd"
+  </div> -->
+  <HeroNav />
+  <!-- <div class="hero-nav">
+    Include here the component "HeroNav"
+  </div> -->
+</div>
 </template>
 
 <script>
+import HeroHd from "./hero/HeroHd";
+import HeroNav from "./hero/HeroNav";
+
 export default {
-  name: "HeroHd"
+  name: "HeroSection",
+  components: { HeroHd, HeroNav }
 };
 </script>
 
-<style lang="scss" scoped>
-.hero-hd {
-  background: linear-gradient(
-    180deg,
-    $white 0%,
-    $transparent-white 73%
-  );
+<style scoped>
+
+.hero-section {
+  padding: 0 1px 0 0;
 }
-.bg-mask {
-  width: 1920px;
-  height: 1080px;
+.hero-hd {
   position: relative;
 }
-.heading {
-  width: calc(100% - 838px);
-  padding: 0 0 254px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 419px;
-  top: 190px;
-}
-.heading-text {
-  color: $fire-brick;
-  align-self: stretch;
-  text-align: center;
-  text-shadow: 0 0 32px $transparent-black;
-  @include acme-gothic-96-regular;
-}
-.chaser-text {
-  color: $white;
-  align-self: stretch;
-  text-align: center;
+.hero-nav {
   position: absolute;
   left: 0;
-  bottom: -36px;
-  letter-spacing: 4px;
-  @include acme-gothic-51-semi-bold;
+  top: calc(50% - 80px / 2);
 }
 </style>

@@ -1,12 +1,19 @@
 <template>
-    <Navbar>
-  <main>
-    <Nuxt />
-  </main>
+   <section>
+      <header>
+        <HeroSection></HeroSection>
+      </header>
+        <Nuxt />S
+   </section>
 </template>
 
 <script>
-export default {}
+import HeroSection from '../components/home/HeroSection'
+export default {
+   components: {
+    HeroSection,
+   }
+}
 </script>
 
-<style lang="scss"></style>
+<style></style>

@@ -1,3 +1,5 @@
+// import colors from 'windicss/colors'
+
 export default {
     extend: {
         screens: {
@@ -10,10 +12,9 @@ export default {
           'hd': '1920px',
         },
         colors: {
-        // gray: colors.coolGray,
-        // blue: colors.lightBlue,
-        // red: colors.rose,
-        // pink: colors.fuchsia,
+          black: `#231F20`,
+          white: '#ffffff',
+          red: '#CD1815'
         },
         fontFamily: {
         // sans: ['Graphik', 'sans-serif'],
@@ -24,7 +25,7 @@ export default {
         // 144: '36rem',
         },
         borderRadius: {
-        // '4xl': '2rem',
+        // '4xl': '2rem',x`
         },
     }
 }

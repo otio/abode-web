@@ -3,7 +3,7 @@
  <img
       alt=""
       class="bg-mask"
-      src="~/assets/image/san-francisco-downtown-skyline.jpg"
+      src="https://res.cloudinary.com/mill-birdy/image/upload/c_scale,w_3840/v1638512389/Abode-Web/san-francisco-downtown-skyline_o1mzfa.jpg"
     />
   <div class="gradient"></div>
   <div class="heading">

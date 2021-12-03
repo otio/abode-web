@@ -1,14 +1,8 @@
 <template>
- <div class="hero-section">
-  <HeroNav />
-   <HeroHd />
-  <!-- <div class="hero-hd">
-    Include here the component "HeroHd"
-  </div> -->
-  <!-- <div class="hero-nav">
-    Include here the component "HeroNav"
-  </div> -->
-</div>
+ <section class="container">
+    <HeroNav />
+    <HeroHd />
+</section>
 </template>
 
 <script>
@@ -22,10 +16,15 @@ export default {
 </script>
 
 <style scoped>
-
-.hero-section {
-  padding: 0 1px 0 0;
+@media screen and (min-width: 360px){
+  .container {
+    max-width: 360px;
+  }
 }
+
+/* .hero-section {
+  padding: 0 1px 0 0;
+} */
 .hero-hd {
   position: relative;
 }

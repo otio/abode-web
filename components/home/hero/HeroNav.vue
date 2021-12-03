@@ -18,20 +18,47 @@
         src="https://static.overlay-tech.com/assets/a6fc117c-537d-4f41-9461-f07e987f3248.svg"
       />
     </div>
-    <div class="nav-menu">
-      <p class="nav-link">Buying</p>
-      <p class="nav-link">Rentals</p>
-      <p class="nav-link">Team</p>
-      <p class="nav-link">Resources</p>
-      <p class="nav-link">Selling</p>
-    </div>
+   <div>
+      <button v-show="isMobile">
+        <img
+          alt=""
+          class="mobile-menu"
+          src="https://static.overlay-tech.com/assets/bb1ee59c-bf36-4e94-af1e-4922e06df1d3.svg"
+      />
+      </button>
+      <nav class="nav-menu">
+        <p class="nav-link">Buying</p>
+        <p class="nav-link">Rentals</p>
+        <p class="nav-link">Team</p>
+        <p class="nav-link">Resources</p>
+        <p class="nav-link">Selling</p>
+      </nav>
+   </div>
 </div>
 </template>
 
 <script>
 export default {
-  name: "HeroNav"
-};
+  name: "HeroNav",
+  // data() {
+  //   // return {
+  //   //   isMobile: this.mobileCheck
+  //   // }
+  // },
+  computed: {
+    innerWidth() {
+      if(process.client) {
+        const width = window.innerWidth
+        return width
+      } else {
+        return null
+      }
+    },
+    isMobile(){
+      return this.innerWidth <= 1024
+    }
+  }
+}
 </script>
 
 <style scoped>

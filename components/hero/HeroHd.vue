@@ -1,6 +1,6 @@
 <template>
-  <div class="hero-hd">
- <img
+  <section class="hero-hd">
+  <img
       alt=""
       class="bg-mask"
       src="https://res.cloudinary.com/mill-birdy/image/upload/c_scale,w_3840/v1638512389/Abode-Web/san-francisco-downtown-skyline_o1mzfa.jpg"
@@ -14,7 +14,7 @@
       Competence, Exclusivity and Passion
     </p>
   </div>
-</div>
+</section>
 </template>
 
 <script>
@@ -26,7 +26,9 @@ export default {
 <style  scoped>
 
 .hero-hd {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .bg-mask {
   width: 1920px;

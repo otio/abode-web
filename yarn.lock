@@ -1701,6 +1701,19 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@storyblok/nuxt@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@storyblok/nuxt/-/nuxt-2.0.4.tgz#4f3fb6513c3931679ed5d3a621fb5d8920a4b915"
+  integrity sha512-EzjRZ/UraorhVwep8v8XYI7piDKQWGodlCnkbZ7PdIG5//bVfndgxGtEJzDyp4XBPlskVxSYKtgmqu1xrM4LNA==
+  dependencies:
+    "@storyblok/vue" "^2.0.0"
+    storyblok-js-client "^4.1.5"
+
+"@storyblok/vue@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/vue/-/vue-2.0.0.tgz#4a882a358aee08386a17561c74a990f4f6a327c3"
+  integrity sha512-ljKLH0dHnym/Jmk8vcYZg0qaqN3fmyZz78g7DkujotwwbkPM7jT6lFGCsEi6HwwucYkJcPr1GQhLOwVIhF0DeA==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -10619,6 +10632,13 @@ std-env@^2.2.1, std-env@^2.3.0:
   integrity sha512-4qT5B45+Kjef2Z6pE0BkskzsH0GO7GrND0wGlTM1ioUe3v0dGYx9ZJH0Aro/YyA8fqQ5EyIKDRjZojJYMFTflw==
   dependencies:
     ci-info "^3.0.0"
+
+storyblok-js-client@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.1.5.tgz#d0ceb811a9b4847850bf4856046e01816ac221c6"
+  integrity sha512-0cd9AtU1JE0Q7lyda7NSyfwasvuy3X5v9z1kMm4TWmcbUiQEjUjiNaZ9o0bu7iTpgVeatoa2j6XGLRqPQKz8dw==
+  dependencies:
+    qs "^6.9.4"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

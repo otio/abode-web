@@ -27,7 +27,12 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs:[
+      '~/components',
+      '~/components/hero'
+    ]
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -42,6 +47,13 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    [
+      "@storyblok/nuxt",
+      {
+        accessToken: process.env.STORYBLOK_SPACE_TOKEN,
+        cacheProvider: "memory",
+      },
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

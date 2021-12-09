@@ -1,13 +1,20 @@
 <template>
-  <div class="relative flex flex-row items-center justify-evenly">
+  <div
+    class="
+      flex flex-row
+      items-center
+      justify-evenly
+      absolute
+      w-screen
+      px-16
+      py-8
+      z-60
+    "
+  >
     <Logo />
-   <div>
+    <div>
       <button v-show="isMobile">
-        <img
-          alt=""
-          class="mobile-menu"
-          src="~/static/mobile-menu.svg"
-      />
+        <img alt="" class="mobile-menu" src="~/static/mobile-menu.svg" />
       </button>
       <nav>
         <ul class="relative flex flex-row items-center">
@@ -16,56 +23,55 @@
           </li>
         </ul>
       </nav>
-   </div>
-</div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Nav",
+  name: 'Nav',
   data() {
     return {
-      navlinks:[
-        { label: 'Selling' , slug: 'selling'},
-        { label: 'Buying' , slug: 'buying'},
-        { label: 'Rentals' , slug: 'rentals'},
-        { label: 'Team' , slug: 'team'},
-        { label: 'Resources' , slug: 'resources'}
+      navlinks: [
+        { label: 'Selling', slug: 'selling' },
+        { label: 'Buying', slug: 'buying' },
+        { label: 'Rentals', slug: 'rentals' },
+        { label: 'Team', slug: 'team' },
+        { label: 'Resources', slug: 'resources' },
       ],
     }
   },
   computed: {
     innerWidth() {
-      if(process.client) {
+      if (process.client) {
         const width = window.innerWidth
         return width
       } else {
         return null
       }
     },
-    isMobile(){
+    isMobile() {
       return this.innerWidth <= 1024
     },
     desktopMenu() {
       return {
-            'flex-row': true,
-            'justify-end': true, 
-            'items-center': true
-          }          
-      },
+        'flex-row': true,
+        'justify-end': true,
+        'items-center': true,
+      }
+    },
     mobileMenu() {
       return {
-            'flex-col': true,
-            'justify-start': true, 
-            'items-center': true
-        }
-    }
-  }
+        'flex-col': true,
+        'justify-start': true,
+        'items-center': true,
+      }
+    },
+  },
 }
 </script>
 
 <style scoped>
-
 .hero-nav {
   background-color: var(--transparent-white-smoke);
   /* display: flex; */

@@ -1,32 +1,29 @@
 <template>
-  <section class="hero-hd">
-  <img
-      alt=""
-      class="bg-mask"
-      src="https://res.cloudinary.com/mill-birdy/image/upload/c_scale,w_3840/v1638512389/Abode-Web/san-francisco-downtown-skyline_o1mzfa.jpg"
-    />
-  <div class="gradient"></div>
-  <div class="heading">
-    <p class="heading-text">
-      Abode San Francisco Real Estate
-    </p>
-    <p class="chaser-text">
-      Competence, Exclusivity and Passion
-    </p>
+  <div id="hero-content" class="hero-hd">
+    <div class="">
+      <img
+        alt=""
+        class="bg-mask"
+        src="https://res.cloudinary.com/mill-birdy/image/upload/c_scale,w_3840/v1638512389/Abode-Web/san-francisco-downtown-skyline_o1mzfa.jpg"
+      />
+    </div>
+    <div class="gradient"></div>
+    <div class="heading">
+      <p class="heading-text">Abode San Francisco Real Estate</p>
+      <p class="chaser-text">Competence, Exclusivity and Passion</p>
+    </div>
   </div>
-</section>
 </template>
 
 <script>
 export default {
-  name: "HeroHd"
-};
+  name: 'BannerContent',
+}
 </script>
 
-<style  scoped>
-
+<style scoped>
 .hero-hd {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
@@ -70,15 +67,12 @@ export default {
 }
 .chaser-text {
   color: var(--white);
-  align-self: stretch;
-  text-align: center;
-  /* position: absolute; */
-  /* left: 0; */
-  /* bottom: -36px; */
-  letter-spacing: 4px;
   font-family: var(--acme-gothic-36-semi-bold-family);
   font-size: var(--acme-gothic-36-semi-bold-size);
   font-weight: var(--acme-gothic-36-semi-bold-weight);
   line-height: var(--acme-gothic-36-semi-bold-line-height);
+  align-self: stretch;
+  text-align: center;
+  letter-spacing: 4px;
 }
 </style>

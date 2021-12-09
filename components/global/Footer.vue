@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col items-center justify-evenly px-16">
+  <div class="flex flex-col items-center justify-evenly px-16">
     <div class="row">
       <div id="ev-logos" class="flex flex-row justify-start">
         <div class="object-cover">

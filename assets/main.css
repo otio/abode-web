@@ -34,12 +34,7 @@
 
   /* hanuman-30-bold */
   --hanuman-30-bold-family: 'Hanuman';
-  --hanuman-30-bold-size: 30px;
+  --hanuman-30-bold-size: 36px;
   --hanuman-30-bold-weight: 700;
   --hanuman-30-bold-line-height: 56px;
-}
-
-.button {
-  background-color: var(--fire-brick);
-  @apply w-max;
 }

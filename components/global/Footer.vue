@@ -1,6 +1,6 @@
 <template>
   <div class="relative flex flex-col items-center justify-evenly px-16">
-    <div class="flex flex-row justify-around w-screen px-16">
+    <div class="row">
       <div id="ev-logos" class="flex flex-row justify-start">
         <div class="object-cover">
           <img alt="" src="~/static/EV-Logo-James.png" />
@@ -10,7 +10,9 @@
         </div>
       </div>
       <div class="flex flex-col justify-center items-center">
-        <div><p class="">Subscribe to receive your market report</p></div>
+        <div>
+          <p class="text-2xl">Subscribe to receive your market report</p>
+        </div>
         <div class="flex flex-row mt-4">
           <input class="input" placeholder="Email address" />
           <button class="button">
@@ -19,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row justify-around w-screen px-16 mt-16">
+    <div class="row mt-16">
       <Logo />
       <div id="contact-cards" class="flex flex-row justify-evenly">
         <SocialCard />
@@ -35,7 +37,7 @@ export default {}
 
 <style scoped>
 .row {
-  @apply flex flex-row justify-evenly w-screen p-7;
+  @apply flex flex-row justify-around w-screen px-16;
 }
 .input {
   width: 25rem;

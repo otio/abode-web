@@ -18,7 +18,7 @@
 export default {
   asyncData(context) {
     return context.app.$storyapi
-      .get('cdn/stories/home', {
+      .get('cdn/stories/', {
         version: 'draft',
       })
       .then((res) => {

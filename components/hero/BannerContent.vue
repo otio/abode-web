@@ -55,7 +55,7 @@ export default {
   top: 190px;
 }
 .heading-text {
-  color: var(--fire-brick);
+  color: var(--primary-default);
   align-self: stretch;
   text-align: center;
   margin-bottom: 17rem;

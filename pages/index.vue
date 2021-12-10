@@ -1,9 +1,12 @@
 <template>
   <BaseLayout>
-    <template #header> </template>
     <BannerContent />
-    <MeetTeam></MeetTeam>
-
+    <MeetTeam />
+    <FeaturedListing />
+    <ClientReviews />
+    <MagazineSignup />
+    <AreasServed />
+    <MarketingHouseEmail />
     <template #footer>
       <Footer />
     </template>
@@ -11,6 +14,7 @@
 </template>
 
 <script>
+// TODO: Migrate to Nuxt Layouts
 export default {}
 </script>
 

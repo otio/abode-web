@@ -139,7 +139,7 @@ export default {
   letter-spacing: 1px;
 }
 .meet-team-button {
-  background-color: var(--fire-brick);
+  background-color: var(--primary-default);
   border-radius: 3px;
   padding: 20px 20.87px;
   display: flex;

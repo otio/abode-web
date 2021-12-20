@@ -1,5 +1,5 @@
 <template>
-  <div id="hero-content" class="hero-hd">
+  <div id="hero-content" class="">
     <div class="">
       <img
         alt=""
@@ -28,12 +28,12 @@ export default {
   left: 0;
 }
 .bg-mask {
-  width: 1920px;
+  width: 100vw;
   height: 1080px;
   position: relative;
 }
 .gradient {
-  width: 1920px;
+  width: 100vw;
   height: 1080px;
   background: linear-gradient(
     180deg,

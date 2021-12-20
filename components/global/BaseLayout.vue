@@ -1,22 +1,10 @@
 <template>
-  <div
-    class="
-      hd:container
-      2xl:container
-      xl:container
-      lg:container
-      md:container
-      sm:container
-      xs:container
-      flex flex-col
-      justify-start
-    "
-  >
+  <div class="w-screen flex flex-col justify-start">
     <header class="relative">
       <Nav class="" />
       <slot name="header"></slot>
     </header>
-    <main class="relative">
+    <main class="">
       <slot></slot>
     </main>
     <footer class="footer relative w-screen py-16 z-60">

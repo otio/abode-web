@@ -1,5 +1,43 @@
 <template>
-  <div class="meet-team">
+  <div class="flex flex-col items-center justify-center py-24">
+    <div
+      class="flex flex-row items-center justify-center self-stretch mb-16 py-8"
+    >
+      <p class="flex items-center mr-8 font-display text-6xl">Meet the</p>
+      <div class="flex flex-row items-center">
+        <img
+          alt=""
+          class="mr-1"
+          src="https://static.overlay-tech.com/assets/a239be1d-75cb-4e8f-aa80-2efcbfc8150a.svg"
+        />
+        <p class="font-display text-6xl">bode Team</p>
+      </div>
+    </div>
+    <div class="flex flex-row justify-center items-center self-stretch mx-36">
+      <img
+        alt=""
+        class="rounded-sm mr-16"
+        src="https://static.overlay-tech.com/assets/ebd04f40-388f-4e34-b679-4f3569ddb4ae.png"
+      />
+      <div class="">
+        <div class="">
+          <h2 class="text-5xl">James Caldwell &amp; Shivani Desai</h2>
+          <p class="">
+            Bespoke - a special experience tailored for each client. WE are not
+            all about numbers, it is about a life experience that works for you.
+            The number of bedrooms or baths is important “necessary but not
+            sufficient” as they say. It’s all about the lifestyle each property
+            and community has to offer and what it can be for you. “Home” is a
+            place to either build a legacy or enjoy one already created.
+          </p>
+        </div>
+        <button class="">
+          <p class="">MEET THE TEAM</p>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="meet-team">
     <div class="meet-team-heading">
       <p class="intro-words">Meet the</p>
       <div class="logo-text-combo">
@@ -34,7 +72,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -44,61 +82,6 @@ export default {
 </script>
 
 <style scoped>
-.meet-team {
-  padding: 167.34px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.meet-team-heading {
-  margin-bottom: 75px;
-  padding: 0 575px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-}
-.intro-words {
-  height: 88.24%;
-  width: 35.66%;
-  color: rgba(0, 0, 0, 1);
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-right: 35px;
-  letter-spacing: 0.75px;
-  font-family: var(--acme-gothic-60-light-family);
-  font-size: var(--acme-gothic-60-light-size);
-  font-weight: var(--acme-gothic-60-light-weight);
-  line-height: var(--acme-gothic-60-light-line-height);
-}
-.logo-text-combo {
-  display: flex;
-  align-items: center;
-  width: 402px;
-}
-.abode-minimal-logo {
-  width: 22%;
-  align-self: stretch;
-  object-fit: cover;
-}
-.section-heading {
-  width: 290px;
-  color: rgba(0, 0, 0, 1);
-  text-align: center;
-  letter-spacing: 0.75px;
-  font-family: var(--acme-gothic-60-light-family);
-  font-size: var(--acme-gothic-60-light-size);
-  font-weight: var(--acme-gothic-60-light-weight);
-  line-height: var(--acme-gothic-60-light-line-height);
-}
-.team-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-}
 .portrait-right {
   width: 26.67%;
   align-self: stretch;

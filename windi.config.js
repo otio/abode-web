@@ -14,10 +14,12 @@ export default {
     colors: {
       black: `#231F20`,
       white: '#ffffff',
-      red: '#CD1815',
+      'firebrick': '#CD1815',
     },
     fontFamily: {
-      display: ['Acme Gothic', 'Verdana'],
+      display: ['Acme Gothic'],
+      secondary: ['Hanuman', 'Verdana'],
+      body: ['Roboto', 'Arial']
       // sans: ['Graphik', 'sans-serif'],
       // serif: ['Merriweather', 'serif'],
     },

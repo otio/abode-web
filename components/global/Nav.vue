@@ -19,7 +19,9 @@
       <nav>
         <ul class="relative flex flex-row items-center">
           <li v-for="(link, index) in navlinks" :key="index" class="nav-link">
-            <nuxt-link class="" :to="link.slug">{{ link.label }}</nuxt-link>
+            <nuxt-link class="font-secondary font-light" :to="link.slug">{{
+              link.label
+            }}</nuxt-link>
           </li>
         </ul>
       </nav>

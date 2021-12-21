@@ -16,7 +16,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href: "https://use.typekit.net/qne6cbm.css"}
+      // PULLS in 'A c m e - G o t h i c' font style
+      { rel: 'stylesheet', href: 'https://use.typekit.net/qne6cbm.css' },
     ],
   },
 
@@ -44,6 +45,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     'nuxt-windicss',
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,6 +62,18 @@ export default {
       },
     ],
   ],
+  googleFonts: {
+    // preload: true,
+    // useStylesheet: false,
+    download: true,
+    inject: true,
+    overwriting: false,
+    // outputDir: this.options.dir.assets,
+    fontsPath: '~assets/fonts',
+    families: {
+      Roboto: true,
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

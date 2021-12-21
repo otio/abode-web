@@ -1,5 +1,53 @@
 <template>
-  <div class="featured-listing">
+  <div id="featured-listing" class="px-48">
+    <div id="listing-content" class="flex flex-row">
+      <div id="listing-details" class="flex flex-col items-start">
+        <div id="listing-text" class="flex flex-col">
+          <p class="font-secondary text-5xl pb-12">Featured Listings</p>
+          <p class="font-body text-3xl leading-loose">
+            Dare to be inspired by exploring this curated portfolio of some of
+            the finest real estate listings currently represented by Engel &amp;
+            Völkers.
+          </p>
+        </div>
+        <a class="listing-address">60 Ora Way #H303, San Francisco, CA 94131</a>
+        <div id="listing-features" class="flex flex-row justify-around">
+          <div class="list-feature">
+            <div class="feature-content">
+              <p class="feature-value">1</p>
+              <p class="feature-label">Beds</p>
+            </div>
+          </div>
+          <div class="list-feature">
+            <div class="feature-content">
+              <p class="feature-value">1</p>
+              <p class="feature-label">Beds</p>
+            </div>
+          </div>
+          <div class="list-feature">
+            <div class="feature-content">
+              <p class="feature-value">1</p>
+              <p class="feature-label">Beds</p>
+            </div>
+          </div>
+          <div class="list-feature">
+            <div class="feature-content">
+              <p class="feature-value">1</p>
+              <p class="feature-label">Beds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="featured-listing-image">
+        <img
+          alt=""
+          class="listing-image"
+          src="https://static.overlay-tech.com/assets/88d96045-a452-4f0f-87f1-f7bbe1b8486b.png"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- <div class="featured-listing">
     <div class="listing-content">
       <div class="listing-details">
         <div class="listing-text">
@@ -44,7 +92,7 @@
         src="https://static.overlay-tech.com/assets/88d96045-a452-4f0f-87f1-f7bbe1b8486b.png"
       />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -52,7 +100,7 @@ export default {}
 </script>
 
 <style scoped>
-.featured-listing {
+/* .featured-listing {
   padding: 250px 115px 250px 114px;
   display: flex;
   align-items: center;
@@ -151,5 +199,5 @@ export default {}
 .listing-image {
   width: calc(100% - 780px);
   height: 580px;
-}
+} */
 </style>

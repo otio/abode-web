@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-evenly px-16">
-    <div class="row">
+    <div class="flex flex-row justify-around w-screen px-16">
       <div id="ev-logos" class="flex flex-row justify-start">
         <div class="object-cover">
           <img alt="" src="~/static/EV-Logo-James.png" />
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="row mt-16">
+    <div class="flex flex-row justify-around w-screen px-16 mt-16">
       <Logo />
       <div id="contact-cards" class="flex flex-row justify-evenly">
         <SocialCard />
@@ -36,9 +36,6 @@ export default {}
 </script>
 
 <style scoped>
-.row {
-  @apply flex flex-row justify-around w-screen px-16;
-}
 .input {
   width: 25rem;
   height: 3rem;

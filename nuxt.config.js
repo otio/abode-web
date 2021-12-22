@@ -23,7 +23,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    `~/assets/main.css`,
+    // `~/assets/main.css`,
     // `~/assets/main.scss`
   ],
 
@@ -44,8 +44,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    'nuxt-windicss',
-    '@nuxtjs/google-fonts',
+    '@nuxtjs/tailwindcss',
+    // 'nuxt-windicss',
+    // '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -62,18 +63,18 @@ export default {
       },
     ],
   ],
-  googleFonts: {
-    // preload: true,
-    // useStylesheet: false,
-    download: true,
-    inject: true,
-    overwriting: false,
-    // outputDir: this.options.dir.assets,
-    fontsPath: '~assets/fonts',
-    families: {
-      Roboto: true,
-    },
-  },
+  // googleFonts: {
+  //   // preload: true,
+  //   // useStylesheet: false,
+  //   download: true,
+  //   inject: true,
+  //   overwriting: false,
+  //   // outputDir: this.options.dir.assets,
+  //   fontsPath: '~assets/fonts',
+  //   families: {
+  //     Roboto: true,
+  //   },
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

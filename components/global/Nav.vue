@@ -1,15 +1,6 @@
 <template>
   <div
-    class="
-      flex flex-row
-      items-center
-      justify-evenly
-      absolute
-      w-screen
-      px-16
-      py-8
-      z-60
-    "
+    class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
   >
     <Logo />
     <div>
@@ -19,9 +10,11 @@
       <nav>
         <ul class="relative flex flex-row items-center">
           <li v-for="(link, index) in navlinks" :key="index" class="nav-link">
-            <nuxt-link class="font-secondary font-light" :to="link.slug">{{
-              link.label
-            }}</nuxt-link>
+            <nuxt-link
+              class="text-3xl font-secondary font-light"
+              :to="link.slug"
+              >{{ link.label }}</nuxt-link
+            >
           </li>
         </ul>
       </nav>

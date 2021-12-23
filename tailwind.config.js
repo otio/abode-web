@@ -1,5 +1,6 @@
 // import colors from 'windicss/colors'
 export default {
+  mode: 'jit',
   theme: {
     screens: {
       xs: { max: '360px' },
@@ -11,6 +12,7 @@ export default {
       hd: { max: '1920px', min: '1537px' },
     },
     colors: {
+      transparent: 'transparent',
       black: `#231F20`,
       white: '#ffffff',
       firebrick: '#CD1815',
@@ -30,4 +32,8 @@ export default {
       // '4xl': '2rem',x`
     },
   },
+  // plugins: [
+  //   require('@tailwindcss/typography'),
+  //   // ...
+  // ],
 }

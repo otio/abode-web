@@ -18,6 +18,5 @@
   --transparent-white: rgba(255, 255, 255, 0);
   --transparent-white-smoke: rgba(239, 240, 246, 0.1);
   --white: rgba(255, 255, 255, 1);
-  --white-smoke: rgba(241, 241, 241, 1);
-  --white-smoke-1: rgba(250, 243, 243, 1);
+  --white-smoke: #f1f1f1;
 }

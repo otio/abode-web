@@ -1,18 +1,18 @@
 <template>
-  <div class="gg-magazine">
+  <div id="gg-magazine">
     <img
       alt=""
-      class="mockup2"
+      id="mockup2"
       src="https://static.overlay-tech.com/assets/dd40ffed-87a6-49a8-be76-e6c81c1e6031.png"
     />
-    <div class="descriptionwithcta">
-      <p class="gg-magazine-enjoy-this-seasons-edition">
-        <strong class="gg-magazine-enjoy-this-seasons-edition-emphasis-0"
+    <div id="descriptionwithcta">
+      <p id="gg-magazine-enjoy-this-seasons-edition">
+        <strong id="gg-magazine-enjoy-this-seasons-edition-emphasis-0"
           >GG MAGAZINE<br /> </strong
         >Enjoy this season&#039;s edition of GG, known as the &#34;The Water
         Issue&#34; – dedicated to one of our most essential elements.
       </p>
-      <div class="cta">
+      <div id="cta">
         <!-- Include here the component "Cta" -->
       </div>
     </div>

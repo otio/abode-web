@@ -1,30 +1,30 @@
 <template>
-  <div class="areas-served">
-    <p class="heading">San Francisco Neighborhoods</p>
-    <div class="row">
-      <div class="neighborhood">
+  <div id="areas-served">
+    <p id="heading">San Francisco Neighborhoods</p>
+    <div id="row">
+      <div id="neighborhood">
         <img
+          id="area-image"
           alt=""
-          class="area-image"
           src="https://static.overlay-tech.com/assets/182d2aeb-cb2d-40b2-9b58-607643febb8e.png"
         />
-        <p class="area-label">Sunset</p>
+        <p id="area-label">Sunset</p>
       </div>
-      <div class="neighborhood">
+      <div id="neighborhood">
         <img
+          id="area-image"
           alt=""
-          class="area-image"
           src="https://static.overlay-tech.com/assets/455b96ad-7fa0-4759-bdbd-f3c67145df67.png"
         />
-        <p class="area-label">Noe Valley</p>
+        <p id="area-label">Noe Valley</p>
       </div>
-      <div class="neighborhood">
+      <div id="neighborhood">
         <img
+          id="area-image"
           alt=""
-          class="area-image"
           src="https://static.overlay-tech.com/assets/33588001-9214-4594-9785-49f2e6b34f41.png"
         />
-        <p class="area-label">Bernal Heights</p>
+        <p id="area-label">Bernal Heights</p>
       </div>
     </div>
   </div>

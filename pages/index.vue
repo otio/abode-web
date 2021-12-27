@@ -1,5 +1,5 @@
 <template>
-  <BaseLayout>
+  <main>
     <BannerContent />
     <MeetTeam />
     <FeaturedListing />
@@ -7,10 +7,7 @@
     <MagazineSignup />
     <AreasServed />
     <MarketingHouseEmail />
-    <template #footer>
-      <Footer />
-    </template>
-  </BaseLayout>
+  </main>
 </template>
 
 <script>

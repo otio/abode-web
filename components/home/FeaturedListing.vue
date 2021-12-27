@@ -1,5 +1,5 @@
 <template>
-  <div id="featured-listing" class="px-48">
+  <div id="featured-listing" class="flex flex-col items-center px-48 py-24">
     <div id="listing-content" class="flex flex-row justify-around">
       <div id="listing-details" class="w-sm inline-flex flex-col items-start">
         <div id="listing-text" class="flex flex-col">

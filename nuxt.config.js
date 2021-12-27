@@ -8,6 +8,9 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
+    bodyAttrs: {
+      class: `w-screen overflow-x-hidden`,
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,8 +47,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
-    // 'nuxt-windicss',
+    // '@nuxtjs/tailwindcss',
+    'nuxt-windicss',
     // '@nuxtjs/google-fonts',
   ],
 

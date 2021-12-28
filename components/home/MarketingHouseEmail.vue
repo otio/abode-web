@@ -1,12 +1,14 @@
 <template>
-  <div id="marketing-house-email">
-    <div id="marketing-section">
-      <p id="market-house-cta">Marketing that sells your house</p>
-      <div id="subscription-fields">
-        <p id="chaser">Receive your free comparative analysis</p>
-        <div id="subscription-container">
-          <input id="input" placeholder="Email address" /><button id="submit">
-            <p id="label">Subscribe</p>
+  <div class="marketing-house-email">
+    <div class="marketing-section">
+      <p class="market-house-cta">Marketing that sells your house</p>
+      <div class="subscription-fields">
+        <p class="chaser">Receive your free comparative analysis</p>
+        <div class="subscription-container">
+          <input class="input" placeholder="Email address" /><button
+            class="submit"
+          >
+            <p class="label">Subscribe</p>
           </button>
         </div>
       </div>

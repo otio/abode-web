@@ -1,37 +1,46 @@
 <template>
-  <div id="areas-served">
-    <p id="heading">San Francisco Neighborhoods</p>
-    <div id="row">
-      <div id="neighborhood">
-        <img
-          id="area-image"
-          alt=""
-          src="https://static.overlay-tech.com/assets/182d2aeb-cb2d-40b2-9b58-607643febb8e.png"
-        />
-        <p id="area-label">Sunset</p>
-      </div>
-      <div id="neighborhood">
-        <img
-          id="area-image"
-          alt=""
-          src="https://static.overlay-tech.com/assets/455b96ad-7fa0-4759-bdbd-f3c67145df67.png"
-        />
-        <p id="area-label">Noe Valley</p>
-      </div>
-      <div id="neighborhood">
-        <img
-          id="area-image"
-          alt=""
-          src="https://static.overlay-tech.com/assets/33588001-9214-4594-9785-49f2e6b34f41.png"
-        />
-        <p id="area-label">Bernal Heights</p>
+  <div id="areas-served" class="flex flex-col py-24">
+    <p id="heading" class="font-secondary text-5xl pb-20 text-center">
+      San Francisco Neighborhoods
+    </p>
+    <div id="row" class="flex flex-row justify-evenly">
+      <div
+        v-for="(area, index) in neighborhoods"
+        id="neighborhood"
+        :key="index"
+        class="flex flex-col items-center"
+      >
+        <img id="area-image" alt="" :src="area.picture" class="pb-12" />
+        <p id="area-label" class="font-secondary text-3xl">{{ area.name }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      neighborhoods: [
+        {
+          name: 'Sunset',
+          picture:
+            'https://static.overlay-tech.com/assets/182d2aeb-cb2d-40b2-9b58-607643febb8e.png',
+        },
+        {
+          name: 'Noe Valley',
+          picture:
+            'https://static.overlay-tech.com/assets/182d2aeb-cb2d-40b2-9b58-607643febb8e.png',
+        },
+        {
+          name: 'Bernal Heights',
+          picture:
+            'https://static.overlay-tech.com/assets/182d2aeb-cb2d-40b2-9b58-607643febb8e.png',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style scoped>

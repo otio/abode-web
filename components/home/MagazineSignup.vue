@@ -1,13 +1,15 @@
 <template>
-  <div id="gg-magazine">
+  <div id="gg-magazine" class="flex flex-row items-center justify-center">
     <img
-      alt=""
       id="mockup2"
+      alt=""
       src="https://static.overlay-tech.com/assets/dd40ffed-87a6-49a8-be76-e6c81c1e6031.png"
     />
     <div id="descriptionwithcta">
       <p id="gg-magazine-enjoy-this-seasons-edition">
-        <strong id="gg-magazine-enjoy-this-seasons-edition-emphasis-0"
+        <strong
+          id="gg-magazine-enjoy-this-seasons-edition-emphasis-0"
+          class="font-secondary text-5xl pb-12"
           >GG MAGAZINE<br /> </strong
         >Enjoy this season&#039;s edition of GG, known as the &#34;The Water
         Issue&#34; – dedicated to one of our most essential elements.

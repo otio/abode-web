@@ -1,11 +1,10 @@
 <template>
-  <div
-    id="clients-reviews"
-    class="flex flex-col justify-center items-center py-24"
-  >
-    <h2 id="reviews-section-heading" class="font-secondary text-5xl pb-12">
-      Clients Reviews
-    </h2>
+  <div id="clients-reviews" class="flex flex-col items-center">
+    <div class="">
+      <h2 id="reviews-section-heading" class="font-secondary text-5xl">
+        Clients Reviews
+      </h2>
+    </div>
     <div id="relative-wrapper-one" class="relative">
       <div id="review-wrapper" class="relative flex flex-row justify-center">
         <div id="testimonial-slider" class="flex flex-col items-start">
@@ -36,10 +35,10 @@
               </p>
             </div>
           </div>
-          <div class="flex flex-col items-center">
-            <!-- <button class="relative rotate-180">
-              <img src="~/assets/image/next.svg" alt="" />
-            </button> -->
+          <div class="">
+            <button class="absolute -top-12 left-12rem">
+              <img class="" src="~/assets/image/previous.svg" alt="" />
+            </button>
             <div class="relative w-450px">
               <img
                 id="image-bounding-box"
@@ -48,7 +47,7 @@
                 src="https://static.overlay-tech.com/assets/12f54c79-b9e8-4ea6-8bdd-f275a8a165b6.png"
               />
             </div>
-            <button class="relative">
+            <button class="absolute -bottom-14 left-12rem">
               <img src="~/assets/image/next.svg" alt="" />
             </button>
           </div>
@@ -63,64 +62,7 @@ export default {}
 </script>
 
 <style scoped>
-.num-1 {
-  width: 34px;
-  height: 34px;
-  background-color: var(--silver);
-  margin-bottom: 26px;
-  border-radius: 50%;
-}
-.review-content {
-  padding: 0 0 0 461px;
-  position: relative;
-}
-.review-area {
-  background-color: var(--white-smoke);
-  padding: 72px 67px 56px 85px;
-  position: relative;
-}
-.review-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.testimonial-text {
-  height: 526px;
-  width: 598px;
-  color: var(--grayscale-off-black);
-  display: flex;
-  text-align: center;
-  margin-bottom: 40px;
-  font-family: var(--roboto-43-regular-family);
-  font-size: var(--roboto-43-regular-size);
-  font-weight: var(--roboto-43-regular-weight);
-  line-height: var(--roboto-43-regular-line-height);
-}
-.name {
-  height: 56px;
-  width: 218px;
-  color: var(--grayscale-off-black);
-  display: flex;
-  text-align: center;
-  margin-left: 187px;
-  letter-spacing: 1px;
-  font-family: var(--roboto-56-bold-family);
-  font-size: var(--roboto-56-bold-size);
-  font-weight: var(--roboto-56-bold-weight);
-  line-height: var(--roboto-56-bold-line-height);
-}
-.image-bounding-box {
-  width: 510px;
-  height: 68%;
-  position: absolute;
-  left: calc(50% - 510px / 2);
-  top: 101px;
-}
-.nav-arrows {
-  width: 120px;
-  height: 704.77px;
-  position: absolute;
-  left: 312px;
-  top: 12px;
+#reviews-section-heading {
+  margin-bottom: 6.5rem;
 }
 </style>

@@ -9,17 +9,7 @@
           <img alt="" src="~/static/EV-Logo-Shivani.png" />
         </div>
       </div>
-      <div class="flex flex-col justify-center items-center">
-        <div>
-          <p class="text-2xl">Subscribe to receive your market report</p>
-        </div>
-        <div class="flex flex-row mt-4">
-          <input class="input" placeholder="Email address" />
-          <button class="button">
-            <p class="label">Subscribe</p>
-          </button>
-        </div>
-      </div>
+      <CallToAction />
     </div>
     <div class="flex flex-row justify-around w-screen px-16 mt-16">
       <Logo />

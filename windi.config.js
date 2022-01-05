@@ -1,6 +1,5 @@
 // import colors from 'windicss/colors'
 export default {
-  attributify: true,
   theme: {
     screens: {
       xs: { max: '360px' },
@@ -15,7 +14,8 @@ export default {
       black: `#231F20`,
       white: '#ffffff',
       firebrick: '#CD1815',
-      whitesmoke: '#f1f1f1',
+      whitesmoke: '#F1EAE8',
+      grey: '#9dadad',
     },
     fontFamily: {
       display: ['Acme Gothic'],

@@ -1,17 +1,9 @@
 <template>
   <div class="marketing-house-email">
-    <div class="marketing-section">
-      <p class="market-house-cta">Marketing that sells your house</p>
-      <div class="subscription-fields">
-        <p class="chaser">Receive your free comparative analysis</p>
-        <div class="subscription-container">
-          <input class="input" placeholder="Email address" /><button
-            class="submit"
-          >
-            <p class="label">Subscribe</p>
-          </button>
-        </div>
-      </div>
+    <div class="bg-whitesmoke bg-opacity-80 p-16">
+      <p class="text-7xl font-display mb-12">Marketing that sells your house</p>
+
+      <CallToAction />
     </div>
   </div>
 </template>
@@ -29,7 +21,7 @@ export default {}
   display: flex;
   align-items: center;
 }
-.marketing-section {
+/* .marketing-section {
   background: linear-gradient(
     107deg,
     rgba(255, 255, 255, 0.8) 1%,
@@ -42,8 +34,8 @@ export default {}
   align-items: flex-start;
   align-self: stretch;
   backdrop-filter: blur(100px);
-}
-.market-house-cta {
+} */
+/* .market-house-cta {
   color: var(--grayscale-off-black);
   flex: 1;
   align-self: stretch;
@@ -54,56 +46,13 @@ export default {}
   font-size: var(--acme-gothic-64-regular-size);
   font-weight: var(--acme-gothic-64-regular-weight);
   line-height: var(--acme-gothic-64-regular-line-height);
-}
-.subscription-fields {
-  width: 50.54%;
-  height: 48.83%;
-  margin-left: 224px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.chaser {
-  color: var(--black-primary);
-  align-self: stretch;
-  text-align: right;
-  margin-bottom: 24px;
-  font-family: var(--inter-24-bold-family);
-  font-size: var(--inter-24-bold-size);
-  font-weight: var(--inter-24-bold-weight);
-  line-height: var(--inter-24-bold-line-height);
-}
-.subscription-container {
-  display: flex;
-  align-items: flex-start;
-  align-self: stretch;
-}
-.input {
-  flex: 1;
-  background-color: var(--white);
-  margin-right: 8px;
-  border-radius: 3px;
-  padding: 14px 22px;
-  border: 2px solid var(--grey-secondary);
-  color: var(--grey-secondary);
-  font-family: var(--inter-16-regular-family);
-  font-size: var(--inter-16-regular-size);
-  font-weight: var(--inter-16-regular-weight);
-  line-height: var(--inter-16-regular-line-height);
-}
-.submit {
-  background-color: var(--primary-default);
-  border-radius: 3px;
-  padding: 16px 32px;
-  display: flex;
-  align-items: flex-start;
-  cursor: pointer;
-}
-.label {
+} */
+
+/* .label {
   color: var(--grayscale-off-white);
   font-family: var(--inter-16-semibold-family);
   font-size: var(--inter-16-semibold-size);
   font-weight: var(--inter-16-semibold-weight);
   line-height: var(--inter-16-semibold-line-height);
-}
+} */
 </style>

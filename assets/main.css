@@ -10,7 +10,7 @@
   --gainsboro: rgba(229, 229, 229, 1);
   --grayscale-off-black: rgba(20, 20, 43, 1);
   --grayscale-off-white: rgba(252, 252, 252, 1);
-  --grey-secondary: rgba(157, 173, 173, 1);
+  --grey-secondary: #9dadad;
   --primary-default: rgba(255, 0, 0, 1);
   --silver: rgba(196, 196, 196, 1);
   --transparent-black: rgba(0, 0, 0, 0.04);

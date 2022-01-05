@@ -11,7 +11,7 @@
           <p class="">Abode San Francisco Real Estate</p>
         </div>
         <div class="text-3xl text-white text-center self-stretch">
-          <p class="font-semibold tracking-wider">
+          <p class="font-light tracking-wider">
             Competence, Exclusivity and Passion
           </p>
         </div>

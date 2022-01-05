@@ -1440,11 +1440,11 @@
     ufo "^0.7.4"
 
 "@nuxt/kit@npm:@nuxt/kit-edge@latest":
-  version "3.0.0-27337794.cac70e4"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-27337794.cac70e4.tgz#ff716967f450b2551a08530734111e5ec49f0229"
-  integrity sha512-6zz8vsg3TVRI6Wz7CBJ7NXyXkGxewnuP+x5ioaAyR1pxGMc7yh/jGUN+QTPeER7usM2fB/RqN80h73jaUR1Z/A==
+  version "3.0.0-27338323.1e98259"
+  resolved "https://registry.yarnpkg.com/@nuxt/kit-edge/-/kit-edge-3.0.0-27338323.1e98259.tgz#28258c5ce4f932ce58ed9dc0331f7568cb67db72"
+  integrity sha512-lABruok/JkKOoEJNpkZ2M6YMSKBgOaWAyWjDq+Ekk4Ga/FZgok+epTcN3cQBOP/MpH3PXsM2L3zdM8DoEMxeug==
   dependencies:
-    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27337794.cac70e4"
+    "@nuxt/schema" "npm:@nuxt/schema-edge@3.0.0-27338323.1e98259"
     consola "^2.15.3"
     defu "^5.0.0"
     dotenv "^10.0.0"
@@ -1481,10 +1481,10 @@
     consola "^2.15.0"
     node-fetch "^2.6.1"
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27337794.cac70e4":
-  version "3.0.0-27337794.cac70e4"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.0-27337794.cac70e4.tgz#47ecd9f68695777fcebbdb994b0f3704c0160021"
-  integrity sha512-ErouOzVXgHgJ1tuWuwPbOST0bCX+utNaBeW6t6yBm7JiMjsJRjCHuti/claQDRrkntZShjF2nMYeRP2A4c8bsQ==
+"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27338323.1e98259":
+  version "3.0.0-27338323.1e98259"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema-edge/-/schema-edge-3.0.0-27338323.1e98259.tgz#c9aeedfcde18a5d81404df9e5012ec3707ad6c23"
+  integrity sha512-TV8HMFEkD2cMLnsYBE0+wQcOSwElw6SW4rnDOFoDhHI61GeflpGZOfXLQRJS2FLAyMv/QVeBHdd+PWWOxDqGgA==
   dependencies:
     create-require "^1.1.1"
     defu "^5.0.0"
@@ -8484,10 +8484,10 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-windicss@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/nuxt-windicss/-/nuxt-windicss-2.2.1.tgz#0d853e43d49e9aa85feedcf589af5e1971364211"
-  integrity sha512-K8Fq+iHBoCZt/Z8LF6REe6vAlkxdVvSMN5kEcF+36qfZoIJYasVErfZqWoBHTW1x7MkK9yiLsxrQIlfl/vvSZg==
+nuxt-windicss@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/nuxt-windicss/-/nuxt-windicss-2.2.2.tgz#22c1129376b4f33366dbb4f8abc82f2cd7a67fea"
+  integrity sha512-4tvzk9d2TUFxloty187D+wmO8ZNAvpSmRJ5HQO3/AvZdMMhAl4gomXR9fCgFKQe7Fxcj9nIKNInOx8TWowjiqA==
   dependencies:
     "@nuxt/kit" "npm:@nuxt/kit-edge@latest"
     "@windicss/plugin-utils" "^1.6.1"
@@ -8499,7 +8499,7 @@ nuxt-windicss@^2.2.1:
     read-cache "^1.0.0"
     sirv "^1.0.19"
     vite-plugin-windicss "^1.6.1"
-    windicss "^3.4.0"
+    windicss "^3.4.2"
     windicss-analysis "^0.3.5"
     windicss-webpack-plugin "^1.6.2"
 
@@ -12245,10 +12245,10 @@ windicss-webpack-plugin@^1.6.2:
     webpack-virtual-modules "^0.4.3"
     windicss "^3.4.0"
 
-windicss@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.4.0.tgz#2da63739089b5c6f6ca1b7cc28bd855cd5bc95cc"
-  integrity sha512-X+9Y1/FPxX253Xo4Hk/qfVuvoAxgKx686Z6yHxmBFMH7wRCPdRO42na9k/yEnrW6EqCFJP/GcMIHn3QENaE42g==
+windicss@^3.4.0, windicss@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.4.2.tgz#257795c9be8b6e93117ffa3fb27874d225da6679"
+  integrity sha512-YieqWaXiwPu0JJoB7z03RXdjZjQQJtMZAeXUXu/j3JXSMhIgV/2rUXu4Q7QrworRlbaASZlFhxjnL/78aAty+Q==
 
 word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"

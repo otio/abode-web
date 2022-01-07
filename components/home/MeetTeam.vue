@@ -1,5 +1,5 @@
 <template>
-  <div id="meet-team" class="flex flex-col items-center justify-center my-24">
+  <section class="flex flex-col items-center justify-center my-24">
     <div class="flex flex-row items-center justify-center self-stretch mb-16">
       <h2 class="hidden">Meet the Abode Team</h2>
       <p class="flex items-center mr-8 font-display text-6xl">Meet the</p>
@@ -29,7 +29,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

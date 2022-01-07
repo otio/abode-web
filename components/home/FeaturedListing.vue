@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="featured-listing"
-    class="flex flex-row items-center justify-around m-12rem"
-  >
+  <section class="flex flex-row items-center justify-around m-12rem">
     <div id="listing-info" class="flex flex-col pr-16">
       <div id="listing-text" class="flex flex-col items-center">
         <h2 class="font-secondary text-5xl pb-12">Featured Listings</h2>
@@ -39,7 +36,7 @@
         src="https://static.overlay-tech.com/assets/88d96045-a452-4f0f-87f1-f7bbe1b8486b.png"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

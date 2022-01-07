@@ -1,5 +1,5 @@
 <template>
-  <div id="gg-magazine" class="flex flex-row items-center justify-around p-48">
+  <section class="flex flex-row items-center justify-around p-48">
     <div class="mr-16">
       <img
         id=""
@@ -15,7 +15,7 @@
       </p>
       <CallToAction />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

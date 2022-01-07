@@ -1,6 +1,9 @@
 <template>
-  <div id="hero-content" class="relative">
-    <img :src="imgSizes.hd" alt="" />
+  <section class="relative">
+    <img
+      src="https://res.cloudinary.com/mill-birdy/image/upload/c_mfit,h_1080,w_1920/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg"
+      alt=""
+    />
     <div class="gradient"></div>
     <div class="absolute inset-10rem">
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
@@ -8,7 +11,7 @@
         <div
           class="font-display text-center text-firebrick text-8xl mt-10 mb-60"
         >
-          <p class="">Abode San Francisco Real Estate</p>
+          <h1 class="">Abode San Francisco Real Estate</h1>
         </div>
         <div class="text-3xl text-white text-center self-stretch">
           <p class="font-light tracking-wider">
@@ -17,7 +20,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -26,7 +29,7 @@ export default {
   data() {
     return {
       imgSizes: {
-        hd: 'https://res.cloudinary.com/mill-birdy/image/upload/c_mfit,h_1080,w_1920/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
+        hd: '',
         '2xl':
           'https://res.cloudinary.com/mill-birdy/image/upload/c_mfit,h_1080,w_3840/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
         xl: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',

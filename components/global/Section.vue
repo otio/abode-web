@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Rentals</h1>
-  </div>
+  <section></section>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Section',
+}
 </script>
 
 <style scoped></style>

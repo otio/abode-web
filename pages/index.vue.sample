@@ -1,0 +1,27 @@
+<template>
+  <main>
+    <!--
+      <component
+      :is="blok.component"
+      v-for="blok in blok.body"
+      :key="blok._uid"
+      :blok="blok"
+    />
+     -->
+
+    <BannerContent />
+    <MeetTeam />
+    <FeaturedListing />
+    <ClientReview />
+    <MagazineSignup />
+    <AreasServed />
+    <MarketingHouseEmail />
+  </main>
+</template>
+
+<script>
+// TODO: Migrate to Nuxt Layouts
+export default {}
+</script>
+
+<style scoped></style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="areas-served" class="flex flex-col mb-48">
+  <section class="flex flex-col mb-48">
     <p id="heading" class="font-secondary text-5xl pb-20 text-center">
       San Francisco Neighborhoods
     </p>
@@ -14,7 +14,7 @@
         <p id="area-label" class="font-secondary text-3xl">{{ area.name }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,7 +1,11 @@
 {
-  "name": "abode-web",
-  "version": "1.0.0",
+  "name": "web",
   "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Jonathan A. M <ontoneio.mm@gmail.com>",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

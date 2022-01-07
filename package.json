@@ -1,0 +1,20 @@
+{
+  "name": "abode-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/otio/abode-web.git",
+  "author": "ontoneio <ontoneio.mm@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "studio",
+    "web"
+  ],
+  "devDependencies": {
+    "@nrwl/workspace": "latest",
+    "@nrwl/cli": "latest",
+    "@nrwl/tao": "latest",
+    "typescript": "4.2.4",
+    "@nrwl/nx-cloud": "latest"
+  }
+}

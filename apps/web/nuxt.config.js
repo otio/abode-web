@@ -50,6 +50,7 @@ export default {
     // '@nuxtjs/tailwindcss',
     'nuxt-windicss',
     // '@nuxtjs/google-fonts',
+    '@nuxtjs/sanity/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,13 +59,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    [
-      '@storyblok/nuxt',
-      {
-        accessToken: process.env.STORYBLOK_SPACE_TOKEN,
-        cacheProvider: 'memory',
-      },
-    ],
   ],
   // googleFonts: {
   //   // preload: true,
@@ -81,6 +75,9 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+  sanity: {
+    projectId: 'jywomcz4',
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},

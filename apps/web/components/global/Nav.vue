@@ -9,11 +9,11 @@
       </button>
       <nav>
         <ul class="relative flex flex-row items-center">
-          <li v-for="(link, index) in navlinks" :key="index" class="nav-link">
+          <li v-for="link in cleanNavlinks" :key="link._id" class="nav-link">
             <nuxt-link
               class="font-secondary font-light text-3xl"
               :to="link.slug"
-              >{{ link.label }}</nuxt-link
+              >{{ link.title }}</nuxt-link
             >
           </li>
         </ul>
@@ -25,18 +25,25 @@
 <script>
 export default {
   name: 'Nav',
+  // props: {
+  //   navLinks: {
+  //     type: Array,
+  //     default: () => [],
+  //   },
+  // },
+
   data() {
     return {
-      navlinks: [
-        { label: 'Selling', slug: 'selling' },
-        { label: 'Buying', slug: 'buying' },
-        { label: 'Rentals', slug: 'rentals' },
-        { label: 'Team', slug: 'team' },
-        { label: 'Resources', slug: 'resources' },
-      ],
+      navlinks: [],
     }
   },
+  async fetch() {
+    this.navlinks = await this.$store.state.nav
+  },
   computed: {
+    cleanNavlinks() {
+      return this.navlinks.filter((link) => link.slug !== '/')
+    },
     innerWidth() {
       if (process.client) {
         const width = window.innerWidth

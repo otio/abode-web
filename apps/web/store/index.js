@@ -1,28 +1,33 @@
 import { groq } from '@nuxtjs/sanity'
 
 export const state = () => ({
-  nav: [],
+  settings: {},
 })
 
 export const mutations = {
-  initialize(state, payload) {
-    payload.forEach((route) => {
-      state.nav.push(route)
-    })
+  INITIALIZE(state, payload) {
+    state.settings = payload
   },
 }
 
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
-    const navPages = groq`*[_type == "page"]{
+    const navPages = groq`*[_type == "siteSettings"][0]{
       // ...,
-      _id,
-      title,
-      "slug": slug.current
+      "home": homepage->{
+        _id,
+        "slug": slug.current
+      },
+      "nav": navlink[]->{
+        // ...,
+        title,
+        _id,
+        "slug": slug.current
+      }
     }`
     const nav = await $sanity.fetch(navPages)
 
-    commit('initialize', nav)
+    commit('INITIALIZE', nav)
     // if (req.session.user) {
     //   commit('user', req.session.user)
     // }

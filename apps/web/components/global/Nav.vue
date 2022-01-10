@@ -2,7 +2,7 @@
   <div
     class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
   >
-    <nuxt-link to="/"><Logo /></nuxt-link>
+    <nuxt-link :to="initial.home.slug"><Logo /></nuxt-link>
     <div>
       <button v-show="isMobile">
         <img alt="" class="mobile-menu" src="~/static/mobile-menu.svg" />
@@ -34,15 +34,15 @@ export default {
 
   data() {
     return {
-      navlinks: [],
+      initial: {},
     }
   },
   async fetch() {
-    this.navlinks = await this.$store.state.nav
+    this.initial = await this.$store.state.settings
   },
   computed: {
     cleanNavlinks() {
-      return this.navlinks.filter((link) => link.slug !== '/')
+      return this.initial.nav
     },
     innerWidth() {
       if (process.client) {

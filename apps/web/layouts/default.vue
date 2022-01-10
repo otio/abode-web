@@ -3,7 +3,7 @@
     <header class="z-60">
       <Nav class="pb-16" />
     </header>
-    <Nuxt />
+    <main><Nuxt /></main>
     <footer class="footer relative py-16 z-40">
       <Footer />
     </footer>

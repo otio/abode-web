@@ -77,6 +77,7 @@ export default {
   axios: {},
   sanity: {
     projectId: 'jywomcz4',
+    apiVersion: '2021-10-21',
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

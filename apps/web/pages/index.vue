@@ -1,5 +1,9 @@
 <template>
-  <div></div>
+  <div>
+    <div v-for="component in components" :key="component._key">
+      <component :is="component._type" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,34 +18,10 @@ export default {
     }
     return false
   },
-  async asyncData({ store, $sanity }) {
-    // console.log(homeId)
-    try {
-      const homeId = store.state.settings.home._id
-      const homeQuery = groq`*[_id == ${homeId}]`
-      // const result = await $sanity.fetch(homeQuery(homeId))
-      const result = await $sanity.fetch(homeQuery)
-      // eslint-disable-next-line nuxt/no-this-in-fetch-data
-      this.homeInfo = result
-      // console.log(homeId)
-      console.log('Result--->', result)
-      return result
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('index asyncData()', error)
-    }
-
-    // const homeId = `${store.state.settings.home._id}`
-    // const homeQuery = groq`*[_id == ${homeId}]`
-    // const result = await $sanity.fetch(homeQuery)
-    // // eslint-disable-next-line no-debugger
-    // // debugger
-    // return result
-  },
-  data() {
-    return {
-      homeInfo: null,
-    }
+  async asyncData({ $sanity, store }) {
+    const homeQuery = groq`*[ _id == "${store.state.settings.home._id}"]`
+    const result = await $sanity.fetch(homeQuery)
+    return result[0]
   },
   created() {},
 }

@@ -2,7 +2,7 @@
   <section class="flex flex-row items-center justify-around m-12rem">
     <div id="listing-info" class="flex flex-col pr-16">
       <div id="listing-text" class="flex flex-col items-center">
-        <h2 class="font-secondary text-5xl pb-12">Featured Listings</h2>
+        <h2 class="font-secondary text-5xl pb-12">Featured Listing</h2>
         <p class="font-body text-2xl leading-loose">
           Dare to be inspired by exploring this curated portfolio of some of the
           finest real estate listings currently represented by Engel &amp;

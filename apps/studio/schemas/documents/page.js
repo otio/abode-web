@@ -22,5 +22,19 @@ export default {
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
     },
+    {
+      name: "components",
+      title: "Page Components",
+      type: "array",
+      of: [
+        { type: "bannerContent" },
+        { type: "meetTeam" },
+        { type: "featuredListing" },
+        { type: "clientReview" },
+        { type: "magazineSignup" },
+        { type: "areasServed" },
+        { type: "marketingCta" },
+      ],
+    },
   ],
 };

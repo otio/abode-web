@@ -10,8 +10,6 @@ export const mutations = {
   },
 }
 
-// const test = groq`*[_id == 'ef9e0f87-00b4-4a47-955d-5a50c3f0641b']`
-
 export const actions = {
   async nuxtServerInit({ commit }, { $sanity }) {
     const navPages = groq`*[_type == "siteSettings"][0]{

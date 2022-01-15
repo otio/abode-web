@@ -8,7 +8,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  validate({ params, query, store }) {
+    return query.preview === 'true'
+  },
+}
 </script>
 
 <script>

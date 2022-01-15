@@ -1,9 +1,6 @@
 <template>
   <section class="relative">
-    <img
-      src="https://res.cloudinary.com/mill-birdy/image/upload/c_mfit,h_1080,w_1920/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg"
-      alt=""
-    />
+    <img :src="$attrs.bgImage.derived[0].secure_url" alt="" />
     <div class="gradient"></div>
     <div class="absolute inset-10rem">
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
@@ -26,19 +23,11 @@
 <script>
 export default {
   name: 'BannerContent',
-  data() {
-    return {
-      imgSizes: {
-        hd: '',
-        '2xl':
-          'https://res.cloudinary.com/mill-birdy/image/upload/c_mfit,h_1080,w_3840/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-        xl: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-        lg: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-        md: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-        sm: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-        xs: 'https://res.cloudinary.com/mill-birdy/image/upload/v1640567963/Abode-Web/san-francisco-downtown-skyline_xznsvv.jpg',
-      },
-    }
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
   },
 }
 </script>

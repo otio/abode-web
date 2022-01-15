@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="component in components" :key="component._key">
-      <component :is="component._type" />
+      <component :is="component._type" v-bind="component" />
     </div>
   </div>
 </template>
@@ -13,10 +13,7 @@ import { groq } from '@nuxtjs/sanity'
 
 export default {
   validate({ params, query, store }) {
-    if (store.state.settings.home.slug === '/') {
-      return true
-    }
-    return false
+    return query.preview === 'true' || store.state.settings.home.slug === '/'
   },
   async asyncData({ $sanity, store }) {
     const homeQuery = groq`*[ _id == "${store.state.settings.home._id}"]`

@@ -42,6 +42,9 @@ export default {
       '~/components/home',
     ],
   },
+  generate: {
+    fallback: true,
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

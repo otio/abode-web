@@ -13,8 +13,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
-    "cloudinary",
-    "@sanity/production-preview"
+    "cloudinary"
   ],
   "env": {
     "development": {

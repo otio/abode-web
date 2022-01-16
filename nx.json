@@ -1,6 +1,6 @@
 {
   "extends": "@nrwl/workspace/presets/npm.json",
-  "npmScope": "abode-web",
+  "npmScope": "otio",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",

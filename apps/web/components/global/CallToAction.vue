@@ -6,7 +6,7 @@
     <div class="flex flex-row justify-around w-md h-3rem">
       <input class="w-3/5 rounded-md" placeholder="Email address" />
       <button
-        class="rounded bg-firebrick cursor-pointer px-8"
+        class="button-cta"
         :formaction="submitToUrl || options.submitToUrl"
       >
         <p class="text-white text-lg">
@@ -55,5 +55,8 @@ input::placeholder {
 }
 input {
   @apply border-2 border-grey border-opacity-70;
+}
+.button-cta {
+  @apply rounded bg-firebrick cursor-pointer px-8;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col justify-start">
     <header class="z-60">
+      <client-only><PreviewBanner /></client-only>
       <Nav class="pb-16" />
     </header>
     <main><Nuxt /></main>

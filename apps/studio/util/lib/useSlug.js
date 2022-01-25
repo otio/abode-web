@@ -45,7 +45,7 @@ export default function (document) {
 
           // debugger
 
-          const query = `*[ _id == $pageId]{"slug": slug_custom_format.current}`;
+          const query = `*[ _id == $pageId]{"slug": slug.current}`;
           const params = { pageId: trimmedPageId };
 
           try {

@@ -16,8 +16,9 @@ export default {
     return query.preview === 'true' || store.state.settings.home.slug === '/'
   },
   async asyncData({ $sanity, store }) {
-    const homeQuery = groq`*[ _id == "${store.state.settings.home._id}"]`
-    const result = await $sanity.fetch(homeQuery)
+    const queryParams = { homeId: store.state.settings.home._id }
+    const homeQuery = groq`*[ _id == $homeId ]`
+    const result = await $sanity.fetch(homeQuery, queryParams)
     return result[0]
   },
   created() {},

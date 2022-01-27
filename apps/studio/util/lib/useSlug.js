@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import sanityClient from "part:@sanity/base/client";
-const client = sanityClient.withConfig({
+const previewClient = sanityClient.withConfig({
+  // projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+  // dataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2021-10-21",
+  useCdn: false,
   withCredentials: true,
 });
 
@@ -46,10 +49,10 @@ export default function (document) {
           // debugger
 
           const query = `*[ _id == $pageId]{"slug": slug.current}`;
-          const params = { pageId: trimmedPageId };
+          const params = { pageId: documentState._id };
 
           try {
-            const pageSlugResult = await client.fetch(query, params);
+            const pageSlugResult = await previewClient.fetch(query, params);
 
             console.log("ROUTE SLUG FOR PAGE =>", pageSlugResult);
             if (

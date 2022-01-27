@@ -26,7 +26,6 @@ export const actions = {
       }
     }`
     const nav = await $sanity.fetch(navPages)
-
     commit('INITIALIZE', nav)
     // if (req.session.user) {
     //   commit('user', req.session.user)

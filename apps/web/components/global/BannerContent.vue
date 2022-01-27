@@ -5,15 +5,8 @@
     <div class="absolute inset-10rem">
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
       <div class="flex flex-col">
-        <div
-          class="font-display text-center text-firebrick text-8xl mt-10 mb-60"
-        >
-          <h1 class="">Abode San Francisco Real Estate</h1>
-        </div>
-        <div class="text-3xl text-white text-center self-stretch">
-          <p class="font-light tracking-wider">
-            Competence, Exclusivity and Passion
-          </p>
+        <div v-for="block in bannerComponents" :key="block._key">
+          <component :is="block._type" v-bind="block" />
         </div>
       </div>
     </div>
@@ -28,6 +21,16 @@ export default {
       type: Object || Array,
       default: () => ({}),
     },
+  },
+  data() {
+    return {
+      bannerComponents: this.$attrs.bannerComponents,
+    }
+  },
+  computed: {
+    // headline() {
+    //   return this.$attrs.bannerComponents
+    // },
   },
 }
 </script>

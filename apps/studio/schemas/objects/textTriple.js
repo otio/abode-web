@@ -4,7 +4,7 @@ export default {
   type: "object",
   fields: [
     {
-      name: "Headline",
+      name: "headline",
       title: "Headline",
       type: "string",
     },

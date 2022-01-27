@@ -10,7 +10,9 @@
 <script>
 export default {
   validate({ params, query, store }) {
-    return query.preview === 'true'
+    return (
+      query.preview === 'true' || store.state.settings.nav.includes(params.slug)
+    )
   },
 }
 </script>

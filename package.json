@@ -6,11 +6,7 @@
     "apps/*",
     "libs/*"
   ],
-  "scripts": {
-    "dev": "run-p -l dev:*",
-    "dev:web": "cd apps/web && yarn dev",
-    "dev:studio": "cd apps/studio && yarn dev"
-  },
+  "scripts": {},
   "devDependencies": {
     "@nrwl/cli": "latest",
     "@nrwl/nx-cloud": "latest",

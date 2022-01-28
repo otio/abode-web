@@ -10,7 +10,8 @@
           {
             "command": "yarn dev"
           }
-        ]
+        ],
+        "cwd": "apps/studio"
       }
     },
     "start": {
@@ -20,7 +21,8 @@
           {
             "command": "yarn start"
           }
-        ]
+        ],
+        "cwd": "apps/studio"
       }
     },
     "build": {
@@ -30,7 +32,8 @@
           {
             "command": "yarn build"
           }
-        ]
+        ],
+        "cwd": "apps/studio"
       }
     }
   }

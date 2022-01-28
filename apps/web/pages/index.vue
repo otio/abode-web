@@ -13,7 +13,9 @@ import { groq } from '@nuxtjs/sanity'
 
 export default {
   validate({ params, query, store }) {
-    return query.preview === 'true' || store.state.settings.home.slug === '/'
+    return (
+      query.preview === 'true' || store.state.settings.home.slug === 'index'
+    )
   },
   async asyncData({ $sanity, store }) {
     const queryParams = { homeId: store.state.settings.home._id }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="component in components" :key="component._key">
+    <div v-for="component in pageComponents" :key="component._key">
       <component :is="component._type" v-bind="component" />
     </div>
   </div>
@@ -19,7 +19,35 @@ export default {
   },
   async asyncData({ $sanity, store }) {
     const queryParams = { homeId: store.state.settings.home._id }
-    const homeQuery = groq`*[ _id == $homeId ]`
+    const homeQuery = groq`*[ _id == $homeId ]{
+    title,
+    slug,
+    "pageComponents": components[]{
+        ...,
+        _type == 'meetTeam' => {
+          introText,
+          teamImage,
+          "page": meetTeamPage{
+            ...,
+            linkToPage->{...}
+          }
+        },
+        _type == 'magazineSignup' => {
+          ...,
+          promoImage,
+          signup->{...}
+        },
+        _type == 'areasServed' => {
+          _key,
+          _type,
+          areaPages[]->{...}
+        },
+        _type == 'marketingCta' => {
+          ...,
+          ctaCapture->{...}
+        },
+      }
+    }`
     const result = await $sanity.fetch(homeQuery, queryParams)
     return result[0]
   },

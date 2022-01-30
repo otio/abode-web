@@ -1,7 +1,7 @@
 <template>
   <form class="flex flex-col items-center">
     <p class="text-center text-2xl mb-8">
-      {{ callHeading || options.callHeading }}
+      {{ callHeading || options.headline }}
     </p>
     <div class="flex flex-row justify-around w-md h-3rem">
       <input class="w-3/5 rounded-md" placeholder="Email address" />

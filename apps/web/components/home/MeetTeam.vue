@@ -13,20 +13,15 @@
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-start pb-16">
           <h2 class="font-secondary text-5xl pb-16">
-            James Caldwell &amp; Shivani Desai
+            {{ $attrs.introText.headline }}
           </h2>
           <p class="font-body text-3xl leading-loose">
-            Bespoke - a special experience tailored for each client. WE are not
-            all about numbers, it is about a life experience that works for you.
-            The number of bedrooms or baths is important "necessary but not
-            sufficient" as they say. It's all about the lifestyle each property
-            and community has to offer and what it can be for you. "Home" is a
-            place to either build a legacy or enjoy one already created.
+            {{ $attrs.introText.paragraphText }}
           </p>
         </div>
-        <button class="rounded bg-firebrick p-1.5rem cursor-pointer">
+        <!-- <button class="rounded bg-firebrick p-1.5rem cursor-pointer">
           <p class="text-white text-lg">MEET THE TEAM</p>
-        </button>
+        </button> -->
       </div>
     </div>
   </section>

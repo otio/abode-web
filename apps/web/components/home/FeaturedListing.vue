@@ -4,15 +4,13 @@
       <div id="listing-text" class="flex flex-col items-center">
         <h2 class="font-secondary text-5xl pb-12">Featured Listing</h2>
         <p class="font-body text-2xl leading-loose">
-          Dare to be inspired by exploring this curated portfolio of some of the
-          finest real estate listings currently represented by Engel &amp;
-          Völkers.
+          {{ $attrs.featuredIntro }}
         </p>
       </div>
 
       <div id="listing-details" class="flex flex-col">
         <a class="text-3xl text-center text-firebrick py-12 underline">{{
-          listingDetails.address
+          $attrs.address
         }}</a>
         <div id="listing-features" class="flex flex-row justify-around">
           <div
@@ -33,7 +31,7 @@
         id="listing-image"
         alt=""
         class=""
-        src="https://static.overlay-tech.com/assets/88d96045-a452-4f0f-87f1-f7bbe1b8486b.png"
+        :src="$attrs.locationImage.secure_url"
       />
     </div>
   </section>
@@ -44,12 +42,12 @@ export default {
   data() {
     return {
       listingDetails: {
-        address: '60 Ora Way #H303, San Francisco, CA 94131',
+        // address: '60 Ora Way #H303, San Francisco, CA 94131',
         features: [
-          { label: 'Beds', value: 3 },
-          { label: 'Baths', value: 2 },
-          { label: 'Sq. Ft', value: 5000 },
-          { label: 'Garages', value: 2 },
+          { label: 'Beds', value: this.$attrs.locationFeatures.beds },
+          { label: 'Baths', value: this.$attrs.locationFeatures.baths },
+          { label: 'Sq. Ft', value: this.$attrs.locationFeatures.sqft },
+          { label: 'Garages', value: this.$attrs.locationFeatures.garages },
         ],
       },
     }

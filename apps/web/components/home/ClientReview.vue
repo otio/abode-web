@@ -14,12 +14,11 @@
           <div class="w-550px h-550px bg-whitesmoke p-16">
             <div class="flex flex-col items-center justify around">
               <p class="text-3xl text-center leading-normal mb-8">
-                You’ve provided excellent service during this home buying
-                process! I appreciate all the tips you offered and your
-                guidance. You were so easy to communicate with and always made
-                yourself available for all my questions. Thank you!
+                {{ $attrs.testimonial }}
               </p>
-              <p class="text-4xl text-center font-semibold">Lu Shan</p>
+              <p class="text-4xl text-center font-semibold">
+                {{ $attrs.clientName }}
+              </p>
             </div>
           </div>
           <div class="">
@@ -30,7 +29,7 @@
               <img
                 alt=""
                 class="absolute left-12 top-14"
-                src="https://static.overlay-tech.com/assets/12f54c79-b9e8-4ea6-8bdd-f275a8a165b6.png"
+                :src="$attrs.testimonialImage.secure_url"
               />
             </div>
             <button class="absolute -bottom-14 left-12rem">

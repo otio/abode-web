@@ -2,8 +2,7 @@
   <div
     class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
   >
-    <!-- 
-    <nuxt-link :to="initial.home.slug"><Logo /></nuxt-link>
+    <nuxt-link to="/"><Logo /></nuxt-link>
     <div>
       <button v-show="isMobile">
         <img alt="" class="mobile-menu" src="~/static/mobile-menu.svg" />
@@ -20,7 +19,6 @@
         </ul>
       </nav>
     </div>
-     -->
   </div>
 </template>
 

@@ -22,6 +22,14 @@ export default {
       // PULLS in 'A c m e - G o t h i c' font style
       { rel: 'stylesheet', href: 'https://use.typekit.net/qne6cbm.css' },
     ],
+    script: [
+      {
+        src: 'https://cdn.jsdelivr.net/npm/ahoy.js@0.3.4/dist/ahoy.min.js',
+        async: true,
+        defer: true,
+        body: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

@@ -1,0 +1,29 @@
+*[ _id == "ef9e0f87-00b4-4a47-955d-5a50c3f0641b" ] {
+  title,
+  slug,
+  "pageComponents": components[]{
+    ...,
+    _type == 'meetTeam' => {
+      introText,
+      teamImage,
+      "page": meetTeamPage{
+        ...,
+        linkToPage->{...}
+      }
+    },
+    _type == 'magazineSignup' => {
+      ...,
+      promoImage,
+      signup->{...}
+    },
+    _type == 'areasServed' => {
+      _key,
+      _type,
+      areaPages[]->{...}
+    },
+    _type == 'marketingCta' => {
+      ...,
+      ctaCapture->{...}
+    },
+  }
+}

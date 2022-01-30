@@ -1,7 +1,7 @@
 export default {
   name: "clientReview",
   title: "Client review",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "clientName",

@@ -10,13 +10,30 @@ export default {
       type: "string",
     },
     {
+      name: "ctaStyle",
+      title: "Style",
+      type: "string",
+      options: {
+        list: [
+          { title: "Full Width Centered", value: "section" },
+          { title: "Piece of Another section", value: "block" },
+          { title: "Piece of Another section", value: "block" },
+        ],
+      },
+    },
+    {
       name: "headline",
-      title: "headline",
+      title: "Headline Text",
       type: "string",
     },
     {
       name: "chaser",
-      title: "chaser",
+      title: "Chaser Text",
+      type: "string",
+    },
+    {
+      name: "floater",
+      title: "Floater Text",
       type: "string",
     },
     {

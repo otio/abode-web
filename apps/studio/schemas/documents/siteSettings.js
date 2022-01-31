@@ -31,5 +31,16 @@ export default {
         },
       ],
     },
+    // {
+    //   title: "Footer Components",
+    //   name: "footerComponents",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       type: "reference",
+    //       to: [{ type: "callToAction" }],
+    //     },
+    //   ],
+    // },
   ],
 };

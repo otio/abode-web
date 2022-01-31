@@ -9,7 +9,7 @@
           <img alt="" src="~/static/EV-Logo-Shivani.png" />
         </div>
       </div>
-      <CallToAction />
+      <!-- <CallToAction /> -->
     </div>
     <div class="flex flex-row justify-around w-screen px-16 mt-16">
       <Logo />

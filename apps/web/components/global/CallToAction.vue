@@ -1,20 +1,32 @@
 <template>
-  <form class="flex flex-col items-center">
-    <p class="text-center text-2xl mb-8">
-      {{ callHeading || options.headline }}
-    </p>
-    <div class="flex flex-row justify-around w-md h-3rem">
-      <input class="w-3/5 rounded-md" placeholder="Email address" />
-      <button
-        class="button-cta"
-        :formaction="submitToUrl || options.submitToUrl"
-      >
-        <p class="text-white text-lg">
-          {{ buttonLabel || options.buttonLabel }}
-        </p>
-      </button>
+  <section>
+    <div id="pr-16">
+      <h2 class="font-secondary text-5xl mb-12">{{ headline }}</h2>
+      <p class="text-2xl mb-12">
+        {{ chaser }}
+      </p>
     </div>
-  </form>
+    <div class="bg-whitesmoke bg-opacity-80 p-16">
+      <p class="text-7xl font-display mb-12">Marketing that sells your house</p>
+
+      <form class="flex flex-col items-center">
+        <p class="text-center text-2xl mb-8">
+          {{ callHeading || options.headline }}
+        </p>
+        <div class="flex flex-row justify-around w-md h-3rem">
+          <input class="w-3/5 rounded-md" placeholder="Email address" />
+          <button
+            class="button-cta"
+            :formaction="submitToUrl || options.submitToUrl"
+          >
+            <p class="text-white text-lg">
+              {{ buttonLabel || options.buttonLabel }}
+            </p>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script>

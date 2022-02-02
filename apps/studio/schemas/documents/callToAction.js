@@ -39,7 +39,10 @@ export default {
       name: "solidBackground",
       title: "Solid Background",
       type: "boolean",
-      hidden: ({ parent }) => parent?.ctaStyle !== "section",
+      hidden: ({ parent }) =>
+        parent?.ctaStyle === undefined ||
+        parent?.ctaStyle === "block" ||
+        parent?.ctaStyle === "floater",
     },
     {
       name: "headline",
@@ -50,7 +53,7 @@ export default {
     {
       name: "chaser",
       title: "Chaser Text",
-      type: "string",
+      type: "text",
       hidden: ({ parent }) => parent?.ctaStyle === "floater",
     },
     {
@@ -67,6 +70,7 @@ export default {
           { title: "No Destination", value: "none" },
           { title: "Internal Link -> Page", value: "internal" },
           { title: "Form Submission Link", value: "form" },
+          // { title: "File Download Link", value: "file" },
         ],
         layout: "radio",
         direction: "horizontal",
@@ -78,7 +82,7 @@ export default {
       title: "Button Label Text",
       type: "string",
       hidden: ({ parent }) =>
-        parent?.destination !== "internal" || parent?.destination !== "form",
+        parent?.destination === undefined || parent?.destination === "none",
     },
     {
       name: "internalLink",
@@ -101,8 +105,8 @@ export default {
       options: {
         layout: "grid",
         list: [
-          { value: "email", title: "Email" },
-          { value: "fullname", title: "Full Name" },
+          { value: "email-address", title: "Email Address" },
+          { value: "full-name", title: "Full Name" },
           { value: "address", title: "Address" },
           { value: "phone", title: "Phone" },
         ],

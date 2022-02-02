@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <div class="font-display text-center text-firebrick text-8xl mt-10 mb-60">
+  <div class="">
+    <div
+      class="font-display text-center text-firebrick text-8xl mt-10 hd:mb-60 2xl:mb-24 xl:mb-24 lg:text-6xl md:text-4xl"
+    >
       <h1 class="">{{ headline }}</h1>
     </div>
     <div class="text-3xl text-white text-center self-stretch">

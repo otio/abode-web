@@ -1,5 +1,7 @@
 <template>
-  <section class="flex flex-row items-center justify-around m-12rem">
+  <section
+    class="flex flex-row items-center justify-around m-12rem lg:(flex-col justify-evenly)"
+  >
     <div id="listing-info" class="flex flex-col pr-16">
       <div id="listing-text" class="flex flex-col items-center">
         <h2 class="font-secondary text-5xl pb-12">Featured Listing</h2>
@@ -18,7 +20,7 @@
             :key="index"
             class="bg-whitesmoke"
           >
-            <div class="text-4xl text-center font-secondary p-8">
+            <div class="text-4xl text-center font-secondary p-8 lg:text-2xl">
               <p class="feature-value">{{ feature.value }}</p>
               <p class="feature-label">{{ feature.label }}</p>
             </div>

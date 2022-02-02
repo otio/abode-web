@@ -3,12 +3,12 @@
     <p id="heading" class="font-secondary text-5xl pb-20 text-center">
       San Francisco Neighborhoods
     </p>
-    <div id="row" class="flex flex-row justify-evenly">
+    <div id="row" class="flex flex-row justify-evenly lg:(flex-col)">
       <div
         v-for="area in neighborhoods"
         :id="`neighborhood-${area.areaName}`"
         :key="area._id"
-        class="flex flex-col items-center"
+        class="flex flex-col items-center lg:flex-col-reverse"
       >
         <img
           id="area-image"

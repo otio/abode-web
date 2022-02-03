@@ -17,13 +17,19 @@
         :style="$attrs.ctaStyle === 'split' ? 'width: 50%;' : ''"
       >
         <h2 id="headline" :class="headlineStyle">{{ headline }}</h2>
-        <p id="chaser" class="text-2xl mb-12">
+        <p v-show="chaser" id="chaser" class="text-2xl mb-12">
           {{ chaser }}
         </p>
         <form class="flex flex-col items-center">
           <p id="floater" class="text-center text-2xl mb-8">{{ floater }}</p>
           <div class="flex flex-row justify-around w-md h-3rem">
-            <input class="w-3/5 rounded-md" placeholder="Placeholder" />
+            <div
+              v-for="(field, index) in $attrs.inputFields"
+              :key="index"
+              class="w-3/5 rounded-md"
+            >
+              <input class="input" :placeholder="placeholder(field)" />
+            </div>
             <button class="button-cta" :formaction="$attrs.submitToUrl">
               <p class="text-white text-lg">
                 {{ $attrs.buttonLabel }}
@@ -76,6 +82,18 @@ export default {
         : ''
     },
   },
+  methods: {
+    placeholder(field) {
+      const splitDash = field.split('-')
+      const formatted = `${this.capitalizeFirstLetter(
+        splitDash[0]
+      )} ${this.capitalizeFirstLetter(splitDash[1])}`
+      return formatted
+    },
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    },
+  },
 }
 </script>
 
@@ -84,7 +102,7 @@ input::placeholder {
   @apply text-lg pl-4;
 }
 input {
-  @apply border-2 border-grey border-opacity-70;
+  @apply border-2 border-grey border-opacity-70 w-full h-full;
 }
 .button-cta {
   @apply rounded bg-firebrick cursor-pointer px-8;

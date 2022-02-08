@@ -2,6 +2,7 @@
   <div
     class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
   >
+    <!-- TODO: Cpnditionally position Logo basedon presence of Nav links -->
     <nuxt-link to="/" class=""><Logo /></nuxt-link>
     <div>
       <button v-show="isMobile">

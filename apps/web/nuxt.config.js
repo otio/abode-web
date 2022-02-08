@@ -34,6 +34,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'virtual:windi-base.css',
     `~/assets/main.css`,
     // `~/assets/main.scss`
   ],

@@ -1,4 +1,5 @@
 <template>
+<!-- TODO: Add button navigation for multiple Reviews -->
   <section class="flex flex-col items-center">
     <div class="mb-24">
       <h2 class="font-secondary text-5xl">Clients Reviews</h2>

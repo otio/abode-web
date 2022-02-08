@@ -1,4 +1,5 @@
 export default {
+  // TODO: Revise schema to Document
   name: "clientReview",
   title: "Client review",
   type: "object",

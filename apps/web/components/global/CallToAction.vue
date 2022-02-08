@@ -1,4 +1,5 @@
 <template>
+<!-- TODO: change BG image sizing for responsivness -->
   <section
     :class="$attrs.ctaStyle"
     :style="

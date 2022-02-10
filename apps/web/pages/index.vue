@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <div v-for="component in pageComponents" :key="component._key">
+  <div id="sections-wrapper">
+    <section
+      v-for="component in pageComponents"
+      :id="component._type"
+      :key="component._key"
+    >
       <component :is="component._type" v-bind="component" />
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
 import { groq } from '@nuxtjs/sanity'
-
-// const homeQuery = (id) => groq`*[ _id == id ]`
 
 export default {
   validate({ params, query, store }) {

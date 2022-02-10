@@ -1,7 +1,7 @@
 <template>
-  <div class="">
+  <div class="xs:(w-full)">
     <div
-      class="font-display text-center text-firebrick text-8xl mt-10 hd:mb-60 2xl:mb-24 xl:mb-24 lg:text-6xl md:text-4xl"
+      class="font-display text-center text-firebrick mt-10 hd:(text-8xl mb-60) 2xl:mb-24 xl:mb-24 lg:(text-6xl mb-3rem) md:(text-6xl mb-20) xs:(text-5xl mb-48)"
     >
       <h1 class="">{{ headline }}</h1>
     </div>

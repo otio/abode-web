@@ -1,5 +1,5 @@
 <template>
-  <div class="text-firebrick">
+  <div class="">
     <img width="200" src="~/static/Abode-Logo.svg" alt="" />
   </div>
 </template>

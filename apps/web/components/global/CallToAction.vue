@@ -1,6 +1,6 @@
 <template>
-<!-- TODO: change BG image sizing for responsivness -->
-  <section
+  <!-- TODO: change BG image sizing for responsivness -->
+  <div
     :class="$attrs.ctaStyle"
     :style="
       $attrs.ctaStyle === 'hero' ? `background-image: url(${imgUrl})` : ''
@@ -40,7 +40,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-row items-center justify-around p-48">
+  <div class="flex flex-row items-center justify-around p-48">
     <div class="mr-16">
       <img id="" alt="" :src="$attrs.promoImage.secure_url" />
     </div>
@@ -10,7 +10,7 @@
       </p>
       <CallToAction :options="$attrs.signup" />
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

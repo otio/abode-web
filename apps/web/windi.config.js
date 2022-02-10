@@ -32,4 +32,10 @@ export default {
       // '4xl': '2rem',x`
     },
   },
+  extract: {
+    // accepts globs and file paths relative to project root
+    include: ['components/**/*.{vue,html,jsx,tsx}', 'assets/**/*.{css}'],
+    exclude: ['node_modules/**/*', '.git/**/*'],
+  },
+  // preflight: true,
 }

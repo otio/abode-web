@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-start">
+  <div class="flex flex-col justify-start <xs:flex-wrap">
     <header class="z-60">
       <!-- <client-only><PreviewBanner /></client-only> -->
       <Nav class="pb-16" />

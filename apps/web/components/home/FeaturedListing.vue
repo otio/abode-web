@@ -1,5 +1,5 @@
 <template>
-  <section
+  <div
     class="flex flex-row items-center justify-around m-12rem lg:(flex-col justify-evenly)"
   >
     <div id="listing-info" class="flex flex-col pr-16">
@@ -36,7 +36,7 @@
         :src="$attrs.locationImage.secure_url"
       />
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

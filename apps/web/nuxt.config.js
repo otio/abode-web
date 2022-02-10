@@ -9,11 +9,14 @@ export default {
       lang: 'en',
     },
     bodyAttrs: {
-      class: `w-screen overflow-x-hidden`,
+      // class: `overflow-x-hidden`,
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1 minimum-scale=1',
+      },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
@@ -34,7 +37,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'virtual:windi-base.css',
+    // 'virtual:windi-base.css',
     `~/assets/main.css`,
     // `~/assets/main.scss`
   ],
@@ -71,6 +74,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/cloudinary',
   ],
   // googleFonts: {
   //   // preload: true,
@@ -90,6 +94,11 @@ export default {
   sanity: {
     projectId: 'jywomcz4',
     apiVersion: '2021-10-21',
+  },
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    secure: true,
+    useComponent: true,
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

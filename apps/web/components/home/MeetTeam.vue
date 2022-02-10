@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center justify-center my-24">
+  <div class="flex flex-col items-center justify-center my-24">
     <!-- Custom Header -->
     <div class="flex flex-row items-center justify-center self-stretch mb-16">
       <h2 class="hidden">Meet the Abode Team</h2>
@@ -11,9 +11,22 @@
     </div>
     <!-- Custom Header END -->
     <div
-      class="flex flex-row justify-center items-start self-stretch mx-36 lg:flex-col-reverse lg:items-center"
+      class="flex flex-row justify-center items-start self-stretch mx-36 <xl:(flex-col-reverse items-center)"
     >
-      <img alt="" class="mr-16" src="~/static/team-intro-photo.png" />
+      <picture id="team-image" class="mr-16">
+        <source
+          media="(min-width:1920px)"
+          :srcset="`${imgSize(1000)} 1000w`"
+          sizes="100vw"
+        />
+        <img
+          src="https://via.placeholder.com/1000x1300.webp?text=Abode+Team+Image"
+          alt=""
+          class="mr-16"
+        />
+      </picture>
+      <!-- <img alt="" class="mr-16" src="~/static/team-intro-photo.png" /> -->
+
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-start pb-16">
           <h2 class="font-secondary text-5xl 2xl:text-4xl pb-16">
@@ -28,13 +41,35 @@
         </button> -->
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'MeetTeam',
+  data() {
+    return {
+      teamImageId: this.$attrs?.teamImage?.public_id,
+    }
+  },
+  methods: {
+    imgSize(imageWidth, imageHeight = 'auto') {
+      return this.$cloudinary.image.url(this.teamImageId, {
+        width: imageWidth,
+        height: imageHeight,
+        // aspectRatio: 577.701,
+        // crop: 'fit',
+        // gravity: 'west',
+        // dpr: 'auto',
+        // format: 'webp',
+      })
+    },
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#team-image > img {
+  width: 100%;
+}
+</style>

@@ -1,8 +1,45 @@
 <template>
-  <section class="relative">
-    <img :src="$attrs.bgImage.derived[0].secure_url" alt="" />
-    <div class="gradient"></div>
-    <div class="absolute inset-10rem">
+  <div class="relative">
+    <picture>
+      <source
+        media="(min-width: 1920px)"
+        :srcset="bannerSize(1920, 800)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 1536px)"
+        :srcset="bannerSize(1536, 700)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 1280px)"
+        :srcset="bannerSize(1280, 700)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 1024px)"
+        :srcset="bannerSize(1024, 600)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 768px)"
+        :srcset="bannerSize(768, 650)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 640px)"
+        :srcset="bannerSize(640, 840)"
+        sizes="100vw"
+      />
+      <source
+        media="(min-width: 360px)"
+        :srcset="bannerSize(360, 360 * 2)"
+        sizes="100vw"
+      />
+      <img src="" alt="" />
+    </picture>
+    <!-- <div class="gradient"></div> -->
+    <div class="absolute inset-10rem xs:(inset-1rem mt-7rem)">
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
       <div class="flex flex-col">
         <div v-for="block in bannerComponents" :key="block._key">
@@ -10,7 +47,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -25,12 +62,81 @@ export default {
   data() {
     return {
       bannerComponents: this.$attrs.bannerComponents,
+      publicId: this.$attrs?.bgImage?.public_id,
     }
   },
   computed: {
-    // headline() {
-    //   return this.$attrs.bannerComponents
-    // },
+    hdBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 1920 * 2,
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    twoXlBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 1536 * 2,
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    xlBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 1280 * 2,
+        aspectRatio: 1.7,
+        gravity: 'west',
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    lgBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 1024 * 2,
+        aspectRatio: 1.5,
+        gravity: 'west',
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    mdBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 768 * 2,
+        aspectRatio: 1.6,
+        gravity: 'west',
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    smBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 640 * 2,
+        aspectRatio: 1.12,
+        gravity: 'west',
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+    xsBanner() {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: 360 * 2,
+        height: 360 * 5,
+        // aspectRatio: 1.12,
+        gravity: 'west',
+        crop: 'fill',
+        dpr: 'auto',
+      })
+    },
+  },
+  methods: {
+    bannerSize(imageWidth, imageHeight) {
+      return this.$cloudinary.image.url(this.publicId, {
+        width: imageWidth * 2,
+        height: imageHeight * 2 ?? null,
+        crop: 'fill',
+        gravity: 'west',
+        dpr: 'auto',
+      })
+    },
   },
 }
 </script>

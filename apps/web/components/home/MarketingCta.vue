@@ -1,11 +1,11 @@
 <template>
-  <section class="marketing-house-email">
+  <div class="marketing-house-email">
     <div class="bg-whitesmoke bg-opacity-80 p-16">
       <p class="text-7xl font-display mb-12">Marketing that sells your house</p>
 
       <CallToAction />
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

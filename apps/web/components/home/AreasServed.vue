@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col mb-48">
+  <div class="flex flex-col mb-48">
     <!-- TODO: change image sizing for responsivness -->
     <p id="heading" class="font-secondary text-5xl pb-20 text-center">
       San Francisco Neighborhoods
@@ -22,7 +22,7 @@
         </p>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

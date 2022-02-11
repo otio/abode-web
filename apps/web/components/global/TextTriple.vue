@@ -1,9 +1,11 @@
 <template>
   <div class="xs:(w-full)">
-    <div
-      class="font-display text-center text-firebrick mt-10 hd:(text-8xl mb-60) 2xl:mb-24 xl:mb-24 lg:(text-6xl mb-3rem) md:(text-6xl mb-20) xs:(text-5xl mb-48)"
-    >
-      <h1 class="">{{ headline }}</h1>
+    <div class="mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mb-48)">
+      <h1
+        class="font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-4xl)"
+      >
+        {{ headline }}
+      </h1>
     </div>
     <div class="text-3xl text-white text-center self-stretch">
       <p class="font-light tracking-wider">

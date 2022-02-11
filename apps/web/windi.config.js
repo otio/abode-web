@@ -37,5 +37,5 @@ export default {
     include: ['components/**/*.{vue,html,jsx,tsx}', 'assets/**/*.{css}'],
     exclude: ['node_modules/**/*', '.git/**/*'],
   },
-  // preflight: true,
+  preflight: true,
 }

@@ -16,11 +16,11 @@
     </div>
     <!-- Custom Header END -->
     <div
-      class="flex flex-row justify-center items-center mx-36 xl:(flex-col items-center) lg:(flex-col items-center) md:(flex-col items-center) sm:(flex-col items-center) xs:(flex-col items-center mx-0)"
+      class="flex flex-row justify-center items-center mx-36 xl:(flex-col items-center) lg:(flex-col items-center) md:(flex-col items-center) sm:(flex-col items-center mx-8) xs:(flex-col items-center mx-0)"
     >
       <img
         alt=""
-        class="hd:(mr-16) 2xl:(mr-16) xl:(mt-0) lg:(mt-0) md:(mt-0) sm:(mt-0) xs:(mt-0)"
+        class="hd:(mr-16) 2xl:(mr-16) xl:(mt-0) lg:(mt-0) md:(mt-0) sm:(mt-0 mb-16) xs:(mt-0)"
         :srcset="`
         ${imgSize(577)} 360w, 
         ${imgSize(577, 700)} 1024w, 

@@ -1,15 +1,20 @@
 <template>
   <div class="flex flex-col mb-48">
     <!-- TODO: change image sizing for responsivness -->
-    <p id="heading" class="font-secondary text-5xl pb-20 text-center">
+    <p
+      id="heading"
+      class="font-secondary text-5xl pb-20 text-center xs:(text-4xl)"
+    >
       San Francisco Neighborhoods
     </p>
-    <div id="row" class="flex flex-row justify-evenly lg:(flex-col)">
+    <div
+      class="flex flex-row justify-evenly lg:(flex-col) md:(flex-col) sm:(flex-col) xs:(flex-col)"
+    >
       <div
         v-for="area in neighborhoods"
         :id="`neighborhood-${area.areaName}`"
         :key="area._id"
-        class="flex flex-col items-center lg:flex-col-reverse"
+        class="flex flex-col items-center lg:(flex-col-reverse) md:(flex-col-reverse) sm:(flex-col-reverse) xs:(flex-col-reverse)"
       >
         <img
           id="area-image"
@@ -17,7 +22,10 @@
           :src="area.areaPreviewImage.secure_url"
           class="pb-12"
         />
-        <p id="area-label" class="font-secondary text-3xl">
+        <p
+          id="area-label"
+          class="font-secondary text-3xl lg:(mb-4) md:(mb-4) sm:(mb-4) xs:(mb-4)"
+        >
           {{ area.areaName }}
         </p>
       </div>

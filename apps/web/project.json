@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn build"
+            "command": "yarn generate"
           }
         ],
         "cwd": "apps/web"

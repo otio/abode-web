@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.24.1",
-    "@sanity/cli": "^2.26.0",
     "@sanity/core": "^2.24.0",
     "@sanity/dashboard": "^2.24.1",
     "@sanity/default-layout": "^2.24.1",
@@ -33,5 +32,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/otio/abode-web.git"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.27.0"
   }
 }

@@ -1,5 +1,0 @@
-[build]
-  base = '/'
-  publish = 'apps/studio/dist'
-  command = 'yarn nx run studio:build'
-  

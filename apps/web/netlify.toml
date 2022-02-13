@@ -1,4 +1,0 @@
-[build]
-  base = '/'
-  publish = 'apps/web/dist'
-  command = 'yarn nx run web:build'

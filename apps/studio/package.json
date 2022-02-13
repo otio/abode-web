@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "sanity start",
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "npx sanity/cli build"
   },
   "keywords": [
     "sanity"

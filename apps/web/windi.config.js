@@ -31,6 +31,9 @@ export default {
     borderRadius: {
       // '4xl': '2rem',x`
     },
+    backgroundSize: {
+      100: '100% 100%',
+    },
   },
   extract: {
     // accepts globs and file paths relative to project root

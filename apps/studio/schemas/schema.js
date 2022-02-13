@@ -5,7 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import siteSettings from "./documents/siteSettings";
-import Page from "./documents/Page";
+import page from "./documents/page";
 import callToAction from "./documents/callToAction";
 import neighborhood from "./documents/neighborhood";
 
@@ -28,7 +28,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     siteSettings,
-    Page,
+    page,
     callToAction,
     neighborhood,
     /* Your Object types here! */

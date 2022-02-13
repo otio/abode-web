@@ -1,5 +1,5 @@
 [build]
-  base = "apps/studio"
+  base = "studio"
   publish = "dist/"
   command = "yarn build"
   

@@ -92,7 +92,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
   sanity: {
-    projectId: 'jywomcz4',
+    projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
     apiVersion: '2021-10-21',
   },
   cloudinary: {

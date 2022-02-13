@@ -40,6 +40,7 @@ export default {
           name: 'Jim Caldwell',
           phone: '(415)-407-2525',
           email: 'james.caldwell@evrealestate.com',
+          dreNumber: '01305936',
           // profiles: []
         },
         {
@@ -47,6 +48,7 @@ export default {
           name: 'Shivani Desai',
           phone: '(415)-632-7599',
           email: 'shivani.desai@evrealestate.com',
+          dreNumber: '02042817',
           // profiles: []
         },
       ],

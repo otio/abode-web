@@ -5,7 +5,8 @@
     <p class="sm:(text-center) xs:(text-center)">
       {{ socialCard.name }}<br />
       {{ socialCard.phone }}<br />
-      {{ socialCard.email }}
+      {{ socialCard.email }} <br />
+      {{ socialCard.dreNumber }} <br />
     </p>
     <div class="flex items-center justify-end">
       <!-- <a href="" class="">
@@ -50,6 +51,7 @@ export default {
         name: 'Agent Name',
         phone: '(555) 555-5555',
         email: 'agent@agency.email',
+        dreNumber: `01020304`,
         profiles: [
           { linkedIn: 'https://www.linkedin.com/' },
           { fb: 'https://www.facebook.com/' },
@@ -65,6 +67,7 @@ export default {
         name: this.cardInfo?.name,
         phone: this.cardInfo?.phone,
         email: this.cardInfo?.email,
+        dreNumber: `DRE# ${this.cardInfo?.dreNumber}`,
         profiles: [
           // { linkedIn: this.cardInfo.profiles.linkedIn },
           // { fb: this.cardInfo.profiles.fb },

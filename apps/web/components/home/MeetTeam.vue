@@ -68,7 +68,7 @@ export default {
         width: imageWidth,
         height: imageHeight,
         // aspectRatio: 577.701,
-        // crop: 'fit',
+        // crop: 'fill',
         // gravity: 'west',
         // dpr: 'auto',
         // format: 'webp',

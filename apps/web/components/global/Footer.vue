@@ -1,8 +1,11 @@
 <template>
   <div class="flex flex-col items-center justify-evenly p-16">
-    <div class="flex flex-row justify-around w-screen px-16">
-      <div id="ev-logos" class="flex flex-row justify-start">
-        <div class="object-cover">
+    <div class="flex flex-row justify-around w-screen px-16 xs:(flex-col)">
+      <div
+        id="ev-logos"
+        class="flex flex-row justify-start xs:(flex-col justify-evenly items-center)"
+      >
+        <div class="object-cover xs:(mb-2rem)">
           <img alt="" src="~/static/EV-Logo-James.png" />
         </div>
         <div class="object-cover">
@@ -11,50 +14,45 @@
       </div>
       <!-- <CallToAction /> -->
     </div>
-    <div class="flex flex-row justify-around w-screen px-16 mt-16">
+    <div
+      class="flex flex-row justify-around items-center w-screen px-16 mt-16 sm:(flex-col-reverse) xs:(flex-col-reverse)"
+    >
       <Logo />
-      <div id="contact-cards" class="flex flex-row justify-evenly">
-        <SocialCard />
-        <SocialCard />
+      <div
+        v-for="agent in agents"
+        id="contact-cards"
+        :key="agent.id"
+        class="flex flex-col justify-between mb-12"
+      >
+        <SocialCard :card-info="agent" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      agents: [
+        {
+          id: 1,
+          name: 'Jim Caldwell',
+          phone: '(415)-407-2525',
+          email: 'james.caldwell@evrealestate.com',
+          // profiles: []
+        },
+        {
+          id: 2,
+          name: 'Shivani Desai',
+          phone: '(415)-632-7599',
+          email: 'shivani.desai@evrealestate.com',
+          // profiles: []
+        },
+      ],
+    }
+  },
+}
 </script>
 
-<style scoped>
-.input {
-  width: 25rem;
-  height: 3rem;
-  background-color: var(--white);
-  margin-right: 8px;
-  border-radius: 3px;
-  padding: 14px 19px 14px 22px;
-  border: 2px solid var(--grey-secondary);
-  color: var(--grey-secondary);
-  font-family: var(--inter-16-regular-family);
-  font-size: var(--inter-16-regular-size);
-  font-weight: var(--inter-16-regular-weight);
-  line-height: var(--inter-16-regular-line-height);
-}
-.button {
-  background-color: var(--primary-default);
-  border-radius: 3px;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  flex: 1;
-  height: 3rem;
-  cursor: pointer;
-}
-.label {
-  color: var(--grayscale-off-white);
-  font-family: var(--inter-16-semibold-family);
-  font-size: var(--inter-16-semibold-size);
-  font-weight: var(--inter-16-semibold-weight);
-  line-height: var(--inter-16-semibold-line-height);
-}
-</style>
+<style scoped></style>

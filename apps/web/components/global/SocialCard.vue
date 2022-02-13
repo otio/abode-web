@@ -1,19 +1,21 @@
 <template>
-  <div class="social">
-    <p class="menu-item">
+  <div
+    class="flex flex-col items-start justify-center my-4rem sm:(mx-1rem items-center) xs:(mx-1rem items-center)"
+  >
+    <p class="sm:(text-center) xs:(text-center)">
       {{ socialCard.name }}<br />
       {{ socialCard.phone }}<br />
       {{ socialCard.email }}
     </p>
-    <div class="social-icons">
-      <a :href="socialCard.profiles.linkedIn" class="logo-linkedin">
+    <div class="flex items-center justify-end">
+      <!-- <a href="" class="">
         <img
           alt=""
           class="vector-two"
           src="https://static.overlay-tech.com/assets/a299b0ae-30a7-45c9-8804-5a5adadd92e2.svg"
         />
-      </a>
-      <a :href="socialCard.profiles.fb" class="logo-facebook">
+      </a> -->
+      <!-- <a :href="socialCard.profiles.fb" class="logo-facebook">
         <img
           alt=""
           class="vector-two"
@@ -33,7 +35,7 @@
           class="vector-2"
           src="https://static.overlay-tech.com/assets/84d735fd-03e0-47d6-a4b4-69b4ad1338d7.svg"
         />
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
@@ -60,14 +62,14 @@ export default {
   data() {
     return {
       socialCard: {
-        name: this.cardInfo.name,
-        phone: this.cardInfo.phone,
-        email: this.cardInfo.email,
+        name: this.cardInfo?.name,
+        phone: this.cardInfo?.phone,
+        email: this.cardInfo?.email,
         profiles: [
-          { linkedIn: this.cardInfo.profiles.linkedIn },
-          { fb: this.cardInfo.profiles.fb },
-          { twitter: this.cardInfo.profiles.twitter },
-          { instagram: this.cardInfo.profiles.instagram },
+          // { linkedIn: this.cardInfo.profiles.linkedIn },
+          // { fb: this.cardInfo.profiles.fb },
+          // { twitter: this.cardInfo.profiles.twitter },
+          // { instagram: this.cardInfo.profiles.instagram },
         ],
       },
     }
@@ -76,25 +78,6 @@ export default {
 </script>
 
 <style scoped>
-.social {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 0rem 4rem;
-  /* position: absolute;
-  left: -88.5px;
-  top: 0; */
-}
-.menu-item {
-  max-width: 383px;
-  color: var(--black-secondary);
-  margin-bottom: 25px;
-  font-family: var(--inter-24-regular-family);
-  font-size: var(--inter-24-regular-size);
-  font-weight: var(--inter-24-regular-weight);
-  line-height: var(--inter-24-regular-line-height);
-}
 .social-icons {
   display: flex;
   align-items: center;

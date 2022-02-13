@@ -8,13 +8,13 @@
       San Francisco Neighborhoods
     </p>
     <div
-      class="flex flex-row justify-evenly lg:(flex-col) md:(flex-col) sm:(flex-col) xs:(flex-col)"
+      class="flex flex-row justify-evenly xl:(flex-col) lg:(flex-col) md:(flex-col) sm:(flex-col) xs:(flex-col)"
     >
       <div
         v-for="area in neighborhoods"
         :id="`neighborhood-${area.areaName}`"
         :key="area._id"
-        class="flex flex-col items-center lg:(flex-col-reverse) md:(flex-col-reverse) sm:(flex-col-reverse) xs:(flex-col-reverse)"
+        class="flex flex-col items-center xl:(flex-col-reverse) md:(flex-col-reverse) sm:(flex-col-reverse) xs:(flex-col-reverse)"
       >
         <img
           id="area-image"
@@ -24,7 +24,7 @@
         />
         <p
           id="area-label"
-          class="font-secondary text-3xl lg:(mb-4) md:(mb-4) sm:(mb-4) xs:(mb-4)"
+          class="font-secondary text-3xl xl:(mb-4) lg:(mb-4) md:(mb-4) sm:(mb-4) xs:(mb-4)"
         >
           {{ area.areaName }}
         </p>

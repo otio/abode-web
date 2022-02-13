@@ -65,68 +65,7 @@ export default {
       publicId: this.$attrs?.bgImage?.public_id,
     }
   },
-  computed: {
-    hdBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 1920 * 2,
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    twoXlBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 1536 * 2,
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    xlBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 1280 * 2,
-        aspectRatio: 1.7,
-        gravity: 'west',
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    lgBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 1024 * 2,
-        aspectRatio: 1.5,
-        gravity: 'west',
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    mdBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 768 * 2,
-        aspectRatio: 1.6,
-        gravity: 'west',
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    smBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 640 * 2,
-        aspectRatio: 1.12,
-        gravity: 'west',
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-    xsBanner() {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: 360 * 2,
-        height: 360 * 5,
-        // aspectRatio: 1.12,
-        gravity: 'west',
-        crop: 'fill',
-        dpr: 'auto',
-      })
-    },
-  },
+  computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {
       return this.$cloudinary.image.url(this.publicId, {

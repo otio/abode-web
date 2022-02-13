@@ -8,7 +8,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn dev"
+            "command": "npx nuxi dev"
           }
         ],
         "cwd": "apps/web"
@@ -19,7 +19,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn start"
+            "command": "npx nuxi preview"
           }
         ],
         "cwd": "apps/web"
@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn generate"
+            "command": "npx nuxi generate"
           }
         ],
         "cwd": "apps/web"

@@ -8,7 +8,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx nuxi dev"
+            "command": "npm run dev"
           }
         ],
         "cwd": "apps/web"
@@ -19,7 +19,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx nuxi preview"
+            "command": "npm run start"
           }
         ],
         "cwd": "apps/web"
@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "npx nuxi generate"
+            "command": "npm run generate"
           }
         ],
         "cwd": "apps/web"

@@ -1,9 +1,10 @@
-import { defineNuxtConfig } from '@nuxt/bridge'
+// import { defineNuxtConfig } from '@nuxt/bridge'
 
-export default defineNuxtConfig({
+// export default defineNuxtConfig({
+export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  bridge: false,
+  // bridge: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -116,4 +117,12 @@ export default defineNuxtConfig({
       }
     },
   },
-})
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        'date-fns',
+      ]
+    }
+  }
+}
+// })

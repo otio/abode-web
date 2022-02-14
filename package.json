@@ -6,13 +6,16 @@
     "apps/*",
     "libs/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many --target=dev --all",
+    "dev:web": "nx run web:dev",
+    "dev:studio": "nx run studio:dev"
+  },
   "devDependencies": {
     "@nrwl/cli": "latest",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "latest",
     "@nrwl/workspace": "latest",
-    "npm-run-all": "^4.1.5",
     "typescript": "4.2.4"
   },
   "dependencies": {}

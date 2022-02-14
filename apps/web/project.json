@@ -8,7 +8,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn dev"
+            "command": "nuxt"
           }
         ],
         "cwd": "apps/web"
@@ -19,7 +19,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn start"
+            "command": "nuxt start"
           }
         ],
         "cwd": "apps/web"
@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn generate"
+            "command": "nuxt generate"
           }
         ],
         "cwd": "apps/web"

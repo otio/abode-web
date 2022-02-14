@@ -76,7 +76,7 @@ export default defineNuxtConfig({
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    // '@nuxt/content',
     '@nuxtjs/cloudinary',
   ],
   // googleFonts: {
@@ -106,7 +106,7 @@ export default defineNuxtConfig({
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  // content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

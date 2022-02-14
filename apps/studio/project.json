@@ -8,7 +8,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn dev"
+            "command": "sanity start"
           }
         ],
         "cwd": "apps/studio"
@@ -19,7 +19,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn start"
+            "command": "npx sanity/cli start"
           }
         ],
         "cwd": "apps/studio"
@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "yarn build"
+            "command": "npx sanity/cli"
           }
         ],
         "cwd": "apps/studio"

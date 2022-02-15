@@ -7,7 +7,9 @@
     "libs/*"
   ],
   "scripts": {
-    "dev": "nx run-many --target=dev --all"
+    "dev": "nx run-many --target=dev --all",
+    "build:web": "nx run web:build",
+    "build:studio": "nx run studio:build"
   },
   "devDependencies": {
     "@nrwl/cli": "latest",

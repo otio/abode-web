@@ -16,9 +16,10 @@ export default {
     title: 'abode-web',
     htmlAttrs: {
       lang: 'en',
+      class: `overflow-x-hidden`,
     },
     bodyAttrs: {
-      // class: `overflow-x-hidden`,
+      class: `overflow-x-hidden`,
     },
     meta: [
       { charset: 'utf-8' },

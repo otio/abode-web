@@ -35,10 +35,10 @@ export default {
       100: '100% 100%',
     },
   },
-  extract: {
-    // accepts globs and file paths relative to project root
-    include: ['components/**/*.{vue,html,jsx,tsx}', 'assets/**/*.{css}'],
-    exclude: ['node_modules/**/*', '.git/**/*'],
-  },
+  // extract: {
+  //   // accepts globs and file paths relative to project root
+  //   include: ['components/**/*.{vue,html,jsx,tsx}', 'assets/**/*.{css}'],
+  //   exclude: ['node_modules/**/*', '.git/**/*'],
+  // },
   preflight: true,
 }

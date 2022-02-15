@@ -33,7 +33,9 @@
             <button class="absolute -top-12 left-12rem xs:(left-6.5rem)">
               <img class="" src="~/assets/image/previous.svg" alt="" />
             </button>
-            <div class="relative w-450px md:(hidden) sm:(hidden) xs:(hidden)">
+            <div
+              class="relative w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)"
+            >
               <img
                 alt=""
                 class="absolute left-12 top-14"

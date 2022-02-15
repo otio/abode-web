@@ -31,7 +31,6 @@
     ]
   },
   "affected": {
-    "defaultBase": "main",
-    "feature": "feature/*"
+    "defaultBase": "main"
   }
 }

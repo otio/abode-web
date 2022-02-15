@@ -3,7 +3,14 @@ import { defineNuxtConfig } from '@nuxt/bridge'
 export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  bridge: true,
+  publicRuntimeConfig: {
+    
+  },
+  sanity: {
+    projectId: process.env.SANITY_PUBLIC_PROJECT_ID,
+    dataset: process.env.SANITY_PUBLIC_DATASET,
+    apiVersion: '2021-10-21',
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -94,11 +101,7 @@ export default defineNuxtConfig({
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-  sanity: {
-    projectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID,
-    dataset: process.env.NUXT_PUBLIC_SANITY_DATASET,
-    apiVersion: '2021-10-21',
-  },
+
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     secure: true,

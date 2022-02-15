@@ -1,11 +1,10 @@
-import { defineNuxtConfig } from '@nuxt/bridge'
+// import { defineNuxtConfig } from '@nuxt/bridge'
 
-export default defineNuxtConfig({
+// export default defineNuxtConfig({
+export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  publicRuntimeConfig: {
-    
-  },
+  publicRuntimeConfig: {},
   sanity: {
     projectId: process.env.SANITY_PUBLIC_PROJECT_ID,
     dataset: process.env.SANITY_PUBLIC_DATASET,
@@ -119,4 +118,4 @@ export default defineNuxtConfig({
       }
     },
   },
-})
+}

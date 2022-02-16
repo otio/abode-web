@@ -8,6 +8,8 @@
   ],
   "scripts": {
     "dev": "nx run-many --target=dev --all",
+    "dev:netlify": "nx run-many --target=netlify --all",
+    "build": "nx run-many --target=build --all",
     "build:web": "nx run web:build",
     "build:studio": "nx run studio:build"
   },

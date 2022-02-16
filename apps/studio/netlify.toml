@@ -1,3 +1,11 @@
+[dev]
+  command = "yarn start"
+  port = 9090
+  targetPort = 3333
+  publish = "dist"
+  autoLaunch = true
+  framework = "#custom"
+
 [[ redirects ]]
   from = "/*"
   to = "/index.html"

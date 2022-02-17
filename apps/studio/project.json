@@ -42,9 +42,13 @@
         "commands": [
           {
             "command": "sanity build"
+          },
+          {
+            "command": "cp netlify.toml dist/"
           }
         ],
-        "cwd": "apps/studio"
+        "cwd": "apps/studio",
+        "parallel": false
       }
     }
   }

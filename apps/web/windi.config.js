@@ -2,8 +2,8 @@
 export default {
   theme: {
     screens: {
-      xs: { max: '360px' },
-      sm: { max: '640px', min: '361px' },
+      xs: { max: '530px' },
+      sm: { max: '640px', min: '531px' },
       md: { max: '768px', min: '641px' },
       lg: { max: '1024px', min: '769px' },
       xl: { max: '1280px', min: '1025px' },

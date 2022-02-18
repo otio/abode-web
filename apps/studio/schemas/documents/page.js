@@ -34,6 +34,7 @@ export default {
         { type: "magazineSignup" },
         { type: "areasServed" },
         { type: "marketingCta" },
+        { type: "callToAction" },
       ],
     },
   ],

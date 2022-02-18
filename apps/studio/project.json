@@ -44,7 +44,7 @@
             "command": "sanity build"
           },
           {
-            "command": "cp netlify.toml dist/"
+            "command": "shx cp netlify.toml dist/"
           }
         ],
         "cwd": "apps/studio",

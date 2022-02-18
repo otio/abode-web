@@ -23,12 +23,12 @@
         }}</a>
         <div
           id="listing-features"
-          class="flex flex-row justify-evenly xs:(flex-col)"
+          class="flex flex-row flex-wrap justify-evenly xs:(flex-col)"
         >
           <div
             v-for="(feature, index) in listingDetails.features"
             :key="index"
-            class="bg-whitesmoke xs:(my-4)"
+            class="bg-whitesmoke my-4"
           >
             <div class="text-3xl text-center font-secondary p-4 lg:text-2xl">
               <p>{{ feature.value }}</p>

@@ -14,6 +14,8 @@
           <div id="num-2"></div>
         </div> -->
         <div
+          v-for="review in reviews"
+          :key="review._key"
           class="relative flex flex-row-reverse justify-center <md:(flex-col)"
         >
           <div
@@ -22,30 +24,32 @@
           >
             <div class="flex flex-col items-center justify around">
               <p class="text-3xl text-center leading-normal mb-8">
-                {{ $attrs.testimonial }}
+                {{ review.testimonial }}
               </p>
               <p class="text-4xl text-center font-semibold">
-                {{ $attrs.clientName }}
+                {{ review.clientName }}
               </p>
             </div>
           </div>
           <div id="testimonial-image" class="">
-            <button class="absolute -top-12 left-12rem xs:(left-6.5rem)">
-              <img class="" src="~/assets/image/previous.svg" alt="" />
-            </button>
             <div
               class="relative w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)"
             >
               <img
                 alt=""
                 class="absolute left-12 top-14"
-                :src="$attrs.testimonialImage.secure_url"
+                :src="review.testimonialImage.secure_url"
               />
             </div>
-            <button class="absolute -bottom-14 left-12rem xs:(left-6.5rem)">
-              <img src="~/assets/image/next.svg" alt="" />
-            </button>
           </div>
+        </div>
+        <div v-show="reviews.length > 1">
+          <button class="absolute -top-12 left-12rem xs:(left-6.5rem)">
+            <img class="" src="~/assets/image/previous.svg" alt="" />
+          </button>
+          <button class="absolute -bottom-14 left-12rem xs:(left-6.5rem)">
+            <img src="~/assets/image/next.svg" alt="" />
+          </button>
         </div>
       </div>
     </div>
@@ -55,6 +59,11 @@
 <script>
 export default {
   name: 'ClientReview',
+  data() {
+    return {
+      reviews: this.$attrs?.clientReviews,
+    }
+  },
 }
 </script>
 

@@ -21,6 +21,7 @@ export default {
   },
   async asyncData({ $sanity, store }) {
     const queryParams = { homeId: store.state.settings.home._id }
+    // TODO Clean up query
     const homeQuery = groq`*[ _id == $homeId ]{
     title,
     slug,
@@ -33,6 +34,9 @@ export default {
             ...,
             linkToPage->{...}
           }
+        },
+        _type == 'reviewPicker' => {
+          clientReviews[]->{...}
         },
         _type == 'magazineSignup' => {
           ...,

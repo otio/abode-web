@@ -8,9 +8,10 @@ import siteSettings from "./documents/siteSettings";
 import page from "./documents/page";
 import callToAction from "./documents/callToAction";
 import neighborhood from "./documents/neighborhood";
+import clientReview from "./documents/clientReview";
 
 // Objects
-import clientReview from "./objects/clientReview";
+import reviewPicker from "./objects/reviewPicker";
 import bannerContent from "./objects/bannerContent";
 import textTriple from "./objects/textTriple";
 import internalPageButton from "./objects/internalPageButton";
@@ -31,9 +32,10 @@ export default createSchema({
     page,
     callToAction,
     neighborhood,
-    /* Your Object types here! */
     clientReview,
+    /* Your Object types here! */
     bannerContent,
+    reviewPicker,
     textTriple,
     internalPageButton,
     meetTeam,

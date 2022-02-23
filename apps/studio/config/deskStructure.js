@@ -37,7 +37,7 @@ import useSlug from "../util/lib/useSlug";
 
 export default () =>
   S.list()
-    .title("Base")
+    .title("Content Types")
     .items([
       S.listItem()
         .title("Site Settings")

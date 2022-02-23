@@ -30,7 +30,7 @@ export default {
         { type: "bannerContent" },
         { type: "meetTeam" },
         { type: "featuredListing" },
-        { type: "clientReview" },
+        { type: "reviewPicker" },
         { type: "magazineSignup" },
         { type: "areasServed" },
         { type: "marketingCta" },

@@ -11,9 +11,10 @@
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
     "@sanity/dashboard",
-    "cloudinary"
+    "@sanity/desk-tool",
+    "cloudinary",
+    "dashboard-widget-netlify"
   ],
   "env": {
     "development": {

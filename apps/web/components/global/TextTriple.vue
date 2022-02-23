@@ -1,8 +1,8 @@
 <template>
   <div class="xs:(w-full)">
-    <div class="mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mb-48)">
+    <div class="mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)">
       <h1
-        class="font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-4xl)"
+        class="font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)"
       >
         {{ headline }}
       </h1>
@@ -12,7 +12,10 @@
         {{ chaser }}
       </p>
     </div>
-    <div class="text-lg text-white text-center self-stretch">
+    <div
+      v-show="paragraph !== ''"
+      class="text-lg text-white text-center self-stretch"
+    >
       <p class="font-light">
         {{ paragraph }}
       </p>

@@ -40,7 +40,7 @@ export default {
         src: 'https://cdn.jsdelivr.net/npm/ahoy.js@0.3.4/dist/ahoy.min.js',
         async: true,
         defer: true,
-        body: true,
+        // body: true,
       },
     ],
   },
@@ -57,12 +57,7 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
-    dirs: [
-      '~/components',
-      '~/components/global',
-      '~/components/hero',
-      '~/components/home',
-    ],
+    dirs: ['~/components', '~/components/global', '~/components/home'],
   },
   generate: {
     fallback: true,
@@ -76,6 +71,7 @@ export default {
     'nuxt-windicss',
     // '@nuxtjs/google-fonts',
     '@nuxtjs/sanity/module',
+    '@braid/vue-formulate/nuxt',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

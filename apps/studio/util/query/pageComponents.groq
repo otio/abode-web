@@ -11,6 +11,9 @@
         linkToPage->{...}
       }
     },
+     _type == 'reviewPicker' => {
+          clientReviews[]->{...}
+    },
     _type == 'magazineSignup' => {
       ...,
       promoImage,

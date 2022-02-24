@@ -42,9 +42,21 @@
         "commands": [
           {
             "command": "sanity build"
+          }
+        ],
+        "cwd": "apps/studio",
+        "parallel": false
+      }
+    },
+    "clean": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "shx rm -rf node_modules/"
           },
           {
-            "command": "shx cp netlify.toml dist/"
+            "command": "shx rm -rf dist/"
           }
         ],
         "cwd": "apps/studio",

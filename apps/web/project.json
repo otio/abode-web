@@ -46,6 +46,24 @@
         ],
         "cwd": "apps/web"
       }
+    },
+    "clean": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "shx rm -rf node_modules/"
+          },
+          {
+            "command": "shx rm -rf .nuxt/"
+          },
+          {
+            "command": "shx rm -rf dist/"
+          }
+        ],
+        "cwd": "apps/web",
+        "parallel": false
+      }
     }
   }
 }

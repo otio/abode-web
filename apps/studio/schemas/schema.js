@@ -6,11 +6,11 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import siteSettings from "./documents/siteSettings";
 import page from "./documents/page";
-import callToAction from "./documents/callToAction";
 import neighborhood from "./documents/neighborhood";
 import clientReview from "./documents/clientReview";
 
 // Objects
+import callToAction from "./objects/callToAction";
 import reviewPicker from "./objects/reviewPicker";
 import bannerContent from "./objects/bannerContent";
 import textTriple from "./objects/textTriple";

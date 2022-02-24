@@ -86,17 +86,50 @@ export default {
         parent?.destination === undefined || parent?.destination === "none",
     },
     {
-      name: "internalLink",
-      title: "Internal link",
-      type: "reference",
-      to: [{ type: "page" }],
-      hidden: ({ parent }) => parent?.destination !== "internal",
-    },
-    {
       name: "submitUrl",
       title: "submitUrl",
       type: "url",
       hidden: ({ parent }) => parent?.destination !== "form",
+    },
+    {
+      name: "hasBonusAsset",
+      title: "Has Bonus Asset?",
+      description: "Is there any kind of special content to give away",
+      type: "boolean",
+    },
+    {
+      name: "bonusAssetType",
+      title: "Bonus Asset Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Internal Link -> Page", value: "internal" },
+          { title: "External Link -> Another Site", value: "external" },
+          // TODO: Add ability to self host small files
+          // { title: "Self Hosted File", value: "file" },
+        ],
+        layout: "radio",
+        direction: "horizontal",
+      },
+      hidden: ({ parent }) => parent?.hasBonusAsset !== true,
+      // initialValue: [{ title: "No Destination", value: "none" }],
+    },
+    {
+      name: "internalLink",
+      title: "Internal link",
+      type: "reference",
+      to: [{ type: "page" }],
+      hidden: ({ parent }) =>
+        parent?.destination !== "internal" ||
+        parent?.bonusAssetType !== "internal",
+    },
+    {
+      name: "externalLink",
+      title: "External link",
+      type: "url",
+      hidden: ({ parent }) =>
+        parent?.destination !== "external" ||
+        parent?.bonusAssetType === "external",
     },
     {
       name: "inputFields",

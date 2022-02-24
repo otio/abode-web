@@ -15,20 +15,17 @@
         `"
         />
       </div>
-      <div
-        v-show="isSubmitted === false"
-        class="flex flex-col xs:(items-center text-center)"
-      >
+      <div class="flex flex-col xs:(items-center text-center)">
         <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
         <p v-show="chaser" id="chaser" class="text-2xl mb-12 xs:(mx-2)">
           {{ chaser }}
         </p>
         <FormulateForm
+          v-if="isSubmitted !== true"
           v-slot="{ hasErrors }"
           v-model="formValues"
           class="flex flex-col items-center"
-          :action="formSubmissionUrl"
-          method="POST"
+          @submit="submitHandler"
         >
           <p id="floater" class="text-center text-2xl mb-8">{{ floater }}</p>
           <div
@@ -42,7 +39,8 @@
               <FormulateInput
                 type="email"
                 :placeholder="placeholder(field)"
-                validation="required|email"
+                validation="bail|required|email"
+                @keypress.enter="hasError !== true ? submitHandler : null"
               />
             </div>
             <div class="xs:(w-full)">
@@ -54,9 +52,9 @@
             </div>
           </div>
         </FormulateForm>
-      </div>
-      <div v-show="isSubmitted === true">
-        <p id="floater" class="text-center text-2xl mb-8">Thank You!</p>
+        <div v-else>
+          <p id="floater" class="text-center text-2xl mb-8">Thank You!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -177,12 +175,20 @@ export default {
     async submitHandler(data) {
       this.$axios.setHeader('Accept', 'application/json')
       try {
-        await this.$axios.post(this.formSubmissionUrl, data)
-        console.info('FORM SUBMIT SUCCESS!')
-        return (this.isSubmitted = true)
+        const result = await this.$axios.post(this.formSubmissionUrl, data)
+        // console.info('FORM SUBMIT SUCCESS!')
+        this.isSubmitted = true
+        console.log(result)
+        return result
       } catch (error) {
-        console.error(error)
-        return (this.isSubmitted = false)
+        if (error.response.status === 404) {
+          return this.$nuxt.error({ statusCode: 404, message: error.message })
+        } else {
+          return this.$nuxt.error({
+            statusCode: error.response.status,
+            message: error.message,
+          })
+        }
       }
     },
     configureAhoy() {

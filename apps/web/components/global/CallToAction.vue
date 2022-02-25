@@ -53,14 +53,19 @@
             </div>
           </div>
         </FormulateForm>
-        <div v-else-if="bonusAsset.bonusUrl !== ''">
+        <div v-else-if="bonusAsset !== ''">
           <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
-          <p id="bonus-asset" class="text-center text-firebrick text-2xl underline mb-8">
-            <a :href="bonusAsset.bonusUrl" rel="noopener noreferrer">Click Here -- {{ bonusAsset.bonusAssetLinkLabel }}</a>
+          <p
+            id="bonus-asset"
+            class="text-center text-firebrick text-2xl underline mb-8"
+          >
+            <a :href="bonusAsset.bonusUrl" rel="noopener noreferrer"
+              >Click Here -- {{ bonusAsset.bonusAssetLinkLabel }}</a
+            >
           </p>
         </div>
         <div v-else>
-           <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
+          <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
         </div>
       </div>
     </div>
@@ -150,9 +155,9 @@ export default {
           return ''
       }
     },
-    bonusAsset(){
+    bonusAsset() {
       return this.$attrs?.bonusAsset ?? ''
-    }
+    },
   },
   mounted() {
     // this.configureAhoy()
@@ -193,7 +198,10 @@ export default {
         return result
       } catch (error) {
         if (error) {
-          return this.$nuxt.error({ statusCode: error.statusCode , message: error.message })
+          return this.$nuxt.error({
+            statusCode: error.statusCode,
+            message: error.message,
+          })
         }
       }
     },

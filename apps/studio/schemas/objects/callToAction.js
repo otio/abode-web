@@ -92,6 +92,24 @@ export default {
       hidden: ({ parent }) => parent?.destination !== "form",
     },
     {
+      name: "internalLink",
+      title: "Internal link",
+      type: "reference",
+      to: [{ type: "page" }],
+      hidden: ({ parent }) => 
+        parent?.destination !== "internal" ||
+        parent?.bonusAssetType !== "internal",
+      
+    },
+    {
+      name: "externalLink",
+      title: "External link",
+      type: "url",
+      hidden: ({ parent }) =>
+        parent?.destination !== "external" ||
+        parent?.bonusAssetType === "external"
+    },
+    {
       name: "hasBonusAsset",
       title: "Has Bonus Asset?",
       description: "Is there any kind of special content to give away",
@@ -103,8 +121,8 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "Internal Link -> Page", value: "internal" },
-          { title: "External Link -> Another Site", value: "external" },
+          { title: "URL", value: "url" },
+          { title: "File", value: "file" },
           // TODO: Add ability to self host small files
           // { title: "Self Hosted File", value: "file" },
         ],
@@ -115,22 +133,28 @@ export default {
       // initialValue: [{ title: "No Destination", value: "none" }],
     },
     {
-      name: "internalLink",
-      title: "Internal link",
-      type: "reference",
-      to: [{ type: "page" }],
-      hidden: ({ parent }) =>
-        parent?.destination !== "internal" ||
-        parent?.bonusAssetType !== "internal",
+      name: 'bonusAsset',
+      title: 'Bonus Asset',
+      type: 'object',
+      fields: [
+        {
+          name: 'bonusAssetLinkLabel',
+          title: 'Bonus Asset Link Label',
+          type: 'string',
+        },
+        {
+          name: 'bonusUrl',
+          title: 'Bonus Url',
+          type: 'url',
+        },
+      ],
+      hidden: ({ parent }) => parent?.bonusAssetType !== 'url',
     },
-    {
-      name: "externalLink",
-      title: "External link",
-      type: "url",
-      hidden: ({ parent }) =>
-        parent?.destination !== "external" ||
-        parent?.bonusAssetType === "external",
-    },
+    // {
+    //   name: 'bonusFile',
+    //   title: 'Bonus File',
+    //   type: 'file',
+    // },
     {
       name: "inputFields",
       title: "Input Fields",
@@ -140,9 +164,9 @@ export default {
         layout: "grid",
         list: [
           { value: "email-address", title: "Email Address" },
-          { value: "full-name", title: "Full Name" },
-          { value: "address", title: "Address" },
-          { value: "phone", title: "Phone" },
+          // { value: "full-name", title: "Full Name" },
+          // { value: "address", title: "Address" },
+          // { value: "phone", title: "Phone" },
         ],
       },
       hidden: ({ parent }) => parent?.destination !== "form",

@@ -40,6 +40,7 @@
                 type="email"
                 :placeholder="placeholder(field)"
                 validation="bail|required|email"
+                error-behavior="value"
                 @keypress.enter="hasError !== true ? submitHandler : null"
               />
             </div>
@@ -52,8 +53,14 @@
             </div>
           </div>
         </FormulateForm>
+        <div v-else-if="bonusAsset.bonusUrl !== ''">
+          <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
+          <p id="bonus-asset" class="text-center text-firebrick text-2xl underline mb-8">
+            <a :href="bonusAsset.bonusUrl" rel="noopener noreferrer">Click Here -- {{ bonusAsset.bonusAssetLinkLabel }}</a>
+          </p>
+        </div>
         <div v-else>
-          <p id="floater" class="text-center text-2xl mb-8">Thank You!</p>
+           <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
         </div>
       </div>
     </div>
@@ -82,13 +89,13 @@ export default {
   },
   computed: {
     headline() {
-      return this.$attrs?.headline
+      return this.$attrs?.headline ?? ''
     },
     chaser() {
-      return this.$attrs?.chaser
+      return this.$attrs?.chaser ?? ''
     },
     floater() {
-      return this.$attrs?.floater
+      return this.$attrs?.floater ?? ''
     },
     headlineStyle() {
       return `${this.componentStyle}-headline`
@@ -100,7 +107,7 @@ export default {
       return this.$attrs.buttonLabel ?? 'Submit'
     },
     formSubmissionUrl() {
-      return this.$attrs?.submitUrl
+      return this.$attrs?.submitUrl ?? '_blank'
     },
     formId() {
       return this.getFormId(this.formSubmissionUrl)[0]
@@ -143,9 +150,12 @@ export default {
           return ''
       }
     },
+    bonusAsset(){
+      return this.$attrs?.bonusAsset ?? ''
+    }
   },
   mounted() {
-    this.configureAhoy()
+    // this.configureAhoy()
   },
   methods: {
     placeholder(field) {
@@ -178,31 +188,27 @@ export default {
         const result = await this.$axios.post(this.formSubmissionUrl, data)
         // console.info('FORM SUBMIT SUCCESS!')
         this.isSubmitted = true
+        // eslint-disable-next-line no-console
         console.log(result)
         return result
       } catch (error) {
-        if (error.response.status === 404) {
-          return this.$nuxt.error({ statusCode: 404, message: error.message })
-        } else {
-          return this.$nuxt.error({
-            statusCode: error.response.status,
-            message: error.message,
-          })
+        if (error) {
+          return this.$nuxt.error({ statusCode: error.statusCode , message: error.message })
         }
       }
     },
-    configureAhoy() {
-      if (process.client && window?.ahoy) {
-        window.ahoy.configure({
-          visitsUrl: 'https://usebasin.com/ahoy/visits',
-          eventsUrl: 'https://usebasin.com/ahoy/events',
-          page: this
-            .formId /* Use your form id here, this is just an example */,
-        })
-        window.ahoy.trackView()
-        window.ahoy.trackSubmits()
-      }
-    },
+    // configureAhoy() {
+    //   if (process.client && window?.ahoy) {
+    //     window.ahoy.configure({
+    //       visitsUrl: 'https://usebasin.com/ahoy/visits',
+    //       eventsUrl: 'https://usebasin.com/ahoy/events',
+    //       page: this
+    //         .formId /* Use your form id here, this is just an example */,
+    //     })
+    //     window.ahoy.trackView()
+    //     window.ahoy.trackSubmits()
+    //   }
+    // },
   },
 }
 </script>

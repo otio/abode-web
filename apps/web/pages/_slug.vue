@@ -1,5 +1,5 @@
 <template>
-  <div id="sections-wrapper">
+<div id="page-section-wrapper">
     <section
       v-for="component in pageComponents"
       :id="component._type"
@@ -14,15 +14,19 @@
 import { groq } from '@nuxtjs/sanity'
 
 export default {
-  validate({ query, store }) {
+  validate({ params, query, store }) {
+    
     return (
-      query.preview === 'true' || store.state.settings.home.slug === 'index'
+      query.preview === 'true' || store.state.settings.nav.includes(params.slug)
     )
   },
-  async asyncData({ $sanity, store }) {
-    const queryParams = { homeId: store.state.settings.home._id }
+  async asyncData({ $sanity, store, params }) {
+    debugger
+    const navPageId = store.state.settings.nav.find(page => page.slug === params.slug )
+
+    const queryParams = { pageId: navPageId._id }
     // TODO Clean up query
-    const homeQuery = groq`*[ _id == $homeId ]{
+    const pageQuery = groq`*[ _id == $pageId ]{
     title,
     slug,
     "pageComponents": components[]{
@@ -54,11 +58,11 @@ export default {
         },
       }
     }`
-    const result = await $sanity.fetch(homeQuery, queryParams)
-    return result[0]
+    const result = await $sanity.fetch(pageQuery, queryParams)
+    return result
   },
-  created() {},
 }
 </script>
+
 
 <style scoped></style>

@@ -4,7 +4,7 @@
       <!-- <client-only><PreviewBanner /></client-only> -->
       <Nav class="pb-16" />
     </header>
-    <main><Nuxt /></main>
+    <main><Nuxt :nuxt-child-key="$route.path" /></main>
     <footer class="footer relative py-16 z-40">
       <Footer />
     </footer>

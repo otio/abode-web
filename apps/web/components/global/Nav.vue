@@ -2,10 +2,10 @@
   <div
     class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
   >
-    <!-- TODO: Cpnditionally position Logo basedon presence of Nav links -->
+    <!-- TODO: Conditionally position Logo basedon presence of Nav links -->
     <nuxt-link to="/" class=""><Logo /></nuxt-link>
     <div>
-      <!-- <button v-show="isMobile">
+      <button v-show="isMobile">
         <img alt="" class="mobile-menu" src="~/static/mobile-menu.svg" />
       </button>
       <nav>
@@ -18,7 +18,7 @@
             >
           </li>
         </ul>
-      </nav> -->
+      </nav>
     </div>
   </div>
 </template>

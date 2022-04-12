@@ -1,0 +1,32 @@
+*[ _id == $pageId ]{
+    title,
+    slug,
+    "pageComponents": components[]{
+        ...,
+        _type == 'meetTeam' => {
+          introText,
+          teamImage,
+          "page": meetTeamPage{
+            ...,
+            linkToPage->{...}
+          }
+        },
+        _type == 'reviewPicker' => {
+          clientReviews[]->{...}
+        },
+        _type == 'magazineSignup' => {
+          ...,
+          promoImage,
+          signup->{...}
+        },
+        _type == 'areasServed' => {
+          _key,
+          _type,
+          areaPages[]->{...}
+        },
+        _type == 'marketingCta' => {
+          ...,
+          ctaCapture->{...}
+        },
+      }
+}

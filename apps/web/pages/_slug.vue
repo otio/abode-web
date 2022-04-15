@@ -14,15 +14,16 @@
 import { groq } from '@nuxtjs/sanity'
 
 export default {
-  validate({ params, query, store }) {
+ 
+  // validate({ params, query, store }) {
     
-    return (
-      query.preview === 'true' || store.state.settings.nav.includes(params.slug)
-    )
-  },
-  async asyncData({ $sanity, store, params }) {
-    debugger
-    const navPageId = store.state.settings.nav.find(page => page.slug === params.slug )
+  //   return (
+  //     query.preview === 'true' || store.state.settings.nav.includes(params.slug)
+  //   )
+  // },
+  async asyncData({ $sanity, store, route }) {
+    // debugger
+    const navPageId = store.state.settings.nav.find(page => page.slug === route.params.slug )
 
     const queryParams = { pageId: navPageId._id }
     // TODO Clean up query
@@ -59,7 +60,7 @@ export default {
       }
     }`
     const result = await $sanity.fetch(pageQuery, queryParams)
-    return result
+    return {...result}
   },
 }
 </script>

@@ -44,16 +44,20 @@ export default {
     }
   },
   methods: {
-    nextReview() {
-      return this.selectedIndex + 1
-    },
     previousReview() {
-      if(this.selectedIndex < this.numberOfReviews - 1){
-        return (this.selectedIndex += 1)
+      if(this.selectedIndex <= this.numberOfReviews - 1){
+        this.selectedIndex = this.numberOfReviews - 1
       } else {
         return (this.selectedIndex -= 1)
       }
-    }
+    },
+    nextReview() {
+       if(this.selectedIndex >= this.numberOfReviews - 1){
+         this.selectedIndex = 0
+      } else {
+        return (this.selectedIndex += 1)
+      }
+    }, 
   },
 }
 </script>

@@ -60,7 +60,7 @@ export default {
       }
     }`
     const result = await $sanity.fetch(pageQuery, queryParams)
-    return {...result}
+    return [...result]
   },
 }
 </script>

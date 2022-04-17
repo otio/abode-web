@@ -1,9 +1,10 @@
 <template>
-<div id="page-section-wrapper">
+  <div id="page-section-wrapper">
     <section
       v-for="component in pageComponents"
       :id="component._type"
       :key="component._key"
+      class="pt-24"
     >
       <component :is="component._type" v-bind="component" />
     </section>
@@ -14,17 +15,17 @@
 import { groq } from '@nuxtjs/sanity'
 
 export default {
- 
   // validate({ params, query, store }) {
-    
+
   //   return (
   //     query.preview === 'true' || store.state.settings.nav.includes(params.slug)
   //   )
   // },
   async asyncData({ $sanity, store, route }) {
     // debugger
-    const navPageId = store.state.settings.nav.find(page => page.slug === route.params.slug )
-
+    const navPageId = store.state.settings.nav.find(
+      (page) => page.slug === route.params.slug
+    )
     const queryParams = { pageId: navPageId._id }
     // TODO Clean up query
     const pageQuery = groq`*[ _id == $pageId ]{
@@ -60,10 +61,18 @@ export default {
       }
     }`
     const result = await $sanity.fetch(pageQuery, queryParams)
-    return [...result]
+    // debugger d
+    return result[0]
+  },
+  data() {
+    return {
+      pageData: {},
+    }
+  },
+  mounted() {
+    this.pageData = this.pageComponents
   },
 }
 </script>
-
 
 <style scoped></style>

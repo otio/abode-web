@@ -57,7 +57,6 @@ export default {
     const result = await $sanity.fetch(homeQuery, queryParams)
     return result[0]
   },
-  created() {},
 }
 </script>
 

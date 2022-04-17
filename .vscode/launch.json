@@ -5,27 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-          "name": "Launch via NPM",
+          "name": "Launch via Yarn",
           "request": "launch",
-          "runtimeArgs": [
-            "run-script",
-            "debug"
-          ],
-          "runtimeExecutable": "npm",
+          "runtimeExecutable": "yarn",
+          "runtimeArgs": ["dev"],
+          "runtimeVersion": "16.14.2",
           "skipFiles": [
             "<node_internals>/**"
           ],
-          "type": "node"
-        },
-        {
-          "name": "Web Attach",
+          "type": "node",
           "port": 3000,
-          "request": "attach",
-          "skipFiles": [
-            "<node_internals>/**"
-          ],
-          "type": "node"
         },
+        
         {
             "type": "chrome",
             "request": "launch",

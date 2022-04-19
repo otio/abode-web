@@ -3,15 +3,14 @@
     class="relative flex flex-row-reverse justify-center <md:(flex-col)"
     :class="articleLayout"
   >
-    <div id="testimonial-text" class="bg-whitesmoke p-16" :class="reviewLayout">
-      <div class="flex flex-col items-center justify-around">
-        <p class="text-3xl text-center leading-normal mb-8">
-          {{ review.testimonial }}
-        </p>
-
-        <p class="text-4xl text-center font-semibold">
-          {{ review.clientName }}
-        </p>
+    <div id="testimonial-text" class="bg-whitesmoke py-8" :class="reviewLayout">
+      <div class="relative px-16">
+        <div class="max-h-400px text-3xl text-center leading-normal mb-8" :class="messageLayout">
+          {{ testimonial }}
+        </div>
+        <div class="text-4xl text-center font-semibold">
+          {{ clientName }}
+        </div>
       </div>
     </div>
     <div v-show="!isPage" id="testimonial-image" class="origin-center">
@@ -34,7 +33,18 @@ export default {
       default: false,
     },
   },
+  data() {
+      return {
+          currentReview: ''
+      }
+  },
   computed: {
+    testimonial() {
+        return this.review?.testimonial
+    },
+    clientName() {
+        return this.review?.clientName
+    },
     imgUrl() {
       return this.review?.testimonialImage?.secure_url ?? '/nav-logo.png'
     },
@@ -44,13 +54,37 @@ export default {
         'w-full': this.isPage,
       }
     },
+    messageLayout() {
+      return {
+        'testimonial': this.showLink,
+      }
+    },
     articleLayout() {
       return {
         'px-100px': this.isPage,
       }
     },
+    messageLength() {
+        return this.testimonial.length
+    },
+    showLink() {
+        return this.messageLength > 234
+    }
+  },
+  methods: {
+    getMessage(review) {
+        this.currentReview = review.testimonial
+        return this.currentReview
+    },
+    
   },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.testimonial {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>

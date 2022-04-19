@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     previousReview() {
-      if (this.selectedIndex <= this.numberOfReviews - 1) {
+      if (this.selectedIndex <= 0) {
         this.selectedIndex = this.numberOfReviews - 1
       } else {
         return (this.selectedIndex -= 1)

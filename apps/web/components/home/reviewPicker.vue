@@ -57,7 +57,23 @@ export default {
       selectedIndex: 0,
     }
   },
+  computed: {},
   methods: {
+    // testimonialTrimmer(review) {
+    //   const testimonial = review?.testimonial
+    //   const testimonialLength = testimonial.length
+    //   if (typeof testimonial === 'string' && testimonialLength > 234) {
+    //     let characterLimit = testimonial.slice(0, 218)
+    //     const linkedTestimonial = `${characterLimit}...Read More ->`
+    //     //   const breakout = [...testimonial]
+    //     //   const short = breakout.splice(217, 0, '...Read More... ->')
+    //     review.testimonial = linkedTestimonial
+    //     debugger
+    //     return review
+    //   } else {
+    //     return review
+    //   }
+    // },
     previousReview() {
       if (this.selectedIndex <= 0) {
         this.selectedIndex = this.numberOfReviews - 1

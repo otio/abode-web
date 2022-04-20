@@ -1,21 +1,32 @@
 <template>
   <article
-    class="relative flex flex-row-reverse justify-center <md:(flex-col)"
+    class="relative flex flex-row-reverse justify-center items-center <md:(flex-col)"
     :class="articleLayout"
   >
     <div id="testimonial-text" class="bg-whitesmoke py-8" :class="reviewLayout">
       <div class="relative px-16">
-        <div class="max-h-400px text-3xl text-center leading-normal mb-8" :class="messageLayout">
-          {{ testimonial }}
+        <div
+          class="text-3xl text-center leading-normal mb-8"
+          :class="spacingStyle"
+        >
+          {{ !isPage && showLink ? shortened : testimonial }}
+          <span v-if="!isPage && showLink">
+            <NuxtLink
+              :to="`/testimonials?#${review._id}`"
+              class="text-firebrick"
+            >
+              ...Read More -></NuxtLink
+            >
+          </span>
         </div>
         <div class="text-4xl text-center font-semibold">
           {{ clientName }}
         </div>
       </div>
     </div>
-    <div v-show="!isPage" id="testimonial-image" class="origin-center">
-      <div class="relative w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)">
-        <img alt="" class="absolute left-12 top-14" :src="imgUrl" />
+    <div v-show="!isPage" id="testimonial-image" class="origin-center -mr-12">
+      <div class="w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)">
+        <img alt="" class="" :src="imgUrl" />
       </div>
     </div>
   </article>
@@ -23,10 +34,15 @@
 
 <script>
 export default {
+  name: 'ReviewCard',
   props: {
     review: {
       type: Object,
       default: () => {},
+    },
+    linkedTestimonial: {
+      type: String,
+      default: '',
     },
     isPage: {
       type: Boolean,
@@ -34,16 +50,20 @@ export default {
     },
   },
   data() {
-      return {
-          currentReview: ''
-      }
+    return {
+      currentReview: this.review?.testimonial,
+      linkedReview: '',
+    }
   },
   computed: {
     testimonial() {
-        return this.review?.testimonial
+      return this.currentReview
+    },
+    shortened() {
+      return this.currentReview.slice(0, 220)
     },
     clientName() {
-        return this.review?.clientName
+      return this.review?.clientName
     },
     imgUrl() {
       return this.review?.testimonialImage?.secure_url ?? '/nav-logo.png'
@@ -54,37 +74,29 @@ export default {
         'w-full': this.isPage,
       }
     },
-    messageLayout() {
-      return {
-        'testimonial': this.showLink,
-      }
-    },
+    // messageLayout() {
+    //   return {
+    //     'overflow-ellipsis': this.showLink,
+    //   }
+    // },
     articleLayout() {
       return {
         'px-100px': this.isPage,
       }
     },
+    spacingStyle() {
+      return {
+        'max-h-400px ': !this.isPage,
+      }
+    },
     messageLength() {
-        return this.testimonial.length
+      return this.currentReview.length
     },
     showLink() {
-        return this.messageLength > 234
-    }
-  },
-  methods: {
-    getMessage(review) {
-        this.currentReview = review.testimonial
-        return this.currentReview
+      return this.messageLength > 234
     },
-    
   },
 }
 </script>
 
-<style>
-.testimonial {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-</style>
+<style></style>

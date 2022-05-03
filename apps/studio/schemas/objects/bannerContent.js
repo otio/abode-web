@@ -4,9 +4,16 @@ export default {
   type: "object",
   fields: [
     {
+      name: "bannerImage",
+      title: "Banner Image",
+      description: 'Use this field instead of BG Image',
+      type: "image",
+    },
+    // DEPRECATE
+    {
       name: "bgImage",
       title: "BG Image",
-      description: "Cloudinary hosted Image URL",
+      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
       type: "cloudinary.asset",
     },
     {

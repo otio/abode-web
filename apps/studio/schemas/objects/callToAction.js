@@ -25,8 +25,20 @@ export default {
       },
     },
     {
+      name: "ctaImage",
+      title: "Image Asset",
+      description: 'Use this field in place of Image Asset field',
+      type: "image",
+      hidden: ({ parent }) =>
+        parent?.ctaStyle === undefined ||
+        parent?.ctaStyle === "block" ||
+        parent?.ctaStyle === "floater",
+    },
+    // DEPRECATE
+    {
       name: "imageAsset",
       title: "Image Asset",
+      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
       type: "cloudinary.asset",
       hidden: ({ parent }) =>
         // document?.ctaStyle === "hero" || document?.ctaStyle === "split",

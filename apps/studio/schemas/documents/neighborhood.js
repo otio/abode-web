@@ -10,8 +10,16 @@ export default {
       type: "string",
     },
     {
+      name: "areaImage",
+      title: "Area Image",
+      description: 'Use this field instead of Area Preview Image',
+      type: "image",
+    },
+    // DEPRECATE
+    {
       name: "areaPreviewImage",
       title: "Area Preview Image",
+      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
       type: "cloudinary.asset",
     },
     {

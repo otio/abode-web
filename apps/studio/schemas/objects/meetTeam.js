@@ -3,9 +3,16 @@ export default {
   title: "Meet team",
   type: "object",
   fields: [
+    // DEPRECATE
+    {
+      name: "teamImage2",
+      title: "Team Image",
+      type: "image",
+    },
     {
       name: "teamImage",
       title: "Team Image",
+      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
       type: "cloudinary.asset",
     },
     {

@@ -6,6 +6,9 @@
     "apps/*",
     "libs/*"
   ],
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "dev": "nx run-many --target=dev --all",
     "dev:web": "nx run web:dev",
@@ -14,9 +17,8 @@
     "build": "nx run-many --target=build --all",
     "build:web": "nx run web:build",
     "build:studio": "nx run studio:build",
-    "prerefresh": "shx rm -rf ./node_modules, yarn.lock",
-    "refresh": "nx run-many --target=clean --all",
-    "postrefresh": "yarn"
+    "prerefresh": "shx rm -rf node_modules yarn.lock",
+    "refresh": "nx run-many --target=clean --all"
   },
   "devDependencies": {
     "@nrwl/cli": "latest",

@@ -15,14 +15,14 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.24.1",
-    "@sanity/core": "^2.24.0",
-    "@sanity/dashboard": "^2.24.1",
-    "@sanity/default-layout": "^2.24.1",
-    "@sanity/default-login": "^2.24.1",
-    "@sanity/desk-tool": "^2.24.1",
-    "@sanity/production-preview": "^2.15.0",
-    "@sanity/vision": "^2.24.1",
+    "@sanity/base": "^2.29.5",
+    "@sanity/core": "^2.29.5",
+    "@sanity/dashboard": "^2.29.5",
+    "@sanity/default-layout": "^2.29.5",
+    "@sanity/default-login": "^2.29.5",
+    "@sanity/desk-tool": "^2.29.6",
+    "@sanity/production-preview": "^2.29.3",
+    "@sanity/vision": "^2.29.5",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
@@ -35,6 +35,6 @@
     "url": "https://github.com/otio/abode-web.git"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.27.0"
+    "@sanity/cli": "^2.29.6"
   }
 }

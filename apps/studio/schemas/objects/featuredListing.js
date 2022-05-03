@@ -15,8 +15,16 @@ export default {
       type: "string",
     },
     {
+      name: "listingImage",
+      title: "Listing Image",
+      description: 'Use this field in place of Location Image',
+      type: "image",
+    },
+    // DEPRECATE
+    {
       name: "locationImage",
       title: "Location Image",
+      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
       type: "cloudinary.asset",
     },
     {

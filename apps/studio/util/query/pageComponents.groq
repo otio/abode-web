@@ -12,7 +12,10 @@
       }
     },
      _type == 'reviewPicker' => {
-          clientReviews[]->{...}
+          clientReviews[]->{
+            ...,
+            "imgUrl":reviewImage.asset->{...}
+      }
     },
     _type == 'magazineSignup' => {
       ...,

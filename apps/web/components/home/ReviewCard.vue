@@ -66,7 +66,15 @@ export default {
       return this.review?.clientName
     },
     imgUrl() {
-      return this.review?.testimonialImage?.secure_url ?? '/nav-logo.png'
+      if(this.review?.imgUrl !== null){
+        return this.review.imgUrl.url
+      } 
+      // else if(this.review?.testimonialImage){
+      //   return this.review.testimonialImage.secure_url
+      // } 
+      else {
+        return '/Abode-Logo.svg'
+      }
     },
     reviewLayout() {
       return {

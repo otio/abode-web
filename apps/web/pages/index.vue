@@ -38,7 +38,7 @@ export default {
         _type == 'reviewPicker' => {
           clientReviews[]->{
             ...,
-            "imgUrl": reviewImage.asset->url,
+            "imgUrl": reviewImage.asset->{...},
           }
         },
         _type == 'magazineSignup' => {

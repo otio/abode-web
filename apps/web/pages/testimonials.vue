@@ -18,7 +18,10 @@ import { groq } from '@nuxtjs/sanity'
 export default {
   async asyncData({ $sanity, query }) {
     // TODO Clean up query
-    const reviewQuery = groq`*[ _type == 'clientReview' ]{ ... }`
+    const reviewQuery = groq`*[ _type == 'clientReview' ]{
+      ...,
+      "imgUrl":reviewImage.asset->{...}
+    }`
     const result = await $sanity.fetch(reviewQuery)
     return { testimonials: result, query }
   },

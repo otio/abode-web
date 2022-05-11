@@ -1,7 +1,7 @@
-// import { defineNuxtConfig } from '@nuxt/bridge'
+import { defineNuxtConfig } from '@nuxt/bridge'
 
-// export default defineNuxtConfig({
-export default {
+export default defineNuxtConfig({
+// export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   publicRuntimeConfig: {},
@@ -70,9 +70,9 @@ export default {
     // '@nuxtjs/tailwindcss',
     'nuxt-windicss',
     // '@nuxtjs/google-fonts',
-    '@nuxtjs/sanity/module',
+    '@nuxtjs/sanity',
     '@braid/vue-formulate/nuxt',
-    '@nuxtjs/sanity/module'
+    // '@nuxtjs/sanity/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -116,4 +116,4 @@ export default {
       }
     },
   },
-}
+})

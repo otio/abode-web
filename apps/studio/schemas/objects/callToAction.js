@@ -1,7 +1,7 @@
 export default {
   name: "callToAction",
   title: "Forms / Calls-to-Action",
-  type: "object",
+  type: "document",
   fields: [
     {
       name: "trackingTitle",

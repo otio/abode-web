@@ -27,6 +27,10 @@ export default {
     slug,
     "pageComponents": components[]{
         ...,
+         _type == 'bannerContent' => {
+          ...,
+          "imgUrl": bannerImage.asset->{...}
+        },
         _type == 'meetTeam' => {
           introText,
           teamImage,
@@ -54,6 +58,9 @@ export default {
         _type == 'marketingCta' => {
           ...,
           ctaCapture->{...}
+        },
+         _type == 'ctaPicker' => {
+          callToActionForms[]->{...}
         },
       }
     }`

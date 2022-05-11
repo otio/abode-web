@@ -15,16 +15,15 @@
     "lint": "yarn lint:js",
     "test": "jest"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@braid/vue-formulate": "^2.5.3",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/cloudinary": "^1.0.3",
-    "@nuxtjs/sanity": "^0.10.0",
+    "@nuxtjs/sanity": "^1.2.0",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.8"
-  },
-  "devDependencies": {
+    "nuxt": "^2.15.8",
     "@babel/eslint-parser": "^7.14.7",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",

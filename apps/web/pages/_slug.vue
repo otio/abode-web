@@ -33,6 +33,10 @@ export default {
     slug,
     "pageComponents": components[]{
         ...,
+         _type == 'bannerContent' => {
+          ...,
+          "imgUrl": bannerImage.asset->{...}
+        },
         _type == 'meetTeam' => {
           introText,
           teamImage,

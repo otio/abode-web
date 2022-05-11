@@ -8,6 +8,7 @@ import siteSettings from "./documents/siteSettings";
 import page from "./documents/page";
 import neighborhood from "./documents/neighborhood";
 import clientReview from "./documents/clientReview";
+import marketReport from "./documents/marketReport";
 
 // Objects
 import callToAction from "./objects/callToAction";
@@ -20,6 +21,8 @@ import featuredListing from "./objects/featuredListing";
 import magazineSignup from "./objects/magazineSignup";
 import areasServed from "./objects/areasServed";
 import marketingCta from "./objects/marketingCta";
+import marketReportsPicker from "./objects/marketReportsPicker";
+import ctaPicker from "./objects/ctaPicker";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,6 +36,7 @@ export default createSchema({
     callToAction,
     neighborhood,
     clientReview,
+    marketReport,
     /* Your Object types here! */
     bannerContent,
     reviewPicker,
@@ -43,6 +47,8 @@ export default createSchema({
     magazineSignup,
     areasServed,
     marketingCta,
+    marketReportsPicker,
+    ctaPicker
     /* Your Document types here! */
   ]),
 });

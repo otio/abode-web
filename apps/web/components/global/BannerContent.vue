@@ -68,13 +68,7 @@ export default {
   computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: imageWidth * 2,
-        height: imageHeight * 2 ?? null,
-        crop: 'fill',
-        gravity: 'west',
-        dpr: 'auto',
-      })
+      return this.$urlFor(this.publicId).width(imageWidth).height(imageHeight)
     },
   },
 }

@@ -72,6 +72,7 @@ export default {
     // '@nuxtjs/google-fonts',
     '@nuxtjs/sanity/module',
     '@braid/vue-formulate/nuxt',
+    '@nuxtjs/sanity/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -80,7 +81,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     // '@nuxt/content',
-    '@nuxtjs/cloudinary',
+    // '@nuxtjs/cloudinary',
   ],
   // googleFonts: {
   //   // preload: true,

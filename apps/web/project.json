@@ -8,7 +8,7 @@
       "options": {
         "commands": [
           {
-            "command": "nuxt"
+            "command": "nuxi dev"
           }
         ],
         "cwd": "apps/web"
@@ -30,7 +30,7 @@
       "options": {
         "commands": [
           {
-            "command": "nuxt start"
+            "command": "nuxi start"
           }
         ],
         "cwd": "apps/web"
@@ -41,7 +41,7 @@
       "options": {
         "commands": [
           {
-            "command": "nuxt generate"
+            "command": "nuxi generate"
           }
         ],
         "cwd": "apps/web"

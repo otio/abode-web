@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 // export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  bridge: true,
   publicRuntimeConfig: {},
   sanity: {
     projectId: process.env.SANITY_PUBLIC_PROJECT_ID,
@@ -66,19 +67,19 @@ export default defineNuxtConfig({
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // '@nuxtjs/tailwindcss',
-    'nuxt-windicss',
+    // 'nuxt-windicss',
     // '@nuxtjs/google-fonts',
-    '@nuxtjs/sanity',
-    '@braid/vue-formulate/nuxt',
+    // '@nuxtjs/sanity',
+    // '@braid/vue-formulate/nuxt',
     // '@nuxtjs/sanity/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     // '@nuxt/content',
     // '@nuxtjs/cloudinary',

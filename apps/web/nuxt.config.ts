@@ -4,12 +4,15 @@ export default defineNuxtConfig({
 // export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  bridge: true,
+  bridge: {
+    app: false
+  },
   publicRuntimeConfig: {},
   sanity: {
     projectId: process.env.SANITY_PUBLIC_PROJECT_ID,
     dataset: process.env.SANITY_PUBLIC_DATASET,
     apiVersion: '2021-10-21',
+    globalHelper: true,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -57,12 +60,12 @@ export default defineNuxtConfig({
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: ['~/components', '~/components/global', '~/components/home'],
-  },
-  generate: {
-    fallback: true,
-  },
+  // components: {
+  //   dirs: ['~/components', '~/components/global', '~/components/home'],
+  // },
+  // generate: {
+  //   fallback: true,
+  // },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -71,13 +74,13 @@ export default defineNuxtConfig({
     // '@nuxtjs/tailwindcss',
     // 'nuxt-windicss',
     // '@nuxtjs/google-fonts',
-    // '@nuxtjs/sanity',
     // '@braid/vue-formulate/nuxt',
     // '@nuxtjs/sanity/module'
   ],
-
+  
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/sanity',
     // https://go.nuxtjs.dev/axios
     // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
@@ -100,21 +103,22 @@ export default defineNuxtConfig({
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
-  cloudinary: {
-    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    secure: true,
-    useComponent: true,
-  },
+  // cloudinary: {
+  //   cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+  //   secure: true,
+  //   useComponent: true,
+  // },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   // content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  builder: 'webpack',
   build: {
-    extend(config, ctx) {
-      if (ctx.isDev) {
-        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
-      }
-    },
+    // extend(config, ctx) {
+    //   if (ctx.isDev) {
+    //     config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+    //   }
+    // },
   },
 })

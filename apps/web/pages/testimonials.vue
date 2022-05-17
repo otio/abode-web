@@ -12,31 +12,33 @@
   </div>
 </template>
 
-<script>
-import { groq } from '@nuxtjs/sanity'
+<script setup>
+import { groq, useSanity } from '@nuxtjs/sanity'
 
-export default {
-  async asyncData({ $sanity, query }) {
+    const sanity = useSanity()
     // TODO Clean up query
     const reviewQuery = groq`*[ _type == 'clientReview' ]{
       ...,
       "imgUrl":reviewImage.asset->{...}
     }`
-    const result = await $sanity.fetch(reviewQuery)
-    return { testimonials: result, query }
-  },
-  mounted() {
-    this.scrollToReview()
-  },
-  methods: {
-    scrollToReview() {
-      if (document && this.query?.id) {
-        const review = document.getElementById(this.query.id)
-        return review.scrollIntoView({ behavior: 'smooth' })
-      }
-    },
-  },
-}
+// export default {
+  const {data} = await useAsyncData('testimonials', () => sanity.fetch(reviewQuery) ) 
+
+//  { testimonials: result, query }
+
+  // mounted() {
+  //   this.scrollToReview()
+  // },
+  // methods: {
+  //   scrollToReview() {
+  //     if (document && this.query?.id) {
+  //       const review = document.getElementById(this.query.id)
+  //       return review.scrollIntoView({ behavior: 'smooth' })
+  //     }
+  //   },
+  // },
+
+// }
 </script>
 
 <style scoped></style>

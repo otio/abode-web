@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
+import { groq, useSanity } from '@nuxtjs/sanity'
 
 export default {
   // validate({ params, query, store }) {
@@ -21,7 +21,8 @@ export default {
   //     query.preview === 'true' || store.state.settings.nav.includes(params.slug)
   //   )
   // },
-  async asyncData({ $sanity, store, route }) {
+  async asyncData({ store, route }) {
+    const sanity = useSanity()
     // debugger
     const navPageId = store.state.settings.nav.find(
       (page) => page.slug === route.params.slug
@@ -64,7 +65,7 @@ export default {
         },
       }
     }`
-    const result = await $sanity.fetch(pageQuery, queryParams)
+    const result = await sanity.fetch(pageQuery, queryParams)
     // debugger d
     return result[0]
   },

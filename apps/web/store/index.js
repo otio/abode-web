@@ -1,4 +1,4 @@
-import { groq } from '@nuxtjs/sanity'
+import { groq, useSanity } from '@nuxtjs/sanity'
 
 export const state = () => ({
   settings: {},
@@ -11,7 +11,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }, { $sanity }) {
+  async nuxtServerInit({ commit }) {
     const navPages = groq`*[_type == "siteSettings"][0]{
       // ...,
       "home": homepage->{
@@ -25,7 +25,8 @@ export const actions = {
         "slug": slug.current
       }
     }`
-    const nav = await $sanity.fetch(navPages)
+    const sanity = useSanity()
+    const nav = await sanity.fetch(navPages)
     commit('INITIALIZE', nav)
     // if (req.session.user) {
     //   commit('user', req.session.user)

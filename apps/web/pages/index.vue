@@ -10,16 +10,10 @@
   </div>
 </template>
 
-<script>
-import { groq } from '@nuxtjs/sanity'
+<script setup>
+import { groq, useSanity } from '@nuxtjs/sanity'
 
-export default {
-  validate({ query, store }) {
-    return (
-      query.preview === 'true' || store.state.settings.home.slug === 'index'
-    )
-  },
-  async asyncData({ $sanity, store }) {
+    const sanity = useSanity()
     const queryParams = { homeId: store.state.settings.home._id }
     // TODO Clean up query
     const homeQuery = groq`*[ _id == $homeId ]{
@@ -64,10 +58,16 @@ export default {
         },
       }
     }`
-    const result = await $sanity.fetch(homeQuery, queryParams)
-    return result[0]
-  },
-}
+
+// export default {
+  // validate({ query, store }) {
+  //   return (
+  //     query.preview === 'true' || store.state.settings.home.slug === 'index'
+  //   )
+  // },
+  const { data } = await useAsyncData('home', () => sanity.fetch(homeQuery, queryParams) ) 
+
+// }
 </script>
 
 <style scoped></style>

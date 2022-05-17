@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   bridge: {
-    app: false
+  //   meta: false,
+  //   capi: {
+  //     legacy: false
+  //   }
+    nitro: false,
   },
   publicRuntimeConfig: {},
   sanity: {

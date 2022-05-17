@@ -11,10 +11,12 @@
 </template>
 
 <script setup>
+import { useNuxtApp, useAsyncData } from '@nuxt/bridge'
 import { groq, useSanity } from '@nuxtjs/sanity'
+const { $store } = useNuxtApp()
 
     const sanity = useSanity()
-    const queryParams = { homeId: store.state.settings.home._id }
+    const queryParams = { homeId: $store.state.settings.home._id }
     // TODO Clean up query
     const homeQuery = groq`*[ _id == $homeId ]{
     title,
@@ -59,13 +61,13 @@ import { groq, useSanity } from '@nuxtjs/sanity'
       }
     }`
 
+  const { data } = await useAsyncData('home', () => sanity.fetch(homeQuery, queryParams) ) 
 // export default {
   // validate({ query, store }) {
   //   return (
   //     query.preview === 'true' || store.state.settings.home.slug === 'index'
   //   )
   // },
-  const { data } = await useAsyncData('home', () => sanity.fetch(homeQuery, queryParams) ) 
 
 // }
 </script>

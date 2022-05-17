@@ -8,7 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
+    "build": "nuxi generate",
     "start": "nuxi preview",
     "generate": "nuxi generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",

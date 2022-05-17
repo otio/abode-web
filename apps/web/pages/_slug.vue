@@ -6,7 +6,7 @@
       :key="component._key"
       class="pt-24"
     >
-      <component :is="component._type" v-bind="component" />
+      <component :is="component._type" :options="component" />
     </section>
   </div>
 </template>

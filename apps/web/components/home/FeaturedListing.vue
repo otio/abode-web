@@ -53,20 +53,26 @@
 
 <script>
 export default {
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
-      intro: this.$attrs?.featuredIntro,
+      intro: this.options?.featuredIntro,
       listingDetails: {
         // address: '60 Ora Way #H303, San Francisco, CA 94131',
         features: [
-          { label: 'Beds', value: this.$attrs.locationFeatures.beds },
-          { label: 'Baths', value: this.$attrs.locationFeatures.baths },
-          { label: 'Sq. Ft', value: this.$attrs.locationFeatures.sqft },
-          { label: 'Garage', value: this.$attrs.locationFeatures.garages },
+          { label: 'Beds', value: this.options?.locationFeatures.beds },
+          { label: 'Baths', value: this.options?.locationFeatures.baths },
+          { label: 'Sq. Ft', value: this.options?.locationFeatures.sqft },
+          { label: 'Garage', value: this.options?.locationFeatures.garages },
         ],
       },
-      listingImageId: this.$attrs?.locationImage?.public_id,
-      address: this.$attrs?.address,
+      listingImageId: this.options?.locationImage?.public_id,
+      address: this.options?.address,
     }
   },
   methods: {

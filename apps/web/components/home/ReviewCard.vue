@@ -36,6 +36,10 @@
 export default {
   name: 'ReviewCard',
   props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
     review: {
       type: Object,
       default: () => {},

@@ -25,15 +25,21 @@
 
 <script>
 export default {
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   computed: {
     headline() {
-      return this.$attrs.headline
+      return this.options?.headline
     },
     chaser() {
-      return this.$attrs.chaser
+      return this.options?.chaser
     },
     paragraph() {
-      return this.$attrs.paragraphText
+      return this.options?.paragraphText
     },
   },
 }

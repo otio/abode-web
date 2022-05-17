@@ -76,12 +76,8 @@
 export default {
   props: {
     options: {
-      type: Object,
-      default: () => ({
-        callHeading: 'Call to action heading',
-        buttonLabel: 'Submit',
-        submitToUrl: '_blank',
-      }),
+      type: Object || Array,
+      default: () => ({}),
     },
   },
   data() {

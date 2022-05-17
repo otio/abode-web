@@ -9,7 +9,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
+}
 </script>
 
 <style scoped>

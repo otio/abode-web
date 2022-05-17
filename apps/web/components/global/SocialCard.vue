@@ -45,6 +45,10 @@
 export default {
   name: 'SocialCard',
   props: {
+     options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
     cardInfo: {
       type: Object,
       default: () => ({

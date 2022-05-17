@@ -32,6 +32,12 @@
 
 <script>
 export default {
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       agents: [

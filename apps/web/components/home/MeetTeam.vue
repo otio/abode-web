@@ -38,7 +38,7 @@
           <p
             class="font-body text-3xl leading-loose sm:(text-2xl leading-normal) xs:(text-2xl leading-normal)"
           >
-            {{ $attrs.introText.paragraphText }}
+            {{ paragraph }}
           </p>
         </div>
         <!-- <button class="rounded bg-firebrick p-1.5rem cursor-pointer">
@@ -52,6 +52,12 @@
 <script>
 export default {
   name: 'MeetTeam',
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       teamImageId: this.$attrs?.teamImage?.public_id,
@@ -60,6 +66,9 @@ export default {
   computed: {
     headline() {
       return this.$attrs?.introText?.headline
+    },
+    paragraph() {
+      return this.options?.introText?.paragraphText
     },
   },
   methods: {

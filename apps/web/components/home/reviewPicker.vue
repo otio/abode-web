@@ -50,10 +50,16 @@
 <script>
 export default {
   name: 'ClientReview',
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
-      reviews: this.$attrs?.clientReviews,
-      numberOfReviews: this.$attrs?.clientReviews.length,
+      reviews: this.options?.clientReviews,
+      numberOfReviews: this.options?.clientReviews.length,
       selectedIndex: 0,
     }
   },

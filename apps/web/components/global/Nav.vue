@@ -26,13 +26,12 @@
 <script>
 export default {
   name: 'Nav',
-  // props: {
-  //   navLinks: {
-  //     type: Array,
-  //     default: () => [],
-  //   },
-  // },
-
+  props: {
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
+  },
   data() {
     return {
       initial: [],

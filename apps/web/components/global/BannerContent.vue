@@ -42,7 +42,7 @@
     <div class="absolute inset-10rem xs:(inset-1rem mt-7rem)">
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
       <div class="flex flex-col">
-        <div v-for="block in bannerComponents" :key="block._key">
+        <div v-for="block in options.bannerComponents" :key="block._key">
           <component :is="block._type" v-bind="block" />
         </div>
       </div>
@@ -59,22 +59,23 @@ export default {
       default: () => ({}),
     },
   },
-  data() {
-    return {
-      bannerComponents: this.$attrs.bannerComponents,
-      publicId: this.$attrs?.bgImage?.public_id,
-    }
-  },
+  // data() {
+  //   return {
+  //     bannerComponents: this.options.bannerComponents,
+  //     publicId: this.options?.imgUrl?.url,
+  //   }
+  // },
   computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {
-      return this.$cloudinary.image.url(this.publicId, {
-        width: imageWidth * 2,
-        height: imageHeight * 2 ?? null,
-        crop: 'fill',
-        gravity: 'west',
-        dpr: 'auto',
-      })
+      return this.$urlFor(this.options?.imgUrl?.assetId).width(imageWidth * 2).height(imageHeight * 2 ?? null).url()
+      // {
+      //   width: imageWidth * 2,
+      //   height: imageHeight * 2 ?? null,
+      //   crop: 'fill',
+      //   gravity: 'west',
+      //   dpr: 'auto',
+      // }
     },
   },
 }

@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "nx run-many --target=dev --all",
     "dev:web": "nx run web:dev",
+    "debug:web": "nx run web:debug --verbose",
     "dev:studio": "nx run studio:dev",
     "dev:netlify": "nx run-many --target=netlify --all",
     "build": "nx run-many --target=build --all",

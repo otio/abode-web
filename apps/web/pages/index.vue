@@ -14,11 +14,12 @@
 import { groq } from '@nuxtjs/sanity'
 
 export default {
-  validate({ query, store }) {
-    return (
-      query.preview === 'true' || store.state.settings.home.slug === 'index'
-    )
-  },
+  // TODO Implement validation params
+  // validate({ query, store }) {
+  //   return (
+  //     query.preview === 'true' || store.state.settings.home.slug === 'index'
+  //   )
+  // },
   async asyncData({ $sanity, store }) {
     const queryParams = { homeId: store.state.settings.home._id }
     // TODO Clean up query
@@ -33,11 +34,15 @@ export default {
         },
         _type == 'meetTeam' => {
           introText,
-          teamImage,
+          "imgUrl": teamImage2.asset->{...},
           "page": meetTeamPage{
             ...,
             linkToPage->{...}
           }
+        },
+        _type == 'featuredListing' => {
+          ...,
+          "imgUrl": listingImage.asset->{...}
         },
         _type == 'reviewPicker' => {
           clientReviews[]->{

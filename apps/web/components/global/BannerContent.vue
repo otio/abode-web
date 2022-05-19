@@ -43,7 +43,7 @@
       <!-- <div class="absolute top-18rem left-26.25rem"> -->
       <div class="flex flex-col">
         <div v-for="block in options.bannerComponents" :key="block._key">
-          <component :is="block._type" v-bind="block" />
+          <component :is="block._type" :options="block" />
         </div>
       </div>
     </div>
@@ -68,7 +68,15 @@ export default {
   computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {
-      return this.$urlFor(this.options?.imgUrl?.assetId).width(imageWidth * 2).height(imageHeight * 2 ?? null).url()
+      // debugger
+      try {
+        return this.$urlFor(this.options?.imgUrl?._id)
+          .width(imageWidth * 2)
+          .height(imageHeight * 2 ?? null)
+          .url()
+      } catch (error) {
+        console.error(error)
+      }
       // {
       //   width: imageWidth * 2,
       //   height: imageHeight * 2 ?? null,

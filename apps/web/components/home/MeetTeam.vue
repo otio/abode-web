@@ -73,15 +73,14 @@ export default {
   },
   methods: {
     imgSize(imageWidth, imageHeight = 'auto') {
-      return this.$cloudinary.image.url(this.teamImageId, {
-        width: imageWidth,
-        height: imageHeight,
-        // aspectRatio: 577.701,
-        // crop: 'fill',
-        // gravity: 'west',
-        // dpr: 'auto',
-        // format: 'webp',
-      })
+      try {
+        return this.$urlFor(this.options?.imgUrl?._id)
+          .width(imageWidth)
+          .height(imageHeight)
+          .url()
+      } catch (error) {
+        console.error(error)
+      }
     },
   },
 }

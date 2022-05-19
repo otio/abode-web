@@ -15,7 +15,7 @@
               :to="`/testimonials?#${review._id}`"
               class="text-firebrick"
             >
-              ...Read More -></NuxtLink
+              ...Read More</NuxtLink
             >
           </span>
         </div>
@@ -26,7 +26,7 @@
     </div>
     <div v-show="!isPage" id="testimonial-image" class="origin-center -mr-12">
       <div class="w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)">
-        <img alt="" class="" :src="imgUrl" />
+        <img alt="" :src="reviewImg" class="" />
       </div>
     </div>
   </article>
@@ -36,10 +36,10 @@
 export default {
   name: 'ReviewCard',
   props: {
-    options: {
-      type: Object || Array,
-      default: () => ({}),
-    },
+    // options: {
+    //   type: Object || Array,
+    //   default: () => ({}),
+    // },
     review: {
       type: Object,
       default: () => {},
@@ -60,25 +60,31 @@ export default {
     }
   },
   computed: {
-    testimonial() {
-      return this.currentReview
-    },
-    shortened() {
-      return this.currentReview.slice(0, 220)
+    articleLayout() {
+      return {
+        'px-100px': this.isPage,
+      }
     },
     clientName() {
       return this.review?.clientName
     },
-    imgUrl() {
-      if(this.review?.imgUrl !== null){
-        return this.review.imgUrl.url
-      } 
-      // else if(this.review?.testimonialImage){
-      //   return this.review.testimonialImage.secure_url
-      // } 
-      else {
+    // messageLayout() {
+    //   return {
+    //     'overflow-ellipsis': this.showLink,
+    //   }
+    // },
+    messageLength() {
+      return this.currentReview.length
+    },
+    reviewImg() {
+      if (this.review?.imgUrl !== null) {
+        return this.review.imgUrl?.url
+      } else if (this.review?.testimonialImage) {
+        return this.review.testimonialImage.url
+      } else {
         return '/Abode-Logo.svg'
       }
+      // this.review?.imgUrl !== null ? this.review.imgUrl.url : this.reviee
     },
     reviewLayout() {
       return {
@@ -86,28 +92,22 @@ export default {
         'w-full': this.isPage,
       }
     },
-    // messageLayout() {
-    //   return {
-    //     'overflow-ellipsis': this.showLink,
-    //   }
-    // },
-    articleLayout() {
-      return {
-        'px-100px': this.isPage,
-      }
+    shortened() {
+      return this.currentReview.slice(0, 220)
+    },
+    showLink() {
+      return this.messageLength > 234
     },
     spacingStyle() {
       return {
         'max-h-400px ': !this.isPage,
       }
     },
-    messageLength() {
-      return this.currentReview.length
-    },
-    showLink() {
-      return this.messageLength > 234
+    testimonial() {
+      return this.currentReview
     },
   },
+  methods: {},
 }
 </script>
 

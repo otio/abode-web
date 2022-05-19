@@ -25,6 +25,7 @@ export const actions = {
         "slug": slug.current
       }
     }`
+    // debugger
     const nav = await $sanity.fetch(navPages)
     commit('INITIALIZE', nav)
     // if (req.session.user) {

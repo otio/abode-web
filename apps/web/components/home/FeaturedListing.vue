@@ -76,16 +76,15 @@ export default {
     }
   },
   methods: {
-    imgSize(imageWidth, imageHeight = 'auto') {
-      return this.$cloudinary.image.url(this.listingImageId, {
-        width: imageWidth,
-        height: imageHeight,
-        // aspectRatio: 1,
-        // crop: 'fit',
-        // gravity: 'west',
-        // dpr: 'auto',
-        // format: 'webp',
-      })
+    imgSize(imageWidth, imageHeight) {
+      try {
+        return this.$urlFor(this.options?.imgUrl?._id)
+          .width(imageWidth)
+          .height(imageHeight)
+          .url()
+      } catch (error) {
+        console.error(error)
+      }
     },
   },
 }

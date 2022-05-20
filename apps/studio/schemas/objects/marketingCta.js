@@ -1,6 +1,7 @@
 export default {
+  // DEPRECATE
   name: "marketingCta",
-  title: "Marketing cta",
+  title: "Marketing Call-To-Action",
   type: "object",
   fields: [
     {

@@ -64,6 +64,9 @@ export default {
           ...,
           ctaCapture->{...}
         },
+         _type == 'ctaPicker' => {
+          callToActionForms[]->{...}
+        },
       }
     }`
     const result = await $sanity.fetch(homeQuery, queryParams)

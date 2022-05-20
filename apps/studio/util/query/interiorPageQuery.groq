@@ -3,6 +3,10 @@
     slug,
     "pageComponents": components[]{
         ...,
+         _type == 'bannerContent' => {
+          ...,
+          bannerImage.asset->{...}
+        },
         _type == 'meetTeam' => {
           introText,
           teamImage,
@@ -24,9 +28,13 @@
           _type,
           areaPages[]->{...}
         },
+        // DEPRECATE
         _type == 'marketingCta' => {
           ...,
           ctaCapture->{...}
+        },
+        _type == 'ctaPicker' => {
+          callToActionForms[]->{...}
         },
       }
 }

@@ -1,7 +1,7 @@
 <template>
-  <!-- TODO: change BG image sizing for responsivness -->
   <div :class="layoutPicker" :style="cssBackground">
-    <div :class="ctaPicker" class="">
+    <!-- TODO: change BG image sizing for responsivness -->
+    <div :class="ctaTypePicker">
       <div
         v-show="componentStyle === 'split'"
         id="split-image"
@@ -32,8 +32,8 @@
             class="flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)"
           >
             <div
-              v-for="(field, index) in $attrs.inputFields"
-              :key="index"
+              v-for="(field, index) in formInputs"
+              :key="index + 1"
               class="w-full xs:(text-center)"
             >
               <FormulateInput
@@ -53,7 +53,7 @@
             </div>
           </div>
         </FormulateForm>
-        <div v-else-if="bonusAsset !== ''">
+        <div v-else-if="bonusAsset !== null">
           <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
           <p
             id="bonus-asset"
@@ -83,32 +83,37 @@ export default {
   data() {
     return {
       formValues: {},
-      bgImageId: this.$attrs.imageAsset?.public_id,
-      componentStyle: this.$attrs.ctaStyle,
+      bgImageId: this.options?.form?.imageUrl?._id,
+      componentStyle: this.options?.form?.ctaStyle,
       isSubmitted: false,
     }
   },
   computed: {
     headline() {
-      return this.$attrs?.headline ?? ''
+      return this.options?.form?.headline ?? ''
     },
     chaser() {
-      return this.$attrs?.chaser ?? ''
+      return this.options?.form?.chaser ?? ''
     },
     floater() {
-      return this.$attrs?.floater ?? ''
+      return this.options?.form?.floater ?? ''
     },
     headlineStyle() {
       return `${this.componentStyle}-headline`
     },
+    formInputs() {
+      return this.options?.form?.inputFields ?? []
+    },
     isSolid() {
-      return this.$attrs.solidBackground ? 'bg-whitesmoke bg-opacity-80' : ''
+      return this.options?.form?.solidBackground
+        ? 'bg-whitesmoke bg-opacity-80'
+        : ''
     },
     buttonLabel() {
-      return this.$attrs.buttonLabel ?? 'Submit'
+      return this.options?.form?.buttonLabel ?? 'Submit'
     },
     formSubmissionUrl() {
-      return this.$attrs?.submitUrl ?? '_blank'
+      return this.options?.form?.submitUrl ?? '_blank'
     },
     formId() {
       return this.getFormId(this.formSubmissionUrl)[0]
@@ -129,7 +134,7 @@ export default {
           return ''
       }
     },
-    ctaPicker() {
+    ctaTypePicker() {
       switch (this.componentStyle) {
         case 'split':
           return `${this.isSolid} flex flex-row justify-between items-center p-6rem xl:(flex-col-reverse) lg:(flex-col-reverse) md:(flex-col-reverse) sm:(flex-col-reverse) xs:(flex-col-reverse p-0 mx-2)`
@@ -152,11 +157,8 @@ export default {
       }
     },
     bonusAsset() {
-      return this.$attrs?.bonusAsset ?? ''
+      return this.options?.form?.bonusAsset ?? ''
     },
-  },
-  mounted() {
-    // this.configureAhoy()
   },
   methods: {
     placeholder(field) {
@@ -173,15 +175,16 @@ export default {
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
     },
-    imgSize(imageWidth, imageHeight = 'auto') {
-      return this.$cloudinary.image.url(this.bgImageId, {
-        width: imageWidth,
-        height: imageHeight,
-        // crop: 'fill',
-        // gravity: 'center',
-        // dpr: 'auto',
-        // format: 'webp',
-      })
+    imgSize(imageWidth, imageHeight) {
+      try {
+        return this.$urlFor(this.options?.form?.imgUrl?._id)
+          .width(imageWidth)
+          .height(imageHeight)
+          .url()
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error)
+      }
     },
     async submitHandler(data) {
       this.$axios.setHeader('Accept', 'application/json')

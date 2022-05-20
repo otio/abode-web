@@ -64,8 +64,11 @@ export default {
           ...,
           ctaCapture->{...}
         },
-         _type == 'ctaPicker' => {
-          callToActionForms[]->{...}
+        _type == 'ctaPicker' => {
+          "form": callToActionForms[0]->{
+            ...,
+            "imgUrl":ctaImage.asset->{...},
+          }
         },
       }
     }`

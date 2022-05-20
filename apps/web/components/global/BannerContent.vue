@@ -68,7 +68,6 @@ export default {
   computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {
-      // debugger
       try {
         return this.$urlFor(this.options?.imgUrl?._id)
           .width(imageWidth * 2)
@@ -77,13 +76,6 @@ export default {
       } catch (error) {
         console.error(error)
       }
-      // {
-      //   width: imageWidth * 2,
-      //   height: imageHeight * 2 ?? null,
-      //   crop: 'fill',
-      //   gravity: 'west',
-      //   dpr: 'auto',
-      // }
     },
   },
 }

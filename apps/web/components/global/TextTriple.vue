@@ -1,12 +1,6 @@
 <template>
   <div class="xs:(w-full)">
-    <div class="mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)">
-      <h1
-        class="font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)"
-      >
-        {{ headline }}
-      </h1>
-    </div>
+    <textHeadline :headline-type="headlineStyle">{{ headline }}</textHeadline>
     <div class="text-3xl text-white text-center self-stretch">
       <p class="font-light tracking-wider">
         {{ chaser }}
@@ -32,14 +26,17 @@ export default {
     },
   },
   computed: {
-    headline() {
-      return this.options?.headline
-    },
     chaser() {
-      return this.options?.chaser
+      return this.options?.chaser ?? ''
+    },
+    headline() {
+      return this.options?.headline ?? ''
+    },
+    headlineStyle() {
+      return this.options?.headlineStyle ?? ''
     },
     paragraph() {
-      return this.options?.paragraphText
+      return this.options?.paragraphText ?? ''
     },
   },
 }

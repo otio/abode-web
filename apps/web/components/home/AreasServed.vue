@@ -34,6 +34,7 @@
 </template>
 
 <script>
+// TODO Fix image handling
 export default {
   props: {
     options: {
@@ -43,7 +44,7 @@ export default {
   },
   data() {
     return {
-      neighborhoods: this.$attrs?.areaPages,
+      neighborhoods: this.options?.areaPages,
     }
   },
 }

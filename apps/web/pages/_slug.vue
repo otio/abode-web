@@ -4,7 +4,6 @@
       v-for="component in pageComponents"
       :id="component._type"
       :key="component._key"
-      class="pt-24"
     >
       <component :is="component._type" :options="component" />
     </section>
@@ -12,9 +11,10 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
+import { mainPage } from '../assets/js/sanityQueries'
 
 export default {
+  layout: 'interior',
   // validate({ params, query, store }) {
 
   //   return (
@@ -27,40 +27,7 @@ export default {
       (page) => page.slug === route.params.slug
     )
     const queryParams = { pageId: navPageId._id }
-    // TODO Clean up query
-    const pageQuery = groq`*[ _id == $pageId ]{
-    title,
-    slug,
-    "pageComponents": components[]{
-        ...,
-        _type == 'meetTeam' => {
-          introText,
-          teamImage,
-          "page": meetTeamPage{
-            ...,
-            linkToPage->{...}
-          }
-        },
-        _type == 'reviewPicker' => {
-          clientReviews[]->{...}
-        },
-        _type == 'magazineSignup' => {
-          ...,
-          promoImage,
-          signup->{...}
-        },
-        _type == 'areasServed' => {
-          _key,
-          _type,
-          areaPages[]->{...}
-        },
-        _type == 'marketingCta' => {
-          ...,
-          ctaCapture->{...}
-        },
-      }
-    }`
-    const result = await $sanity.fetch(pageQuery, queryParams)
+    const result = await $sanity.fetch(mainPage('pageId'), queryParams)
     // debugger d
     return result[0]
   },
@@ -68,9 +35,6 @@ export default {
     return {
       pageData: {},
     }
-  },
-  mounted() {
-    this.pageData = this.pageComponents
   },
 }
 </script>

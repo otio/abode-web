@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { groq } from '@nuxtjs/sanity'
+import { mainPage } from '../assets/js/sanityQueries'
 
 export default {
   // TODO Implement validation params
@@ -23,56 +23,7 @@ export default {
   async asyncData({ $sanity, store }) {
     const queryParams = { homeId: store.state.settings.home._id }
     // TODO Clean up query
-    const homeQuery = groq`*[ _id == $homeId ]{
-    title,
-    slug,
-    "pageComponents": components[]{
-        ...,
-        _type == 'bannerContent' => {
-          bannerComponents,
-          "imgUrl": bannerImage.asset->{...}
-        },
-        _type == 'meetTeam' => {
-          introText,
-          "imgUrl": teamImage2.asset->{...},
-          "page": meetTeamPage{
-            ...,
-            linkToPage->{...}
-          }
-        },
-        _type == 'featuredListing' => {
-          ...,
-          "imgUrl": listingImage.asset->{...}
-        },
-        _type == 'reviewPicker' => {
-          clientReviews[]->{
-            ...,
-            "imgUrl": reviewImage.asset->{...},
-          }
-        },
-        _type == 'magazineSignup' => {
-          ...,
-          promoImage,
-          signup->{...}
-        },
-        _type == 'areasServed' => {
-          _key,
-          _type,
-          areaPages[]->{...}
-        },
-        _type == 'marketingCta' => {
-          ...,
-          ctaCapture->{...}
-        },
-        _type == 'ctaPicker' => {
-          "form": callToActionForms[0]->{
-            ...,
-            "imgUrl":ctaImage.asset->{...},
-          }
-        },
-      }
-    }`
-    const result = await $sanity.fetch(homeQuery, queryParams)
+    const result = await $sanity.fetch(mainPage('homeId'), queryParams)
     return result[0]
   },
 }

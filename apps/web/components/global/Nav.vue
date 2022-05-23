@@ -1,6 +1,7 @@
 <template>
   <div
     class="flex flex-row items-center justify-evenly absolute w-screen px-16 py-8 z-60"
+    :class="navBackground"
   >
     <!-- TODO: Conditionally position Logo basedon presence of Nav links -->
     <nuxt-link to="/" class=""><Logo /></nuxt-link>
@@ -31,6 +32,10 @@ export default {
       type: Object || Array,
       default: () => ({}),
     },
+    isInterior: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -44,6 +49,18 @@ export default {
     cleanNavlinks() {
       return this.initial.nav
     },
+    desktopMenu() {
+      return {
+        'flex-row': true,
+        'justify-end': true,
+        'items-center': true,
+      }
+    },
+    navBackground() {
+      return {
+        'bg-white/70': this.isInterior === true,
+      }
+    },
     innerWidth() {
       if (process.client) {
         const width = window.innerWidth
@@ -54,13 +71,6 @@ export default {
     },
     isMobile() {
       return this.innerWidth <= 1024
-    },
-    desktopMenu() {
-      return {
-        'flex-row': true,
-        'justify-end': true,
-        'items-center': true,
-      }
     },
     mobileMenu() {
       return {

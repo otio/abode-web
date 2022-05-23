@@ -9,6 +9,21 @@ export default {
       type: "string",
     },
     {
+      name: "headlineStyle",
+      title: "headlineStyle",
+      type: "string",
+      options: {
+        layout: "dropdown",
+        list: [
+          { title: "Centered-Bold-Red", value: "center-bold-red" },
+          { title: "Lower-Medium-White", value: "lower-med-white" },
+          { title: "Left-Medium-Transparent", value: "left-med-trans" },
+        ],
+      },
+      hidden: ({ parent }) => parent.headline !== "",
+      // validation: (Rule) => Rule.required(),
+    },
+    {
       name: "chaser",
       title: "Chaser",
       type: "string",

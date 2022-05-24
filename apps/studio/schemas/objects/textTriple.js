@@ -20,7 +20,7 @@ export default {
           { title: "Left-Medium-Transparent", value: "left-med-trans" },
         ],
       },
-      hidden: ({ parent }) => parent.headline !== "",
+      hidden: ({ parent }) => parent?.headline === undefined,
       // validation: (Rule) => Rule.required(),
     },
     {

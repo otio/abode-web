@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-start <xs:flex-wrap">
-    <header class="z-60">
+    <header class="z-60 relative">
       <!-- <client-only><PreviewBanner /></client-only> -->
       <Nav class="pb-16" />
     </header>

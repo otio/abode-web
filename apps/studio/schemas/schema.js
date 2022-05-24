@@ -9,9 +9,9 @@ import page from "./documents/page";
 import neighborhood from "./documents/neighborhood";
 import clientReview from "./documents/clientReview";
 import marketReport from "./documents/marketReport";
+import callToAction from "./documents/callToAction";
 
 // Objects
-import callToAction from "./objects/callToAction";
 import reviewPicker from "./objects/reviewPicker";
 import bannerContent from "./objects/bannerContent";
 import textTriple from "./objects/textTriple";

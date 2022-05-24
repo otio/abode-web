@@ -1,6 +1,6 @@
 <template>
-  <div class="xs:(w-full)">
-    <textHeadline :headline-type="headlineStyle">{{ headline }}</textHeadline>
+  <div :class="wrapperClasses">
+    <TextHeadline :headline-type="headlineStyle">{{ headline }}</TextHeadline>
     <div class="text-3xl text-white text-center self-stretch">
       <p class="font-light tracking-wider">
         {{ chaser }}
@@ -38,8 +38,20 @@ export default {
     paragraph() {
       return this.options?.paragraphText ?? ''
     },
+    wrapperClasses(){
+      switch (this.headlineStyle) {
+       case 'center-bold-red':
+          return 'xs:(w-full)'
+        case 'lower-med-white':
+          return 'z-40 flex flex-col items-center'
+        default:
+          return ''
+      }
+    }
   },
 }
 </script>
 
-<style scoped></style>
+<style>
+
+</style>

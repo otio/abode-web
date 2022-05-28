@@ -60,17 +60,25 @@ export default {
       name: "headline",
       title: "Headline Text",
       type: "string",
+      description: 'DEPRECATED',
       hidden: ({ parent }) => parent?.ctaStyle === "floater",
     },
     {
       name: "chaser",
       title: "Chaser Text",
       type: "text",
+      description: 'DEPRECATED',
       hidden: ({ parent }) => parent?.ctaStyle === "floater",
+    },
+    {
+      name: 'ctaText',
+      title: 'CTA Text / Header-Chaser-Paragraph',
+      type: 'textTriple',
     },
     {
       name: "floater",
       title: "Floater Text",
+      description: 'DEPRECATED use CTA Text paragraph field',
       type: "string",
     },
     {

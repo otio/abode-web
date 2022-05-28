@@ -16,10 +16,11 @@
         />
       </div>
       <div class="flex flex-col xs:(items-center text-center)">
-        <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
+        <TextTriple :options="textTripleOptions"></TextTriple>
+        <!-- <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
         <p v-show="chaser" id="chaser" class="text-2xl mb-12 xs:(mx-2)">
           {{ chaser }}
-        </p>
+        </p> -->
         <FormulateForm
           v-if="isSubmitted !== true"
           v-slot="{ hasErrors }"
@@ -89,50 +90,16 @@ export default {
     }
   },
   computed: {
-    headline() {
-      return this.options?.form?.headline ?? ''
-    },
-    chaser() {
-      return this.options?.form?.chaser ?? ''
-    },
-    floater() {
-      return this.options?.form?.floater ?? ''
-    },
-    headlineStyle() {
-      return `${this.componentStyle}-headline`
-    },
-    formInputs() {
-      return this.options?.form?.inputFields ?? []
-    },
-    isSolid() {
-      return this.options?.form?.solidBackground
-        ? 'bg-whitesmoke bg-opacity-80'
-        : ''
+    bonusAsset() {
+      return this.options?.form?.bonusAsset ?? ''
     },
     buttonLabel() {
       return this.options?.form?.buttonLabel ?? 'Submit'
-    },
-    formSubmissionUrl() {
-      return this.options?.form?.submitUrl ?? '_blank'
-    },
-    formId() {
-      return this.getFormId(this.formSubmissionUrl)[0]
     },
     cssBackground() {
       return this.componentStyle === 'hero'
         ? `background-image: url(${this.imgSize(1920)})`
         : ''
-    },
-    layoutPicker() {
-      switch (this.componentStyle) {
-        case 'split':
-          return `flex flex-row justify-between items-center py-16 xs:(mx-4)`
-        case 'hero':
-          return `z-20 p-16 flex justify-center items-center`
-
-        default:
-          return ''
-      }
     },
     ctaTypePicker() {
       switch (this.componentStyle) {
@@ -145,6 +112,15 @@ export default {
           return ''
       }
     },
+    formId() {
+      return this.getFormId(this.formSubmissionUrl)[0]
+    },
+    formInputs() {
+      return this.options?.form?.inputFields ?? []
+    },
+    formSubmissionUrl() {
+      return this.options?.form?.submitUrl ?? '_blank'
+    },
     headlinePicker() {
       switch (this.componentStyle) {
         case 'split':
@@ -156,9 +132,33 @@ export default {
           return ''
       }
     },
-    bonusAsset() {
-      return this.options?.form?.bonusAsset ?? ''
+    headlineStyle() {
+      return this.options?.headlineStyle ?? ''
     },
+    isSolid() {
+      return this.options?.form?.solidBackground
+        ? 'bg-whitesmoke bg-opacity-80'
+        : ''
+    },
+    textTripleOptions() {
+        return {
+          ...this.options?.form?.ctaText,
+          ctaStyle: this.componentStyle
+        }
+    },
+    layoutPicker() {
+      switch (this.componentStyle) {
+        case 'split':
+          return `flex flex-row justify-between items-center py-16 xs:(mx-4)`
+        case 'hero':
+          return `z-20 p-16 flex justify-center items-center`
+
+        default:
+          return ''
+      }
+    },
+    
+
   },
   methods: {
     placeholder(field) {

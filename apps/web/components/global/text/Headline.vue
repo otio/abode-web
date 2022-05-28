@@ -1,8 +1,8 @@
 <template>
   <div :class="headlineSpacing">
-    <h1 :class="headlineFontStyle">
+    <h2 :class="headlineFontStyle">
       <slot></slot>
-    </h1>
+    </h2>
   </div>
 </template>
 
@@ -21,6 +21,10 @@ export default {
           return 'font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
         case 'lower-med-white':
           return 'font-secondary text-center text-firebrick text-6xl'
+        case 'center-reg-black':
+          return 'font-secondary text-center text-black text-5xl'
+        case 'left-med-trans':
+          return 'font-bold'
         default:
           return ''
       }

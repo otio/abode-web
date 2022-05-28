@@ -5,7 +5,7 @@
       :id="component._type"
       :key="component._key"
     >
-      <component :is="component._type" :options="component" />
+      <component :is="component._type === `callToAction` ? `ctaPicker` : component._type  " :options="component" />
     </section>
   </div>
 </template>
@@ -22,13 +22,11 @@ export default {
   //   )
   // },
   async asyncData({ $sanity, store, route }) {
-    // debugger
     const navPageId = store.state.settings.nav.find(
       (page) => page.slug === route.params.slug
     )
     const queryParams = { pageId: navPageId._id }
     const result = await $sanity.fetch(mainPage('pageId'), queryParams)
-    // debugger d
     return result[0]
   },
   data() {

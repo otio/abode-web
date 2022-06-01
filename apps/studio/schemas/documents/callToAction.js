@@ -27,7 +27,7 @@ export default {
     {
       name: "ctaImage",
       title: "Image Asset",
-      description: 'Use this field in place of Image Asset field',
+      description: "Use this field in place of Image Asset field",
       type: "image",
       hidden: ({ parent }) =>
         parent?.ctaStyle === undefined ||
@@ -38,7 +38,8 @@ export default {
     {
       name: "imageAsset",
       title: "Image Asset",
-      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
+      description:
+        "DEPRECATED - Going forward this field should not be used. Will eventually be phased out.",
       type: "cloudinary.asset",
       hidden: ({ parent }) =>
         // document?.ctaStyle === "hero" || document?.ctaStyle === "split",
@@ -60,26 +61,32 @@ export default {
       name: "headline",
       title: "Headline Text",
       type: "string",
-      description: 'DEPRECATED',
+      description: "DEPRECATED",
       hidden: ({ parent }) => parent?.ctaStyle === "floater",
     },
     {
       name: "chaser",
       title: "Chaser Text",
       type: "text",
-      description: 'DEPRECATED',
+      description: "DEPRECATED",
       hidden: ({ parent }) => parent?.ctaStyle === "floater",
     },
     {
-      name: 'ctaText',
-      title: 'CTA Text / Header-Chaser-Paragraph',
-      type: 'textTriple',
+      name: "ctaText",
+      title: "CTA Text / Header-Chaser-Paragraph",
+      type: "textTriple",
     },
     {
       name: "floater",
       title: "Floater Text",
-      description: 'DEPRECATED use CTA Text paragraph field',
+      description: "DEPRECATED use CTA Text paragraph field",
       type: "string",
+    },
+    {
+      name: "textComponents",
+      title: "textComponents",
+      type: "array",
+      of: [{ type: "textHeadline" }, { type: "text" }, { type: "textBlocks" }],
     },
     {
       name: "destination",
@@ -116,10 +123,9 @@ export default {
       title: "Internal link",
       type: "reference",
       to: [{ type: "page" }],
-      hidden: ({ parent }) => 
+      hidden: ({ parent }) =>
         parent?.destination !== "internal" ||
         parent?.bonusAssetType !== "internal",
-      
     },
     {
       name: "externalLink",
@@ -127,7 +133,7 @@ export default {
       type: "url",
       hidden: ({ parent }) =>
         parent?.destination !== "external" ||
-        parent?.bonusAssetType === "external"
+        parent?.bonusAssetType === "external",
     },
     {
       name: "hasBonusAsset",
@@ -153,22 +159,22 @@ export default {
       // initialValue: [{ title: "No Destination", value: "none" }],
     },
     {
-      name: 'bonusAsset',
-      title: 'Bonus Asset',
-      type: 'object',
+      name: "bonusAsset",
+      title: "Bonus Asset",
+      type: "object",
       fields: [
         {
-          name: 'bonusAssetLinkLabel',
-          title: 'Bonus Asset Link Label',
-          type: 'string',
+          name: "bonusAssetLinkLabel",
+          title: "Bonus Asset Link Label",
+          type: "string",
         },
         {
-          name: 'bonusUrl',
-          title: 'Bonus Url',
-          type: 'url',
+          name: "bonusUrl",
+          title: "Bonus Url",
+          type: "url",
         },
       ],
-      hidden: ({ parent }) => parent?.bonusAssetType !== 'url',
+      hidden: ({ parent }) => parent?.bonusAssetType !== "url",
     },
     // {
     //   name: 'bonusFile',

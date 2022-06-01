@@ -6,11 +6,13 @@ export default {
     {
       name: "headline",
       title: "Headline",
+      description: "DEPRECATED",
       type: "string",
     },
     {
       name: "headlineStyle",
       title: "Headline Style",
+      description: "DEPRECATED",
       type: "string",
       options: {
         layout: "dropdown",
@@ -23,6 +25,11 @@ export default {
       },
       hidden: ({ parent }) => parent?.headline === undefined,
       // validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "headlineIso",
+      title: "Headline",
+      type: "textHeadline",
     },
     {
       name: "chaser",

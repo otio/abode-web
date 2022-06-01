@@ -1,8 +1,14 @@
 <template>
   <div :class="wrapperClasses">
-    <TextHeadline :headline-type="headlineStyle">{{ headline }}</TextHeadline>
-    <TextChaser :chase-type="chaserStyle">{{ chaser }}</TextChaser>
-    <TextParagraph>{{ paragraphText }}</TextParagraph>
+    <TextHeadline v-show="headline !== ''" :headline-type="headlineStyle">{{
+      headline
+    }}</TextHeadline>
+    <TextChaser v-show="chaser !== ''" :chase-type="chaserStyle">{{
+      chaser
+    }}</TextChaser>
+    <TextParagraph v-show="paragraphText !== ''">{{
+      paragraphText
+    }}</TextParagraph>
   </div>
 </template>
 
@@ -30,22 +36,20 @@ export default {
     paragraphText() {
       return this.options?.paragraphText ?? ''
     },
-    wrapperClasses(){
+    wrapperClasses() {
       switch (this.headlineStyle) {
-      //  case 'center-bold-red':
-      //     return 'xs:(w-full)'
-      //   case 'lower-med-white':
-      //     return 'z-40 flex flex-col items-center'
-      //   case 'center-reg-black':
-      //     return 'flex flex-col items-center'
+        //  case 'center-bold-red':
+        //     return 'xs:(w-full)'
+        case 'lower-med-white':
+          return 'flex flex-col-reverse items-center'
+        //   case 'center-reg-black':
+        //     return 'flex flex-col items-center'
         default:
           return ''
       }
-    }
+    },
   },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

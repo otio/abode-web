@@ -6,21 +6,26 @@ export default {
     {
       name: "bannerImage",
       title: "Banner Image",
-      description: 'Use this field instead of BG Image',
+      description: "Use this field instead of BG Image",
       type: "image",
     },
     // DEPRECATE
     {
       name: "bgImage",
       title: "BG Image",
-      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
+      description:
+        "DEPRECATED - Going forward this field should not be used. Will eventually be phased out.",
       type: "cloudinary.asset",
     },
     {
       name: "bannerComponents",
       title: "Banner Components",
       type: "array",
-      of: [{ type: "callToAction" }, { type: "textTriple" }],
+      of: [
+        { type: "callToAction" },
+        { type: "textTriple" },
+        { type: "textHeadline" },
+      ],
     },
     // {
     //   name: "headline",

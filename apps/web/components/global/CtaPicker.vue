@@ -16,7 +16,8 @@
         />
       </div>
       <div class="flex flex-col xs:(items-center text-center)">
-        <TextTriple :options="textTripleOptions"></TextTriple>
+        <component :is="component" :options="component" />
+        <!-- <TextTriple :options="textTripleOptions"></TextTriple> -->
         <!-- <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
         <p v-show="chaser" id="chaser" class="text-2xl mb-12 xs:(mx-2)">
           {{ chaser }}
@@ -140,12 +141,12 @@ export default {
         ? 'bg-whitesmoke bg-opacity-80'
         : ''
     },
-    textTripleOptions() {
-        return {
-          ...this.options?.form?.ctaText,
-          ctaStyle: this.componentStyle
-        }
-    },
+    // textTripleOptions() {
+    //   return {
+    //     ...this.options?.form?.ctaText,
+    //     ctaStyle: this.componentStyle,
+    //   }
+    // },
     layoutPicker() {
       switch (this.componentStyle) {
         case 'split':
@@ -157,8 +158,6 @@ export default {
           return ''
       }
     },
-    
-
   },
   methods: {
     placeholder(field) {

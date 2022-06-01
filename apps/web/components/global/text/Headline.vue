@@ -13,6 +13,10 @@ export default {
       type: String,
       default: 'center-bold-red',
     },
+    options: {
+      type: Object || Array,
+      default: () => ({}),
+    },
   },
   computed: {
     headlineFontStyle() {
@@ -34,7 +38,7 @@ export default {
         case 'center-bold-red':
           return 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
         case 'lower-med-white':
-          return 'bg-white absolute -bottom-13rem px-8rem py-1rem headline-shadow'
+          return 'bg-white px-8rem py-1rem headline-shadow'
         default:
           return ''
       }
@@ -45,6 +49,6 @@ export default {
 
 <style scoped>
 .headline-shadow {
-  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 </style>

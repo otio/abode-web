@@ -23,6 +23,8 @@ import areasServed from "./objects/areasServed";
 import marketingCta from "./objects/marketingCta";
 import marketReportsPicker from "./objects/marketReportsPicker";
 import ctaPicker from "./objects/ctaPicker";
+import textHeadline from "./objects/textHeadline";
+import textBlocks from "./objects/textBlocks";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -41,6 +43,8 @@ export default createSchema({
     bannerContent,
     reviewPicker,
     textTriple,
+    textHeadline,
+    textBlocks,
     internalPageButton,
     meetTeam,
     featuredListing,
@@ -48,7 +52,7 @@ export default createSchema({
     areasServed,
     marketingCta,
     marketReportsPicker,
-    ctaPicker
+    ctaPicker,
     /* Your Document types here! */
   ]),
 });

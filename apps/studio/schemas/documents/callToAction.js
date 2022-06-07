@@ -74,6 +74,7 @@ export default {
     {
       name: "ctaText",
       title: "CTA Text / Header-Chaser-Paragraph",
+      description: "DEPRECATED - use textComponents Field",
       type: "textTriple",
     },
     {
@@ -86,7 +87,7 @@ export default {
       name: "textComponents",
       title: "textComponents",
       type: "array",
-      of: [{ type: "textHeadline" }, { type: "text" }, { type: "textBlocks" }],
+      of: [{ type: "textHeadline" }],
     },
     {
       name: "destination",

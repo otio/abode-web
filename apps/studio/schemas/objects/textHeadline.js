@@ -6,6 +6,7 @@ export default {
     {
       name: "headlineText",
       title: "Headline Text",
+      description: "Used for short form text",
       type: "string",
     },
     {
@@ -19,6 +20,7 @@ export default {
           { title: "Lower-Medium-White", value: "lower-med-white" },
           { title: "Left-Medium-Transparent", value: "left-med-trans" },
           { title: "Center-Regular-Black", value: "center-reg-black" },
+          { title: "Form-Floater", value: "floater" },
         ],
       },
       hidden: ({ parent }) => parent?.headlineText === undefined,

@@ -59,12 +59,6 @@ export default {
       default: () => ({}),
     },
   },
-  // data() {
-  //   return {
-  //     bannerComponents: this.options.bannerComponents,
-  //     publicId: this.options?.imgUrl?.url,
-  //   }
-  // },
   computed: {},
   methods: {
     bannerSize(imageWidth, imageHeight) {

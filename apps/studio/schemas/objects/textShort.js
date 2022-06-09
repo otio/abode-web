@@ -1,33 +1,70 @@
 export default {
-    name: 'textShort',
-    title: 'Short text',
-    description: 'Headings, Titles, Labels, Etc...',
-    type: 'object',
-    fields: [
-        {
-            name: "shortTextContent",
-            title: "Short Text Content",
-            description: "Used for short form text",
-            type: "string",
-          },
-          {
-            name: "shortTextStyle",
-            title: "Short Text Style",
-            description: "Selected style for short form text",
-            type: "string",
-            options: {
-              layout: "dropdown",
-              list: [
-                { title: "Centered-Bold-Red", value: "center-bold-red" },
-                { title: "Center-Regular-Black", value: "center-reg-black" },
-                { title: "Center-Regular-White", value: "center-reg-white" },
-                { title: "Lower-Medium-White", value: "lower-med-white" },
-                { title: "Left-Medium-Transparent", value: "left-med-trans" },
-                { title: "Form-Floater", value: "floater" },
-              ],
-            },
-            hidden: ({ parent }) => parent?.shortTextContent === undefined,
-            // validation: (Rule) => Rule.required(),
-          },
-    ],
-}
+  name: "textShort",
+  title: "Short text",
+  description: "Headings, Titles, Labels, Etc...",
+  type: "object",
+  fields: [
+    {
+      name: "shortTextContent",
+      title: "Short Text Content",
+      description: "Used for short form text",
+      type: "string",
+    },
+    {
+      name: "shortTextStyle",
+      title: "Short Text Style",
+      description: "Selected style for short form text",
+      type: "string",
+      options: {
+        layout: "dropdown",
+        list: [
+          { title: "Headline Red", value: "headline-red" },
+          { title: "Headline Black", value: "headline-black" },
+          { title: "Headline White", value: "headline-white" },
+          { title: "Subheader Red", value: "subheader-red" },
+          { title: "Subheader Black", value: "subheader-black" },
+          { title: "Subheader White", value: "subheader-white" },
+        ],
+      },
+      hidden: ({ parent }) => parent?.shortTextContent === undefined,
+      // validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "shortTextAlign",
+      title: "Short Text Alignment",
+      description: "Positioning for short form text",
+      type: "string",
+      options: {
+        layout: "dropdown",
+        list: [
+          { title: "Left", value: "left" },
+          { title: "Center", value: "center" },
+          { title: "Right", value: "right" },
+        ],
+      },
+      hidden: ({ parent }) => parent?.shortTextContent === undefined,
+      // validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "shortTextBackground",
+      title: "Short Text Background",
+      type: "boolean",
+    },
+    {
+      name: "shortTextBgColor",
+      title: "Short Text Background Color",
+      description: "Positioning for short form text",
+      type: "string",
+      options: {
+        layout: "dropdown",
+        list: [
+          { title: "White", value: "white" },
+          { title: "Black", value: "black" },
+          { title: "Red", value: "red" },
+        ],
+      },
+      hidden: ({ parent }) => parent?.shortTextBackground === false,
+      // validation: (Rule) => Rule.required(),
+    },
+  ],
+};

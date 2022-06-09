@@ -30,16 +30,18 @@
 
       <div class="flex flex-col items-center">
         <div
+          v-for="textComponent in textComponents" :key="textComponent._key"
           class="flex flex-col items-start pb-16 xl:(items-center) sm:(mx-0) xs:(mx-8)"
         >
-          <h2 class="font-secondary pb-16 text-5xl sm:(text-4xl) xs:(text-4xl)">
+          <component :is="textComponent._type" :options="textComponent"></component>
+          <!-- <h2 class="font-secondary pb-16 text-5xl sm:(text-4xl) xs:(text-4xl)">
             {{ headline }}
           </h2>
           <p
             class="font-body text-3xl leading-loose sm:(text-2xl leading-normal) xs:(text-2xl leading-normal)"
           >
             {{ paragraph }}
-          </p>
+          </p> -->
         </div>
         <!-- <button class="rounded bg-firebrick p-1.5rem cursor-pointer">
           <p class="text-white text-lg">MEET THE TEAM</p>
@@ -70,6 +72,9 @@ export default {
     paragraph() {
       return this.options?.introText?.paragraphText
     },
+    textComponents() {
+      return this.options?.introText2 ?? []
+    }
   },
   methods: {
     imgSize(imageWidth, imageHeight = 'auto') {

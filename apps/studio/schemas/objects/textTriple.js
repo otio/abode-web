@@ -29,7 +29,7 @@ export default {
     {
       name: "headlineIso",
       title: "Headline",
-      type: "textHeadline",
+      type: "textContent",
     },
     {
       name: "chaser",

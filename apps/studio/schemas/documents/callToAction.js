@@ -85,9 +85,9 @@ export default {
     },
     {
       name: "textComponents",
-      title: "textComponents",
+      title: "Text Components",
       type: "array",
-      of: [{ type: "textHeadline" }],
+      of: [{ type: "textShort" }, { type: 'textLong'}],
     },
     {
       name: "destination",

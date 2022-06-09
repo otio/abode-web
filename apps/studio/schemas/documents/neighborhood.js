@@ -48,7 +48,11 @@ export default {
     {
       name: "areaExplainerText",
       title: "Area Explainer Text",
-      type: "textTriple",
+      type: "array",
+      of: [
+        { type: 'textShort'},
+        { type: 'textLong'}
+      ]
     },
     {
       name: "areaCtaBanner",

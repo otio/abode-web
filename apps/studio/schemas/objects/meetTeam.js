@@ -21,6 +21,15 @@ export default {
       type: "textTriple",
     },
     {
+      name: "introText2",
+      title: "Intro Text",
+      type: "array",
+      of: [
+        { type: 'textShort' },
+        { type: 'textLong' }
+      ]
+    },
+    {
       name: "meetTeamPage",
       title: "meetTeamPage",
       type: "internalPageButton",

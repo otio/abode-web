@@ -23,24 +23,10 @@ export default {
       type: "array",
       of: [
         { type: "callToAction" },
-        { type: "textTriple" },
-        { type: "textHeadline" },
+        // { type: "textTriple" },
+        { type: "textShort" },
+        { type: "textLong" }
       ],
     },
-    // {
-    //   name: "headline",
-    //   title: "headline",
-    //   type: "text",
-    // },
-    // {
-    //   name: "chaser",
-    //   title: "chaser",
-    //   type: "text",
-    // },
-    // {
-    //   name: "CTA",
-    //   title: "CTA",
-    //   type: "form",
-    // },
   ],
 };

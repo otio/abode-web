@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="tag" :class="[color, alignment]">{{ textContent }}</component>
+    <component :is="tag" :class="[font, size, color, alignment, spacing]">{{ textContent }}</component>
     <!-- <h2 :class="headlineFontStyle">
       {{ textContent }}
       <slot></slot>
@@ -25,7 +25,6 @@ export default {
     }
   },
   computed: {
-    
     textContent() {
       return this.options.shortTextContent
     },
@@ -66,6 +65,30 @@ export default {
     //       return ''
     //   }
     // },
+    size(){
+       switch (this.headlineType) {
+        case 'head':
+          return 'text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
+        case 'subhead':
+          return 'text-5xl xs:(text-4xl)'
+        case 'float':
+          return 'text-2xl'
+        default:
+          return ''
+      }
+    },
+    spacing(){
+       switch (this.headlineType) {
+        case 'head':
+          return 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
+        case 'subhead':
+          return 'pb-12'
+        case 'float':
+          return 'mb-12 xs:(mx-2)'
+        default:
+          return ''
+      }
+    },
     alignment(){
       switch (this.options?.shortTextAlign) {
         case 'left':
@@ -89,11 +112,17 @@ export default {
       }
     },
     font(){
-    return {}
+      switch (this.headlineType) {
+        case 'head':
+          return 'font-display'
+        case 'subhead':
+          return 'font-secondary'
+        case 'float':
+          return 'font-body'
+        default:
+          return 'font-body'
+      }
     },
-    textStyles(){
-      return [this.fontColor, ]
-    }
   },
 }
 </script>

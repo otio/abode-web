@@ -3,10 +3,10 @@
     class="relative flex flex-row-reverse justify-center items-center <md:(flex-col)"
     :class="articleLayout"
   >
-    <div id="testimonial-text" class="bg-whitesmoke py-8" :class="reviewLayout">
-      <div class="relative px-16">
+    <div id="testimonial-text" class="bg-whitesmoke" :class="reviewLayout">
+      <div class="flex flex-col">
         <div
-          class="text-3xl text-center leading-normal mb-8"
+          class="text-2xl leading-normal text-left"
           :class="spacingStyle"
         >
           {{ !isPage && showLink ? shortened : testimonial }}
@@ -19,12 +19,14 @@
             >
           </span>
         </div>
-        <div class="text-4xl text-center font-semibold">
+        <div 
+        :class="isPage ? '-bottom-2rem' : ''"
+        class="absolute right-3.5rem text-3xl font-semibold">
           {{ clientName }}
         </div>
       </div>
     </div>
-    <div v-show="!isPage" id="testimonial-image" class="origin-center -mr-12">
+    <div v-show="!isPage" id="testimonial-image" class="origin-center -mr-12 z-40">
       <div class="w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)">
         <img alt="" :src="reviewImg" class="" />
       </div>
@@ -101,6 +103,8 @@ export default {
     spacingStyle() {
       return {
         'max-h-400px ': !this.isPage,
+        'pb-24': this.isPage,
+        'mb-12': !this.isPage,
       }
     },
     testimonial() {

@@ -17,6 +17,9 @@ export default {
       whitesmoke: '#F1EAE8',
       grey: '#9dadad',
     },
+    fontSize: {
+      
+    },
     fontFamily: {
       display: ['Acme Gothic'],
       secondary: ['Hanuman', 'Verdana'],

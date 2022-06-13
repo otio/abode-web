@@ -1,12 +1,12 @@
 <template>
   <article
-    class="relative flex flex-row-reverse justify-center items-center <md:(flex-col)"
+    class="flex flex-row-reverse justify-center items-center lg:(flex-col) md:(flex-col) sm:(flex-col) xs:(flex-col)"
     :class="articleLayout"
   >
-    <div id="testimonial-text" class="bg-whitesmoke" :class="reviewLayout">
-      <div class="flex flex-col">
+    <div id="testimonial-text" class="bg-whitesmoke px-16" :class="reviewLayout">
+      <div class="flex flex-col xs:(items-center justify-center)">
         <div
-          class="text-2xl leading-normal text-left"
+          class="text-2xl leading-normal text-left pt-8"
           :class="spacingStyle"
         >
           {{ !isPage && showLink ? shortened : testimonial }}
@@ -21,13 +21,13 @@
         </div>
         <div 
         :class="isPage ? '-bottom-2rem' : ''"
-        class="absolute right-3.5rem text-3xl font-semibold">
+        class="right-3.5rem text-3xl font-semibold self-end xs:(self-center)">
           {{ clientName }}
         </div>
       </div>
     </div>
     <div v-show="!isPage" id="testimonial-image" class="origin-center -mr-12 z-40">
-      <div class="w-450px md:(hidden) sm:(hidden) xs:(hidden w-0)">
+      <div class="w-450px lg:(hidden) md:(hidden) sm:(hidden) xs:(hidden w-0)">
         <img alt="" :src="reviewImg" class="" />
       </div>
     </div>
@@ -95,14 +95,14 @@ export default {
       }
     },
     shortened() {
-      return this.currentReview.slice(0, 220)
+      return this.currentReview.slice(0, 190)
     },
     showLink() {
       return this.messageLength > 234
     },
     spacingStyle() {
       return {
-        'max-h-400px ': !this.isPage,
+        'max-h-400px xs:(max-h-875px)': !this.isPage,
         'pb-24': this.isPage,
         'mb-12': !this.isPage,
       }

@@ -1,9 +1,6 @@
 <template>
-    <div
-        :class="[size]"
-      class="text-black self-stretch"
-    >
-      <p class="">
+    <div :class="[size, spacing]" class="px-auto pb-16 xl:(items-center) sm:(mx-0) xs:(mx-8)">
+      <p>
           {{ textContent }}
         <slot></slot>
       </p>
@@ -25,12 +22,23 @@
             size(){
                 switch (this.options?.textLongSize) {
                     case 'lg':
-                        return 'text-2xl  leading-loose sm:(leading-normal) xs:(leading-normal)'
+                        return 'text-2xl leading-loose sm:(leading-normal) xs:(leading-normal)'
                     case 'xl':
                         return 'text-4xl'
                 
                     default:
                         return 'text-lg'
+                }
+            },
+            spacing(){
+                switch (this.options?.textLongSize) {
+                    case 'lg':
+                        return ''
+                    case 'xl':
+                        return ''
+                
+                    default:
+                        return ''
                 }
             }
         },

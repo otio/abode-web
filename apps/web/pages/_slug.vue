@@ -4,6 +4,7 @@
       v-for="component in pageComponents"
       :id="component._type"
       :key="component._key"
+      class="mb-12"
     >
       <component :is="component._type === `callToAction` ? `ctaPicker` : component._type  " :options="component" />
     </section>

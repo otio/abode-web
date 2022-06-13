@@ -41,6 +41,18 @@ export default {
           return 'p'
       }
     },
+        size(){
+       switch (this.headlineType) {
+        case 'head':
+          return 'text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
+        case 'subhead':
+          return 'text-3xl'
+        case 'float':
+          return 'text-2xl'
+        default:
+          return 'text-lg'
+      }
+    },
     // headlineSpacing() {
     //   switch (this.headlineType) {
     //     case 'headline-red':
@@ -65,28 +77,19 @@ export default {
     //       return ''
     //   }
     // },
-    size(){
-       switch (this.headlineType) {
-        case 'head':
-          return 'text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
-        case 'subhead':
-          return 'text-5xl xs:(text-4xl)'
-        case 'float':
-          return 'text-2xl'
-        default:
-          return ''
-      }
-    },
+
     spacing(){
        switch (this.headlineType) {
         case 'head':
-          return 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
+          return this.options?.componentStyle === 'split' 
+          ? 'mt-10 mb-24 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24)'
+          : 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
         case 'subhead':
           return 'pb-12'
         case 'float':
           return 'mb-12 xs:(mx-2)'
         default:
-          return ''
+          return 'pb-8'
       }
     },
     alignment(){
@@ -123,6 +126,18 @@ export default {
           return 'font-body'
       }
     },
+    weight(){
+      switch (this.headlineType) {
+        case 'head':
+          return 'font-normal'
+        case 'subhead':
+          return 'font-bold'
+        case 'float':
+          return 'font-bold'
+        default:
+          return 'font-medium'
+      }
+    }
   },
 }
 </script>

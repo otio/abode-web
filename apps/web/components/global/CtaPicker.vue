@@ -5,7 +5,7 @@
       <div
         v-show="componentStyle === 'split'"
         id="split-image"
-        class="mr-16 xl:(mr-0 mt-16) lg:(mr-0 mt-16) md:(mr-0 mt-20) sm:(mr-0 mt-20) xs:(mr-0 mt-20)"
+        class="w-3/5 mr-16 xl:(mr-0 mt-16) lg:(mr-0 mt-16) md:(mr-0 mt-20) sm:(mr-0 mt-20) xs:(mr-0 mt-20)"
       >
         <img
           id=""
@@ -16,7 +16,9 @@
         />
       </div>
       <div class="flex flex-col xs:(items-center text-center)">
-        <component :is="component" :options="component" />
+        <span v-for="text in textContent" :key="text._key">
+          <component :is="text._type" :options="{...text, componentStyle}" />
+        </span>
         <!-- <TextTriple :options="textTripleOptions"></TextTriple> -->
         <!-- <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
         <p v-show="chaser" id="chaser" class="text-2xl mb-12 xs:(mx-2)">
@@ -29,7 +31,7 @@
           class="flex flex-col items-center"
           @submit="submitHandler"
         >
-          <p id="floater" class="text-center text-2xl mb-8">{{ floater }}</p>
+          <!-- <p id="floater" class="text-center text-2xl mb-8">{{ floater }}</p> -->
           <div
             class="flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)"
           >
@@ -141,12 +143,9 @@ export default {
         ? 'bg-whitesmoke bg-opacity-80'
         : ''
     },
-    // textTripleOptions() {
-    //   return {
-    //     ...this.options?.form?.ctaText,
-    //     ctaStyle: this.componentStyle,
-    //   }
-    // },
+    textContent(){
+      return this.options?.form?.textComponents ?? []
+    },
     layoutPicker() {
       switch (this.componentStyle) {
         case 'split':

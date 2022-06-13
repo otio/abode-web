@@ -10,11 +10,11 @@
     <div class="relative">
       <div
         id="inner"
-        class="relative flex flex-row justify-center items-center md:(flex-col) sm:(flex-col) xs:(flex-col)"
+        class="relative flex flex-row justify-center items-center md:(flex-col items-center justify-center) sm:(flex-col) xs:(flex-col)"
       >
         <button id="previous" class="" @click="previousReview()">
           <img
-            class="transform origin-center rotate-90"
+            class="transform origin-center rotate-90 md:(rotate-180) sm:(rotate-180) xs:(rotate-180)"
             src="/arrow.svg"
             alt=""
           />
@@ -30,17 +30,11 @@
         <div v-show="reviews.length > 1">
           <button id="next" class="" @click="nextReview()">
             <img
-              class="transform origin-center -rotate-90"
+              class="transform origin-center -rotate-90 md:(rotate-0) sm:(rotate-0) xs:(rotate-0 translate-y-8rem)"
               src="/arrow.svg"
               alt=""
             />
           </button>
-          <!-- <button class="absolute -top-12 left-12rem xs:(left-6.5rem)" @click="previousReview()" >
-            <img class="" src="~/assets/image/previous.svg" alt="" />
-          </button>
-          <button class="absolute -bottom-12 left-12rem xs:(left-6.5rem)"  @click="nextReview()">
-            <img src="~/assets/image/next.svg" alt="" />
-          </button> -->
         </div>
       </div>
     </div>

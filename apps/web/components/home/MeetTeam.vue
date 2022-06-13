@@ -2,10 +2,10 @@
   <div class="flex flex-col items-center justify-center my-24">
     <!-- Custom Header -->
     <div
-      class="flex flex-row items-center justify-center self-stretch mb-16 sm:(flex-col) xs:(flex-col)"
+      class="flex flex-row items-center justify-center self-stretch mb-16 lg:(flex-col) md:(flex-col) sm:(flex-col) xs:(flex-col)"
     >
       <h2 class="hidden">Meet the Abode Team</h2>
-      <p class="flex items-center mr-8 font-display text-6xl">Meet the</p>
+      <p class="flex items-center mr-8 font-display text-6xl lg:(pb-8)">Meet the</p>
       <div class="flex flex-row items-center font-display text-6xl mr-4">
         <div class="flex flex-row items-center">
           <img alt="" class="mr-1" src="~/static/abode-minimal-logo.svg" />
@@ -34,14 +34,7 @@
           class="flex flex-col items-start pb-16 xl:(items-center) sm:(mx-0) xs:(mx-8)"
         >
           <component :is="textComponent._type" :options="textComponent"></component>
-          <!-- <h2 class="font-secondary pb-16 text-5xl sm:(text-4xl) xs:(text-4xl)">
-            {{ headline }}
-          </h2>
-          <p
-            class="font-body text-3xl leading-loose sm:(text-2xl leading-normal) xs:(text-2xl leading-normal)"
-          >
-            {{ paragraph }}
-          </p> -->
+        
         </div>
         <!-- <button class="rounded bg-firebrick p-1.5rem cursor-pointer">
           <p class="text-white text-lg">MEET THE TEAM</p>

@@ -22,6 +22,20 @@ export default {
             },
             hidden: ({ parent }) => parent?.textLongContent === undefined,
         },
+        {
+            name: 'textLongSpacing',
+            title: 'Long Text spacing',
+            type: 'string',
+            options: {
+                layout: 'dropdown',
+                list: [
+                    { title: 'No padding', value: 'lg'},
+                    { title: 'Padding-X 13rem - For Full width blocks', value: 'px-13rem'},
+                    // { title: 'Extra Large', value: 'xl'}
+                ]
+            },
+            hidden: ({ parent }) => parent?.textLongContent === undefined,
+        },
         // TODO: Implement Block content
         // {
         //     name: 'blockText',

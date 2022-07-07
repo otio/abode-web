@@ -1,11 +1,20 @@
 import { groq } from '@nuxtjs/sanity'
+// TODO: Clean up Query
 export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
   title,
   slug,
   "pageComponents": components[]{
       ...,
       _type == 'bannerContent' => {
-        bannerComponents,
+        "bannerComponents": bannerComponents[]{
+          ...,
+          _type == 'linkButton' => {
+            ...,
+            "slugType": internalLink->{
+              "cta": ctaSlug.current
+            }
+          }
+        },
         "imgUrl": bannerImage.asset->{...}
       },
       _type == 'meetTeam' => {
@@ -45,6 +54,6 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
           ...,
           "imgUrl":ctaImage.asset->{...},
         }
-      },
+      }
     }
 }`

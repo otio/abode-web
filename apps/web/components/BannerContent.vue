@@ -39,11 +39,21 @@
       <img src="" alt="" />
     </picture>
     <!-- <div class="gradient"></div> -->
-    <div class="absolute inset-10rem xs:(inset-1rem mt-7rem)">
-      <!-- <div class="absolute top-18rem left-26.25rem"> -->
-      <div class="flex flex-col">
-        <div v-for="block in options.bannerComponents" :key="block._key">
-          <component :is="block._type" :options="block" />
+    <!-- <div class="absolute"> -->
+    <div class="absolute top-0 left-0 w-full h-full">
+      <!-- inset-10rem xs:(inset-1rem mt-7rem) -->
+      <div class="relative w-full h-full">
+        <!-- ALIGNMENT -->
+        <div class="flex flex-row h-full mx-15rem justify-start">
+          <!-- HEIGHT POSITION -->
+          <div class="flex flex-col justify-center">
+            <span v-for="block in options.bannerComponents" :key="block._key">
+              <component
+                :is="block._type === `callToAction` ? `ctaPicker` : block._type"
+                :options="block"
+              />
+            </span>
+          </div>
         </div>
       </div>
     </div>

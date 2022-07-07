@@ -17,59 +17,10 @@
       </div>
       <div class="flex flex-col xs:(items-center text-center)">
         <span v-for="text in textContent" :key="text._key">
-          <component :is="text._type" :options="{...text, componentStyle}" />
+          <component :is="text._type" :options="{ ...text, componentStyle }" />
         </span>
-        <!-- <TextTriple :options="textTripleOptions"></TextTriple> -->
-        <!-- <h2 id="headline" :class="headlinePicker">{{ headline }}</h2>
-        <p v-show="chaser" id="chaser" class="text-2xl mb-12 xs:(mx-2)">
-          {{ chaser }}
-        </p> -->
-        <FormulateForm
-          v-if="isSubmitted !== true"
-          v-slot="{ hasErrors }"
-          v-model="formValues"
-          class="flex flex-col items-center"
-          @submit="submitHandler"
-        >
-          <!-- <p id="floater" class="text-center text-2xl mb-8">{{ floater }}</p> -->
-          <div
-            class="flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)"
-          >
-            <div
-              v-for="(field, index) in formInputs"
-              :key="index + 1"
-              class="w-full xs:(text-center)"
-            >
-              <FormulateInput
-                type="email"
-                :placeholder="placeholder(field)"
-                validation="bail|required|email"
-                error-behavior="value"
-                @keypress.enter="hasError !== true ? submitHandler : null"
-              />
-            </div>
-            <div class="xs:(w-full)">
-              <FormulateInput
-                type="submit"
-                :disabled="hasErrors"
-                :name="buttonLabel"
-              />
-            </div>
-          </div>
-        </FormulateForm>
-        <div v-else-if="bonusAsset !== null">
-          <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
-          <p
-            id="bonus-asset"
-            class="text-center text-firebrick text-2xl underline mb-8"
-          >
-            <a :href="bonusAsset.bonusUrl" rel="noopener noreferrer"
-              >Click Here -- {{ bonusAsset.bonusAssetLinkLabel }}</a
-            >
-          </p>
-        </div>
-        <div v-else>
-          <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
+        <div v-show="hasForm">
+          <Form :options="formOptions" />
         </div>
       </div>
     </div>
@@ -89,16 +40,9 @@ export default {
       formValues: {},
       bgImageId: this.options?.form?.imageUrl?._id,
       componentStyle: this.options?.form?.ctaStyle,
-      isSubmitted: false,
     }
   },
   computed: {
-    bonusAsset() {
-      return this.options?.form?.bonusAsset ?? ''
-    },
-    buttonLabel() {
-      return this.options?.form?.buttonLabel ?? 'Submit'
-    },
     cssBackground() {
       return this.componentStyle === 'hero'
         ? `background-image: url(${this.imgSize(1920)})`
@@ -115,14 +59,11 @@ export default {
           return ''
       }
     },
-    formId() {
-      return this.getFormId(this.formSubmissionUrl)[0]
+    hasForm() {
+      return this.options?.form?.ctaLink?.linkDestination === 'form'
     },
-    formInputs() {
-      return this.options?.form?.inputFields ?? []
-    },
-    formSubmissionUrl() {
-      return this.options?.form?.submitUrl ?? '_blank'
+    formOptions() {
+      return this.options?.form?.ctaLink
     },
     headlinePicker() {
       switch (this.componentStyle) {
@@ -143,7 +84,7 @@ export default {
         ? 'bg-whitesmoke bg-opacity-80'
         : ''
     },
-    textContent(){
+    textContent() {
       return this.options?.form?.textComponents ?? []
     },
     layoutPicker() {
@@ -159,20 +100,6 @@ export default {
     },
   },
   methods: {
-    placeholder(field) {
-      const splitDash = field.split('-')
-      const formatted = `${this.capitalizeFirstLetter(
-        splitDash[0]
-      )} ${this.capitalizeFirstLetter(splitDash[1])}`
-      return formatted
-    },
-    getFormId(url) {
-      const splitDash = url.split('/')
-      return splitDash.slice(-1)
-    },
-    capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1)
-    },
     imgSize(imageWidth, imageHeight) {
       try {
         return this.$urlFor(this.options?.form?.imgUrl?._id)
@@ -182,24 +109,6 @@ export default {
       } catch (error) {
         // eslint-disable-next-line no-console
         console.error(error)
-      }
-    },
-    async submitHandler(data) {
-      this.$axios.setHeader('Accept', 'application/json')
-      try {
-        const result = await this.$axios.post(this.formSubmissionUrl, data)
-        // console.info('FORM SUBMIT SUCCESS!')
-        this.isSubmitted = true
-        // eslint-disable-next-line no-console
-        console.log(result)
-        return result
-      } catch (error) {
-        if (error) {
-          return this.$nuxt.error({
-            statusCode: error.statusCode,
-            message: error.message,
-          })
-        }
       }
     },
     // configureAhoy() {

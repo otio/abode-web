@@ -1,3 +1,4 @@
+import abodeSlug from "../../util/lib/abodeSlug";
 export default {
   name: "neighborhood",
   title: "Neighborhood",
@@ -10,16 +11,26 @@ export default {
       type: "string",
     },
     {
+      name: "areaSlug",
+      title: "Area Slug - URL",
+      type: "slug",
+      options: {
+        source: "areaName",
+        slugify: abodeSlug,
+      },
+    },
+    {
       name: "areaImage",
       title: "Area Image",
-      description: 'Use this field instead of Area Preview Image',
+      description: "Use this field instead of Area Preview Image",
       type: "image",
     },
     // DEPRECATE
     {
       name: "areaPreviewImage",
       title: "Area Preview Image",
-      description: 'DEPRECATED - Going forward this field should not be used. Will eventually be phased out.',
+      description:
+        "DEPRECATED - Going forward this field should not be used. Will eventually be phased out.",
       type: "cloudinary.asset",
     },
     {
@@ -49,10 +60,7 @@ export default {
       name: "areaExplainerText",
       title: "Area Explainer Text",
       type: "array",
-      of: [
-        { type: 'textShort'},
-        { type: 'textLong'}
-      ]
+      of: [{ type: "textShort" }, { type: "textLong" }],
     },
     {
       name: "areaCtaBanner",

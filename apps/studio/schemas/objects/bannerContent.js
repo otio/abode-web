@@ -23,9 +23,11 @@ export default {
       type: "array",
       of: [
         { type: "callToAction" },
+        { type: "ctaPicker" },
         // { type: "textTriple" },
         { type: "textShort" },
-        { type: "textLong" }
+        { type: "textLong" },
+        { type: "linkButton" },
       ],
     },
   ],

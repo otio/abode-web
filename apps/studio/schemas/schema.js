@@ -18,7 +18,7 @@ import textTriple from "./objects/textTriple";
 import internalPageButton from "./objects/internalPageButton";
 import meetTeam from "./objects/meetTeam";
 import featuredListing from "./objects/featuredListing";
-import magazineSignup from "./objects/magazineSignup";
+// import magazineSignup from "./objects/magazineSignup";
 import areasServed from "./objects/areasServed";
 import marketingCta from "./objects/marketingCta";
 import marketReportsPicker from "./objects/marketReportsPicker";
@@ -26,6 +26,9 @@ import ctaPicker from "./objects/ctaPicker";
 import textContent from "./objects/textContent";
 import textShort from "./objects/textShort";
 import textLong from "./objects/textLong";
+import tileSection from "./objects/tileSection";
+import linkButton from "./objects/linkButton";
+import form from "./objects/form";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -48,13 +51,16 @@ export default createSchema({
     internalPageButton,
     meetTeam,
     featuredListing,
-    magazineSignup,
+    // magazineSignup,
     areasServed,
     marketingCta,
     marketReportsPicker,
     ctaPicker,
     textShort,
     textLong,
+    tileSection,
+    linkButton,
+    form,
     /* Your Document types here! */
   ]),
 });

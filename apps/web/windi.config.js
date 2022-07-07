@@ -1,5 +1,6 @@
-// import colors from 'windicss/colors'
+import colors from 'windicss/colors'
 export default {
+  safelist: ['px-15rem', 'bg-neutral-100'],
   theme: {
     screens: {
       xs: { max: '530px' },
@@ -15,11 +16,10 @@ export default {
       white: '#ffffff',
       firebrick: '#CD1815',
       whitesmoke: '#F1EAE8',
-      grey: '#9dadad',
+      grey: colors.neutral,
+      // ...colors,
     },
-    fontSize: {
-      
-    },
+    fontSize: {},
     fontFamily: {
       display: ['Acme Gothic'],
       secondary: ['Hanuman', 'Verdana'],

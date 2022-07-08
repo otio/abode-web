@@ -20,12 +20,12 @@ export default {
           fields: [
             {
               name: "tileImage",
-              title: "tileImage",
+              title: "Tile Image",
               type: "image",
             },
             {
               name: "tileText",
-              title: "tileText",
+              title: "Tile Text",
               type: "textContent",
             },
           ],

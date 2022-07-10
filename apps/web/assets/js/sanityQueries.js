@@ -54,6 +54,17 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
           ...,
           "imgUrl":ctaImage.asset->{...},
         }
+      },
+      _type == 'tileSection' => {
+        "tilesSection": tilesWrapper[]{
+          _type == 'tile' => {
+            _type,
+            _key,
+            tileText,
+            "imgUrl": tileImage.asset->{...}
+          },
+        },
+        ...,
       }
     }
 }`

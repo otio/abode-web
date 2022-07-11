@@ -65,6 +65,16 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
           },
         },
         ...,
+      },
+      _type == 'agentPicker' => {
+        _key,
+        _type,
+        infoStyle,
+        "agents": agentInfo[]->{
+          ...,
+          "bioPhoto": agentBioPhoto.asset->{...},
+          "logo": agentLogo.asset->{...}
+        }
       }
     }
 }`

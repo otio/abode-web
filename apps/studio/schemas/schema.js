@@ -10,6 +10,7 @@ import neighborhood from "./documents/neighborhood";
 import clientReview from "./documents/clientReview";
 import marketReport from "./documents/marketReport";
 import callToAction from "./documents/callToAction";
+import agents from "./documents/agents";
 
 // Objects
 import reviewPicker from "./objects/reviewPicker";
@@ -29,6 +30,7 @@ import textLong from "./objects/textLong";
 import tileSection from "./objects/tileSection";
 import linkButton from "./objects/linkButton";
 import form from "./objects/form";
+import agentPicker from "./objects/agentPicker";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,9 +45,11 @@ export default createSchema({
     neighborhood,
     clientReview,
     marketReport,
+    agents,
     /* Your Object types here! */
     bannerContent,
     reviewPicker,
+    agentPicker,
     textTriple,
     textContent,
     internalPageButton,

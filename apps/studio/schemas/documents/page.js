@@ -41,6 +41,7 @@ export default {
         { type: "textShort" },
         { type: "textLong" },
         { type: "tileSection" },
+        { type: "agentPicker" },
       ],
     },
   ],

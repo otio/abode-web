@@ -33,6 +33,15 @@ import form from "./objects/form";
 import agentPicker from "./objects/agentPicker";
 import fieldDefaults from "./objects/fieldDefaults";
 
+// FIELDS
+import formBox from "./fields/formBox";
+import formButton from "./fields/formButton";
+import formGroup from "./fields/formGroup";
+import formSelect from "./fields/formSelect";
+import formSlider from "./fields/formSlider";
+import formText from "./fields/formText";
+import formTextarea from "./fields/formTextarea";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -68,5 +77,12 @@ export default createSchema({
     linkButton,
     form,
     fieldDefaults,
+    formBox,
+    formButton,
+    formGroup,
+    formSelect,
+    formSlider,
+    formText,
+    formTextarea,
   ]),
 });

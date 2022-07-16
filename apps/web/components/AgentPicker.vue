@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="agent in agents" :key="agent._key">
+  <div class="">
+    <div v-for="agent in agents" :key="agent._key" class="mb-300px">
       <component :is="componentStyle" :options="agent"></component>
     </div>
   </div>

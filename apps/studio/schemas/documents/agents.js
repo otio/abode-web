@@ -28,7 +28,7 @@ export default {
     {
       name: "agentPhoneNumber",
       title: "Agent phone number",
-      type: "number",
+      type: "string",
     },
     {
       name: "agentEmail",
@@ -39,7 +39,7 @@ export default {
       name: "agentLicenseNumber",
       title: "Agent license number",
       description: "Optional - DRE#",
-      type: "number",
+      type: "string",
     },
     {
       name: "agentBioPhoto",
@@ -69,7 +69,13 @@ export default {
             {
               name: "socialIcon",
               title: "Social icon",
-              type: "image",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Facebook", value: "facebook" },
+                  { title: "Instagram", value: "instagram" },
+                ],
+              },
             },
             {
               name: "socialLink",

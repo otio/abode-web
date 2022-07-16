@@ -42,6 +42,7 @@ export default {
         { type: "textLong" },
         { type: "tileSection" },
         { type: "agentPicker" },
+        { type: "form" },
       ],
     },
   ],

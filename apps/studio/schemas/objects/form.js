@@ -111,6 +111,77 @@ export default {
               ],
               hidden: ({ parent }) => parent?.formFieldType !== "text",
             },
+            // TEXT END
+            {
+              name: "formTextArea",
+              title: "Form text-area",
+              type: "object",
+              fields: [
+                {
+                  name: "textAreaMax",
+                  title: "Text area max length",
+                  type: "number",
+                },
+                {
+                  name: "textAreaFieldDefaults",
+                  title: "Text area field defaults",
+                  type: "fieldDefaults",
+                },
+              ],
+              hidden: ({ parent }) => parent?.formFieldType !== "textarea",
+            },
+            // TEXTAREA END
+            {
+              name: "formButton",
+              title: "Form button",
+              type: "object",
+              fields: [
+                {
+                  name: "buttonFieldDefaults",
+                  title: "Button field defaults",
+                  type: "fieldDefaults",
+                },
+                {
+                  name: "isSubmit",
+                  title: "Is submit button?",
+                  type: "boolean",
+                },
+              ],
+              hidden: ({ parent }) => parent?.formFieldType !== "button",
+            },
+            // BUTTON END
+            {
+              name: "formBox",
+              title: "Form box - checkboxes & radio inputs",
+              type: "object",
+              fields: [
+                {
+                  name: "boxOptions",
+                  title: "Box options",
+                  type: "array",
+                  of: [
+                    {
+                      name: "boxInput",
+                      title: "Box input",
+                      type: "object",
+                      fields: [
+                        {
+                          name: "isCheckbox",
+                          title: "Is checkbox? Defaults to radio",
+                          type: "boolean",
+                        },
+                        {
+                          name: "boxInputDefaults",
+                          title: "Box input defaults",
+                          type: "fieldDefaults",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+              hidden: ({ parent }) => parent?.formFieldType !== "box",
+            },
           ],
         },
       ],

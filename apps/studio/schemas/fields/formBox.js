@@ -1,6 +1,6 @@
 export default {
   name: "formBox",
-  title: "Form box - checkboxes & radio inputs",
+  title: "Form Box: Checkboxes & Radio Inputs",
   type: "object",
   fields: [
     {

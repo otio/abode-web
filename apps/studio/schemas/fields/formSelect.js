@@ -1,6 +1,6 @@
 export default {
   name: "formSelect",
-  title: "Form select",
+  title: "Form Select Input",
   type: "object",
   fields: [
     {

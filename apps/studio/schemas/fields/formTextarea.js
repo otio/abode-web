@@ -1,6 +1,6 @@
 export default {
   name: "formTextarea",
-  title: "Form text-area",
+  title: "Form Text-Area Input",
   type: "object",
   fields: [
     {

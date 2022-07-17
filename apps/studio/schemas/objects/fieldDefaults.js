@@ -23,14 +23,5 @@ export default {
       title: "Field help text",
       type: "string",
     },
-    {
-      name: "fieldValidations",
-      title: "Field validations",
-      type: "string",
-      options: {
-        list: [{ title: "Is Required", value: "required" }],
-        layout: "radio",
-      },
-    },
   ],
 };

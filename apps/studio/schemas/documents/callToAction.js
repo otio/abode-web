@@ -1,19 +1,11 @@
 export default {
   name: "callToAction",
-  title: "Forms / Calls-to-Action",
+  title: "CTA's - Calls-to-Action",
   type: "document",
   fieldsets: [
     { name: "deprecated", title: "DEPRECATED - DO NOT USE", hidden: true },
   ],
   fields: [
-    // {
-    //   name: "trackingTitle",
-    //   title: "Tracking Title",
-    //   description: "Internal Name for tracking",
-    //   type: "string",
-    //   fieldset: "deprecated",
-    //   validation: (Rule) => Rule.required(),
-    // },
     {
       name: "ctaTitle",
       title: "CTA Title",

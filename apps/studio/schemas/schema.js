@@ -11,6 +11,7 @@ import clientReview from "./documents/clientReview";
 import marketReport from "./documents/marketReport";
 import callToAction from "./documents/callToAction";
 import agents from "./documents/agents";
+import form from "./documents/form";
 
 // Objects
 import reviewPicker from "./objects/reviewPicker";
@@ -29,7 +30,6 @@ import textShort from "./objects/textShort";
 import textLong from "./objects/textLong";
 import tileSection from "./objects/tileSection";
 import linkButton from "./objects/linkButton";
-import form from "./objects/form";
 import agentPicker from "./objects/agentPicker";
 import fieldDefaults from "./objects/fieldDefaults";
 
@@ -57,6 +57,7 @@ export default createSchema({
     clientReview,
     marketReport,
     agents,
+    form,
     /* Your Object types here! */
     bannerContent,
     reviewPicker,
@@ -75,7 +76,6 @@ export default createSchema({
     textLong,
     tileSection,
     linkButton,
-    form,
     fieldDefaults,
     formBox,
     formButton,

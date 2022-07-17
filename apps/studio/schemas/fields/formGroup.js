@@ -1,6 +1,6 @@
 export default {
   name: "formGroup",
-  title: "Form group",
+  title: "Form Group Fields Input",
   type: "object",
   fields: [
     {
@@ -18,6 +18,8 @@ export default {
       title: "Group fields",
       type: "array",
       of: [
+        { type: "textShort" },
+        { type: "textLong" },
         { type: "formText" },
         { type: "formTextarea" },
         { type: "formButton" },

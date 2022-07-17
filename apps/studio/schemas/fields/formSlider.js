@@ -1,13 +1,8 @@
 export default {
   name: "formSlider",
-  title: "Form Slider",
+  title: "Form Slider Input",
   type: "object",
   fields: [
-    {
-      name: "sliderDefaults",
-      title: "Slider defaults",
-      type: "fieldDefaults",
-    },
     {
       name: "asTextField",
       title: "As text field?",

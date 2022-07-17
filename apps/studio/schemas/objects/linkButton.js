@@ -7,7 +7,9 @@ export default {
     {
       name: "style",
       title: "Styling for the Link",
-      hidden: ({ parent }) => parent?.linkDestination === undefined,
+      hidden: ({ parent }) =>
+        parent?.linkDestination === undefined ||
+        parent?.linkDestination === "form",
     },
   ],
   fields: [
@@ -32,7 +34,9 @@ export default {
       name: "linkLabel",
       title: "Link Label Text",
       type: "string",
-      hidden: ({ parent }) => parent?.linkDestination === undefined,
+      hidden: ({ parent }) =>
+        parent?.linkDestination === undefined ||
+        parent?.linkDestination === "form",
     },
     // BEGIN BUTTON STYLES
     {
@@ -49,8 +53,8 @@ export default {
           { title: "Text", value: "link" },
         ],
       },
-      // hidden: ({ parent }) => parent?.shortTextContent === undefined,
-      validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) => parent?.linkDestination === undefined,
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: "buttonBgColor",
@@ -87,7 +91,7 @@ export default {
         ],
       },
       // hidden: ({ parent }) => parent?.shortTextContent === undefined,
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: "linkLabelAlign",
@@ -105,7 +109,7 @@ export default {
         ],
       },
       // hidden: ({ parent }) => parent?.shortTextContent === undefined,
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
     // END OF BUTTON STYLES
     {
@@ -134,6 +138,7 @@ export default {
       title: "Has File Downloadable?",
       description: "Is there any kind of special content to give away?",
       type: "boolean",
+      // hidden: ({ parent }) => parent?.linkDestination === "form",
     },
     {
       name: "downloadType",
@@ -171,9 +176,24 @@ export default {
       hidden: ({ parent }) => parent?.downloadType !== "url",
     },
     {
-      name: "linkForm",
-      title: "linkForm",
-      type: "form",
+      name: "linkSubmitUrl",
+      title: "Link Submit URL",
+      type: "url",
+      hidden: ({ parent }) => parent?.linkDestination !== "form",
+    },
+    {
+      name: "linkFormFields",
+      title: "Link form fields",
+      type: "array",
+      of: [
+        { type: "formText" },
+        { type: "formTextarea" },
+        { type: "formGroup" },
+        { type: "formButton" },
+        { type: "formBox" },
+        { type: "formSelect" },
+        { type: "formSlider" },
+      ],
       hidden: ({ parent }) => parent?.linkDestination !== "form",
     },
   ],

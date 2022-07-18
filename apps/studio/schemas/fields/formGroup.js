@@ -14,6 +14,13 @@ export default {
       type: "boolean",
     },
     {
+      name: "groupRepeatLabel",
+      title: "Group repeat label",
+      description: "Adds a label to show what kind of data is being repeated",
+      type: "string",
+      hidden: ({ parent }) => parent?.groupRepeatable === false,
+    },
+    {
       name: "groupFields",
       title: "Group fields",
       type: "array",

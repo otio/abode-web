@@ -35,6 +35,7 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
           "imgUrl": reviewImage.asset->{...},
         }
       },
+      // DEPRECATED
       _type == 'magazineSignup' => {
         ...,
         promoImage,

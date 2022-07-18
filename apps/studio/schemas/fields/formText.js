@@ -31,6 +31,11 @@ export default {
       title: "Text field defaults",
       type: "fieldDefaults",
     },
+    {
+      name: "textValidations",
+      title: "Text validations",
+      type: "formValidations",
+    },
   ],
   // hidden: ({ parent }) => parent?.formFieldType !== "text",
 };

@@ -41,6 +41,7 @@ import formSelect from "./fields/formSelect";
 import formSlider from "./fields/formSlider";
 import formText from "./fields/formText";
 import formTextarea from "./fields/formTextarea";
+import formValidations from "./fields/formValidations";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -84,5 +85,6 @@ export default createSchema({
     formSlider,
     formText,
     formTextarea,
+    formValidations,
   ]),
 });

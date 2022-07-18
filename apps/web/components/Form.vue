@@ -78,8 +78,65 @@ export default {
     formSubmissionUrl() {
       return this.options?.linkForm?.submitUrl ?? '_blank'
     },
+    formSchema() {
+      return this.options?.linkFormFields.length !== 0
+        ? this.formSchemaBuilder(this.options.linkFormFields)
+        : []
+    },
   },
   methods: {
+    formSchemaBuilder(fields) {
+      const transformed = fields.map(this.formTransformer)
+      return transformed
+    },
+    formTransformer(field) {
+      switch (field._type) {
+        case 'formGroup':
+          return this.formGroupTransform(field)
+        case 'formText':
+          return {}
+        case 'formTextarea':
+          return {}
+        case 'formButton':
+          return {}
+        case 'formBox':
+          return {}
+        case 'formSelect':
+          return {}
+        case 'formSlider':
+          return {}
+
+        default:
+          return {}
+      }
+    },
+    formGroupTransform(field) {
+      const children =
+        field?.groupFields.length !== 0
+          ? this.formSchemaBuilder(field.groupFields)
+          : []
+      const data = {
+        type: 'group',
+        class: 'flex flex-row',
+        name: field.formGroupLabel,
+        validation: '',
+        repeatable: field?.groupRepeatable ?? false,
+        'add-label': field?.groupRepeatLabel ?? null,
+        // value: [{}],
+        children,
+      }
+      return JSON.stringify(data)
+    },
+    formTextTransformer(field) {
+      const data = {
+        type: 'text',
+        name: field.fieldName,
+        label: field.fieldLabel,
+        validation: '',
+      }
+      return JSON.stringify(data)
+    },
+    // END FORM TRANSFORMERS
     placeholder(field) {
       const splitDash = field.split('-')
       const formatted = `${this.capitalizeFirstLetter(

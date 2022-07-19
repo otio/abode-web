@@ -38,8 +38,6 @@
       />
       <img src="" alt="" />
     </picture>
-    <!-- <div class="gradient"></div> -->
-    <!-- <div class="absolute"> -->
     <div class="absolute top-0 left-0 w-full h-full">
       <!-- inset-10rem xs:(inset-1rem mt-7rem) -->
       <div class="relative w-full h-full">

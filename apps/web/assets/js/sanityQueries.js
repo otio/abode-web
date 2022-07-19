@@ -79,3 +79,8 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
       }
     }
 }`
+
+export const formPage = (paramName) => groq`*[ _id == $${paramName} ]{
+  _type == 'form' => {...},
+  _type == 'callToAction' => {...}
+}`

@@ -1,3 +1,20 @@
+const TEXT_FIELD_TYPES =  [
+  { title: "Text", value: "text" },
+  { title: "Datetime Local", value: "datetime-local" },
+  { title: "Date", value: "date" },
+  { title: "Color Picker", value: "color" },
+  { title: "Email", value: "email" },
+  { title: "Hidden", value: "hidden" },
+  { title: "Month", value: "month" },
+  { title: "Number", value: "number" },
+  { title: "Password", value: "password" },
+  { title: "Search", value: "search" },
+  { title: "Tel", value: "tel" },
+  { title: "Time", value: "time" },
+  { title: "URL", value: "url" },
+  { title: "Week", value: "week" },
+]
+
 export default {
   name: "formText",
   title: "Form Text Input",
@@ -8,22 +25,8 @@ export default {
       title: "Text field types",
       type: "string",
       options: {
-        list: [
-          { title: "color", value: "color" },
-          { title: "date", value: "date" },
-          { title: "datetime-local", value: "datetime-local" },
-          { title: "email", value: "email" },
-          { title: "hidden", value: "hidden" },
-          { title: "month", value: "month" },
-          { title: "number", value: "number" },
-          { title: "password", value: "password" },
-          { title: "search", value: "search" },
-          { title: "tel", value: "tel" },
-          { title: "time", value: "time" },
-          { title: "text", value: "text" },
-          { title: "url", value: "url" },
-          { title: "week", value: "week" },
-        ],
+        list: TEXT_FIELD_TYPES,
+        layout: 'dropdown'
       },
     },
     {
@@ -38,5 +41,16 @@ export default {
     },
   ],
   // hidden: ({ parent }) => parent?.formFieldType !== "text",
+  preview: {
+    select: {
+      textField: 'textFieldTypes',
+    },
+    // prepare: ({ textField }) => {
+    //   const fieldName = textField && TEXT_FIELD_TYPES.flatMap(option => option.value === textField ? [option.title] : [])
+    //   return {
+    //     title: textField ? `${textField} is ${fieldName}` : 'No state selected',
+    //   }
+    // }
+  }
 };
 // TEXT END

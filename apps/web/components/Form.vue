@@ -1,5 +1,6 @@
 <template>
   <section>
+    <!-- <FormulateForm :schema="formSchema"></FormulateForm> -->
     <FormulateForm
       v-if="isSubmitted !== true"
       v-slot="{ hasErrors }"
@@ -128,15 +129,50 @@ export default {
       return JSON.stringify(data)
     },
     formTextTransformer(field) {
+      const processedValidations = this.formValidationBuilder(field?.textValidations?.validationTypes)
       const data = {
         type: 'text',
         name: field.fieldName,
         label: field.fieldLabel,
-        validation: '',
+        validation: processedValidations,
       }
       return JSON.stringify(data)
     },
     // END FORM TRANSFORMERS
+    formValidationBuilder(rawValidations){
+      const validationAssembled = rawValidations.map(this.validationTransformer)
+      return validationAssembled
+    },
+    validationTransformer(validation){
+          switch (validation) {
+            case 'accepted':
+              return ['accepted']
+            case 'after':
+              return ['after']
+            default:
+              return []
+          }
+          // { title: 'Alphabetic characters only', value: 'alpha' },
+          // { title: 'Alphanumeric characters only', value: 'alphanumeric' },
+          // { title: 'Bail - Stop on 1st error', value: 'bail' },
+          // { title: 'Before Date', value: 'before' },
+          // { title: 'Between number range', value: 'between' },
+          // // { title: 'confirm', value: 'confirm' },
+          // { title: 'Date format', value: 'date' },
+          // { title: 'Email - Is Valid', value: 'email' },
+          // { title: 'Ends with?', value: 'ends_with' },
+          // { title: 'In input?', value: 'in' },
+          // { title: 'Matches', value: 'matches' },
+          // { title: 'Max number', value: 'max' },
+          // // { title: 'mime', value: 'mime' },
+          // { title: 'Min number', value: 'min' },
+          // { title: 'Not in input', value: 'not' },
+          // { title: 'is Number', value: 'number' },
+          // { title: 'Optional', value: 'optional' },
+          // { title: 'Required', value: 'required' },
+          // { title: 'Starts with?', value: 'starts_with' },
+          // { title: 'Valid URL?', value: 'url' },
+    },
     placeholder(field) {
       const splitDash = field.split('-')
       const formatted = `${this.capitalizeFirstLetter(

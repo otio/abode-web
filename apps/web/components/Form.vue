@@ -95,17 +95,17 @@ export default {
         case 'formGroup':
           return this.formGroupTransform(field)
         case 'formText':
-          return {}
+          return this.formTextransform(field)
         case 'formTextarea':
-          return {}
+          return this.formTextareaTransform(field)
         case 'formButton':
-          return {}
+          return this.formButtonTransform(field)
         case 'formBox':
-          return {}
+          return this.formBoxTransform(field)
         case 'formSelect':
-          return {}
+          return this.formSelectTransform(field)
         case 'formSlider':
-          return {}
+          return this.formSliderTransform(field)
 
         default:
           return {}
@@ -129,7 +129,9 @@ export default {
       return JSON.stringify(data)
     },
     formTextTransformer(field) {
-      const processedValidations = this.formValidationBuilder(field?.textValidations?.validationTypes)
+      const processedValidations = this.formValidationBuilder(
+        field?.textValidations?.validationTypes
+      )
       const data = {
         type: 'text',
         name: field.fieldName,
@@ -139,39 +141,60 @@ export default {
       return JSON.stringify(data)
     },
     // END FORM TRANSFORMERS
-    formValidationBuilder(rawValidations){
+    formValidationBuilder(rawValidations) {
       const validationAssembled = rawValidations.map(this.validationTransformer)
       return validationAssembled
     },
-    validationTransformer(validation){
-          switch (validation) {
-            case 'accepted':
-              return ['accepted']
-            case 'after':
-              return ['after']
-            default:
-              return []
-          }
-          // { title: 'Alphabetic characters only', value: 'alpha' },
-          // { title: 'Alphanumeric characters only', value: 'alphanumeric' },
-          // { title: 'Bail - Stop on 1st error', value: 'bail' },
-          // { title: 'Before Date', value: 'before' },
-          // { title: 'Between number range', value: 'between' },
-          // // { title: 'confirm', value: 'confirm' },
-          // { title: 'Date format', value: 'date' },
-          // { title: 'Email - Is Valid', value: 'email' },
-          // { title: 'Ends with?', value: 'ends_with' },
-          // { title: 'In input?', value: 'in' },
-          // { title: 'Matches', value: 'matches' },
-          // { title: 'Max number', value: 'max' },
-          // // { title: 'mime', value: 'mime' },
-          // { title: 'Min number', value: 'min' },
-          // { title: 'Not in input', value: 'not' },
-          // { title: 'is Number', value: 'number' },
-          // { title: 'Optional', value: 'optional' },
-          // { title: 'Required', value: 'required' },
-          // { title: 'Starts with?', value: 'starts_with' },
-          // { title: 'Valid URL?', value: 'url' },
+    validationTransformer(validation) {
+      switch (validation) {
+        case 'accepted':
+          return ['accepted']
+        case 'after':
+          return ['after']
+        case 'alpha':
+          return ['alpha']
+        case 'alphanumeric':
+          return ['alphanumeric']
+        case 'bail':
+          return ['bail']
+        case 'before':
+          return ['before']
+        case 'between':
+          return ['between']
+        case 'confirm':
+          return ['confirm']
+        case 'date':
+          return ['date']
+        case 'email':
+          return ['email']
+        case 'ends_with':
+          return ['ends_with']
+        case 'in':
+          return ['in']
+        case 'matches':
+          return ['matches']
+        case 'max':
+          return ['max']
+        case 'mime':
+          return ['mime']
+        case 'min':
+          return ['min']
+        case 'not':
+          return ['not']
+        case 'number':
+          return ['number']
+        case 'optional':
+          return ['optional']
+        case 'required':
+          return ['required']
+        case 'starts_with':
+          return ['starts_with']
+        case 'url':
+          return ['url']
+
+        default:
+          return []
+      }
     },
     placeholder(field) {
       const splitDash = field.split('-')

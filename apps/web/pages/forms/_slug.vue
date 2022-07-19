@@ -1,9 +1,11 @@
 <template>
-  <section class="font-display">
-    <div>
-        <h1>{{ formName }}</h1>
+  <section class="relative font-display">
+    <div class="flex flex-col items-center">
+      <div>{{ formName }}</div>
+      <div>
+        <FormulateForm :schema="[{}]"></FormulateForm>
+      </div>
     </div>
-
   </section>
 </template>
 
@@ -26,15 +28,10 @@ export default {
     const result = await $sanity.fetch(formPage('pageId'), queryParams)
     return result[0]
   },
-  data() {
-    return {
-      pageData: {},
-    }
-  },
   computed: {
     formName() {
-        return this.data?.formName ?? 'No form name given...' 
-    }
+      return this.data?.formName ?? 'No form name given...'
+    },
   },
 }
 </script>

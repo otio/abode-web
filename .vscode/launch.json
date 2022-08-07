@@ -5,8 +5,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "yarn dev:web",
-      "name": "Run yarn dev:web",
+      "command": "yarn nx run web:dev",
+      "name": "Run NX Web",
       "request": "launch",
       "type": "node-terminal"
     },

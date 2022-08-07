@@ -1,6 +1,6 @@
-const TEXT_FIELD_TYPES =  [
+const TEXT_FIELD_TYPES = [
   { title: "Text", value: "text" },
-  { title: "Datetime Local", value: "datetime-local" },
+  // { title: "Datetime Local", value: "datetime-local" },
   { title: "Date", value: "date" },
   { title: "Color Picker", value: "color" },
   { title: "Email", value: "email" },
@@ -12,8 +12,8 @@ const TEXT_FIELD_TYPES =  [
   { title: "Tel", value: "tel" },
   { title: "Time", value: "time" },
   { title: "URL", value: "url" },
-  { title: "Week", value: "week" },
-]
+  // { title: "Week", value: "week" },
+];
 
 export default {
   name: "formText",
@@ -21,12 +21,12 @@ export default {
   type: "object",
   fields: [
     {
-      name: "textFieldTypes",
-      title: "Text field types",
+      name: "textFieldType",
+      title: "Text field type",
       type: "string",
       options: {
         list: TEXT_FIELD_TYPES,
-        layout: 'dropdown'
+        layout: "dropdown",
       },
     },
     {
@@ -43,7 +43,7 @@ export default {
   // hidden: ({ parent }) => parent?.formFieldType !== "text",
   preview: {
     select: {
-      textField: 'textFieldTypes',
+      textField: "textFieldTypes",
     },
     // prepare: ({ textField }) => {
     //   const fieldName = textField && TEXT_FIELD_TYPES.flatMap(option => option.value === textField ? [option.title] : [])
@@ -51,6 +51,6 @@ export default {
     //     title: textField ? `${textField} is ${fieldName}` : 'No state selected',
     //   }
     // }
-  }
+  },
 };
 // TEXT END

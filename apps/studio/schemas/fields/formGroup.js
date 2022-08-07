@@ -35,6 +35,17 @@ export default {
         { type: "formSlider" },
       ],
     },
+    {
+      name: "groupFieldAlignment",
+      title: "Field alignment",
+      type: "string",
+      options: {
+        list: [
+          { title: "Row", value: "flex flex-row items-center" },
+          { title: "Column", value: "flex flex-col" },
+        ],
+      },
+    },
   ],
   // hidden: ({ parent }) => parent?.formFieldType !== "group",
 };

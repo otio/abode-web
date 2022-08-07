@@ -1,10 +1,12 @@
 <template>
   <section>
-    <!-- <FormulateForm :schema="formSchema"></FormulateForm> -->
+    <FormulateForm
+      class="flex flex-col items-center"
+      :schema="formSchema"
+      @submit="submitHandler"
+    ></FormulateForm>
     <FormulateForm
       v-if="isSubmitted !== true"
-      v-slot="{ hasErrors }"
-      v-model="formValues"
       class="flex flex-col items-center"
       @submit="submitHandler"
     >
@@ -25,11 +27,11 @@
           />
         </div>
         <div class="xs:(w-full)">
-          <FormulateInput
+          <!-- <FormulateInput
             type="submit"
             :disabled="hasErrors"
             :name="buttonLabel"
-          />
+          /> -->
         </div>
       </div>
     </FormulateForm>
@@ -61,6 +63,7 @@ export default {
   data() {
     return {
       isSubmitted: false,
+      formSchema: null,
     }
   },
   computed: {
@@ -79,71 +82,108 @@ export default {
     formSubmissionUrl() {
       return this.options?.linkForm?.submitUrl ?? '_blank'
     },
-    formSchema() {
+  },
+  created() {
+    return this.formSchemaParser()
+  },
+  methods: {
+    formSchemaParser() {
       return this.options?.linkFormFields.length !== 0
         ? this.formSchemaBuilder(this.options.linkFormFields)
         : []
     },
-  },
-  methods: {
     formSchemaBuilder(fields) {
-      const transformed = fields.map(this.formTransformer)
-      return transformed
+      if (Array.isArray(fields)) {
+        try {
+          const transformed = fields.map(this.formTransformer)
+          this.formSchema = transformed
+          return
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          return console.error(error)
+        }
+      }
     },
     formTransformer(field) {
       switch (field._type) {
         case 'formGroup':
-          return this.formGroupTransform(field)
+          return this.formGroupTransformer(field)
         case 'formText':
-          return this.formTextransform(field)
+          return this.formTextTransformer(field)
         case 'formTextarea':
-          return this.formTextareaTransform(field)
+          return this.formTextareaTransformer(field)
         case 'formButton':
-          return this.formButtonTransform(field)
+          return this.formButtonTransformer(field)
         case 'formBox':
-          return this.formBoxTransform(field)
+          return this.formBoxTransformer(field)
         case 'formSelect':
-          return this.formSelectTransform(field)
+          return this.formSelectTransformer(field)
         case 'formSlider':
-          return this.formSliderTransform(field)
+          return this.formSliderTransformer(field)
 
         default:
           return {}
       }
     },
-    formGroupTransform(field) {
-      const children =
-        field?.groupFields.length !== 0
-          ? this.formSchemaBuilder(field.groupFields)
-          : []
-      const data = {
-        type: 'group',
-        class: 'flex flex-row',
-        name: field.formGroupLabel,
-        validation: '',
-        repeatable: field?.groupRepeatable ?? false,
-        'add-label': field?.groupRepeatLabel ?? null,
-        // value: [{}],
-        children,
+    formGroupTransformer(field) {
+      let children
+      if (Array.isArray(field.groupFields)) {
+        try {
+          const transformed = field.groupFields.map(this.formTransformer)
+          children = transformed
+          const data = {
+            type: 'group',
+            component: 'div',
+            class: field.groupFieldAlignment,
+            name: field.formGroupLabel,
+            validation: '',
+            repeatable: field?.groupRepeatable ?? false,
+            'add-label': field?.groupRepeatLabel ?? null,
+            children,
+            // value: [{}],
+          }
+          return data
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          return console.error(error)
+        }
       }
-      return JSON.stringify(data)
     },
     formTextTransformer(field) {
       const processedValidations = this.formValidationBuilder(
         field?.textValidations?.validationTypes
       )
+      const textField = field.textFieldDefaults
       const data = {
-        type: 'text',
-        name: field.fieldName,
-        label: field.fieldLabel,
+        type: field?.textFieldType,
+        name: textField?.fieldName,
+        label: textField?.fieldLabel,
+        placeholder: textField?.fieldPlaceholder,
+        help: textField?.fieldHelpText,
         validation: processedValidations,
+        'validation-name': null,
+        value: null,
+        min: null,
+        max: null,
+        'error-behavior': 'blur',
       }
-      return JSON.stringify(data)
+      return data
+    },
+    formButtonTransformer(field) {
+      const data = {
+        type: 'submit',
+        name: field.formButtonLabel,
+      }
+      return data
     },
     // END FORM TRANSFORMERS
     formValidationBuilder(rawValidations) {
-      const validationAssembled = rawValidations.map(this.validationTransformer)
-      return validationAssembled
+      if (Array.isArray(rawValidations)) {
+        const validationAssembled = rawValidations.map(
+          this.validationTransformer
+        )
+        return validationAssembled
+      }
     },
     validationTransformer(validation) {
       switch (validation) {

@@ -20,5 +20,12 @@ export default {
       of: [{ type: "string" }],
     },
   ],
+  // preview: {
+  //   select: {
+  //     title: "selectLabel",
+  //     subtitle: "selectPlaceholder",
+  //     optList: "selectOptions",
+  //   },
+  // },
 };
 // SELECT END

@@ -4,6 +4,16 @@ export default {
   type: "object",
   fields: [
     {
+      name: "sliderName",
+      title: "Slider name",
+      type: "string",
+    },
+    {
+      name: "sliderLabel",
+      title: "Slider label",
+      type: "string",
+    },
+    {
       name: "asTextField",
       title: "As text field?",
       type: "boolean",

@@ -43,14 +43,38 @@ export default {
   // hidden: ({ parent }) => parent?.formFieldType !== "text",
   preview: {
     select: {
-      textField: "textFieldTypes",
+      fieldType: "textFieldType",
+      fieldName: "textFieldDefaults.fieldName",
+      fieldLabel: "textFieldDefaults.fieldLabel",
+      fieldPlaceholder: "textFieldDefaults.fieldPlaceholder",
+      fieldHelp: "textFieldDefaults.fieldHelpText",
     },
-    // prepare: ({ textField }) => {
-    //   const fieldName = textField && TEXT_FIELD_TYPES.flatMap(option => option.value === textField ? [option.title] : [])
-    //   return {
-    //     title: textField ? `${textField} is ${fieldName}` : 'No state selected',
-    //   }
-    // }
+    prepare: ({
+      fieldType,
+      fieldName,
+      fieldLabel,
+      fieldPlaceholder,
+      fieldHelp,
+    }) => {
+      const field =
+        fieldType &&
+        TEXT_FIELD_TYPES.flatMap((option) =>
+          option.value === fieldType ? [option.title] : []
+        );
+      // debugger;
+      const defaults = [fieldName, fieldLabel, fieldPlaceholder, fieldHelp].map(
+        (field) => {
+          return field === "" || field === undefined ? " empty" : `${field}`;
+        }
+      );
+      return {
+        subtitle: fieldType ? `${field}` : "No field type selected",
+        // title: `${fieldName}, ${fieldLabel ?? "No label"}, ${
+        //   fieldPlaceholder ?? "No placeholder"
+        // }, ${fieldHelp ?? "No help text"}`,
+        title: `${defaults}`,
+      };
+    },
   },
 };
 // TEXT END

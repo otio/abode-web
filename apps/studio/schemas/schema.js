@@ -32,6 +32,7 @@ import tileSection from "./objects/tileSection";
 import linkButton from "./objects/linkButton";
 import agentPicker from "./objects/agentPicker";
 import fieldDefaults from "./objects/fieldDefaults";
+import formPicker from "./objects/formPicker";
 
 // FIELDS
 import formBox from "./fields/formBox";
@@ -73,6 +74,7 @@ export default createSchema({
     marketingCta,
     marketReportsPicker,
     ctaPicker,
+    formPicker,
     textShort,
     textLong,
     tileSection,

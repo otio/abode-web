@@ -1,15 +1,15 @@
+<!-- eslint-disable vue/no-unused-vars -->
+<!-- eslint-disable vue/v-slot-style -->
 <template>
   <section>
     <FormulateForm
+      v-if="isSubmitted !== true"
+      #default="{ isLoading, hasErrors }"
       class="flex flex-col items-center"
       :schema="formSchema"
       @submit="submitHandler"
     ></FormulateForm>
-    <FormulateForm
-      v-if="isSubmitted !== true"
-      class="flex flex-col items-center"
-      @submit="submitHandler"
-    >
+    <!-- <FormulateForm class="flex flex-col items-center" @submit="submitHandler">
       <div
         class="flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)"
       >
@@ -27,14 +27,14 @@
           />
         </div>
         <div class="xs:(w-full)">
-          <!-- <FormulateInput
+          <FormulateInput
             type="submit"
             :disabled="hasErrors"
             :name="buttonLabel"
-          /> -->
+          />
         </div>
       </div>
-    </FormulateForm>
+    </FormulateForm> -->
     <div v-else-if="bonusAsset !== null">
       <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
       <p
@@ -74,13 +74,13 @@ export default {
       return this.options?.linkLabel ?? 'Submit'
     },
     formId() {
-      return this.getFormId(this.formSubmissionUrl)[0]
+      return this.getFormId(this.formSubmissionUrl)
     },
     formInputs() {
-      return this.options?.linkForm?.inputFields ?? []
+      return this.options?.linkFormFields ?? []
     },
     formSubmissionUrl() {
-      return this.options?.linkForm?.submitUrl ?? '_blank'
+      return this.options?.linkSubmitUrl ?? '_blank'
     },
   },
   created() {
@@ -166,13 +166,18 @@ export default {
         min: null,
         max: null,
         'error-behavior': 'blur',
+        'outer-class': 'formulate-input w-full xs:(text-center)',
+        debounce: true,
+        // labelPosition: 'after',
       }
       return data
     },
     formButtonTransformer(field) {
       const data = {
         type: 'submit',
+        class: 'text-center',
         name: field.formButtonLabel,
+        disabled: this.hasErrors,
       }
       return data
     },
@@ -236,13 +241,13 @@ export default {
           return []
       }
     },
-    placeholder(field) {
-      const splitDash = field.split('-')
-      const formatted = `${this.capitalizeFirstLetter(
-        splitDash[0]
-      )} ${this.capitalizeFirstLetter(splitDash[1])}`
-      return formatted
-    },
+    // placeholder(field) {
+    //   const splitDash = field.split('-')
+    //   const formatted = `${this.capitalizeFirstLetter(
+    //     splitDash[0]
+    //   )} ${this.capitalizeFirstLetter(splitDash[1])}`
+    //   return formatted
+    // },
     getFormId(url) {
       const splitDash = url.split('/')
       return splitDash.slice(-1)

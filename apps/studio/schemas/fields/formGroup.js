@@ -41,7 +41,11 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "Row", value: "flex flex-row items-center" },
+          {
+            title: "Row",
+            value:
+              "flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)",
+          },
           { title: "Column", value: "flex flex-col" },
         ],
       },

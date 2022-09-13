@@ -5,10 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "yarn nx run web:dev",
-      "name": "Run NX Web",
+      "command": "yarn dev",
+      "name": "Run NX Dev",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "skipFiles": ["<node_internals>/**", "~/.nvs/**"]
+    },
+    {
+      "command": "yarn nx run web:dev",
+      "name": "Run WEB",
+      "request": "launch",
+      "type": "node-terminal",
+      "skipFiles": ["<node_internals>/**", "~/.nvs/**"]
     },
     {
       "type": "chrome",

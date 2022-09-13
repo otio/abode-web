@@ -76,11 +76,11 @@ export const mainPage = (paramName) => groq`*[ _id == $${paramName} ]{
           "bioPhoto": agentBioPhoto.asset->{...},
           "logo": agentLogo.asset->{...}
         }
-      }
+      },
+      _type == 'formPicker' => {
+        "schema":formDoc[0]->{...}
+      },
     }
 }`
 
-export const formPage = (paramName) => groq`*[ _id == $${paramName} ]{
-  _type == 'form' => {...},
-  _type == 'callToAction' => {...}
-}`
+export const formPage = (paramName) => groq`*[ _id == $${paramName} ] {...}`

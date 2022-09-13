@@ -6,7 +6,7 @@
       :key="component._key"
     >
       <component
-        :is="component._type === `callToAction` ? `ctaPicker` : component._type"
+        :is="componentSwitcher(component)"
         :options="component"
         class="mb-24"
       />
@@ -37,6 +37,19 @@ export default {
     return {
       pageData: {},
     }
+  },
+  methods: {
+    componentSwitcher(component) {
+      // component._type === `callToAction` ? `ctaPicker` : component._type
+      switch (component._type) {
+        case 'callToAction':
+          return 'CtaPicker'
+        case 'formPicker':
+          return 'Form'
+        default:
+          return component._type
+      }
+    },
   },
 }
 </script>

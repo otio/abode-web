@@ -5,7 +5,7 @@
     <FormulateForm
       v-if="isSubmitted !== true"
       #default="{ isLoading, hasErrors }"
-      class="flex flex-col items-center"
+      class="flex flex-col justify-center items-center"
       :schema="formSchema"
       @submit="submitHandler"
     ></FormulateForm>
@@ -77,7 +77,7 @@ export default {
       return this.getFormId(this.formSubmissionUrl)
     },
     formInputs() {
-      return this.options?.linkFormFields ?? []
+      return this.options?.schema?.formInputs ?? []
     },
     formSubmissionUrl() {
       return this.options?.linkSubmitUrl ?? '_blank'
@@ -88,8 +88,8 @@ export default {
   },
   methods: {
     formSchemaParser() {
-      return this.options?.linkFormFields.length !== 0
-        ? this.formSchemaBuilder(this.options.linkFormFields)
+      return this.formInputs.length !== 0
+        ? this.formSchemaBuilder(this.formInputs)
         : []
     },
     formSchemaBuilder(fields) {
@@ -120,7 +120,8 @@ export default {
           return this.formSelectTransformer(field)
         case 'formSlider':
           return this.formSliderTransformer(field)
-
+        case 'textShort':
+          return this.formInfoTextTransformer(field)
         default:
           return {}
       }
@@ -149,6 +150,7 @@ export default {
         }
       }
     },
+    formInfoTextTransformer(field) {},
     formTextTransformer(field) {
       const processedValidations = this.formValidationBuilder(
         field?.textValidations?.validationTypes
@@ -241,13 +243,6 @@ export default {
           return []
       }
     },
-    // placeholder(field) {
-    //   const splitDash = field.split('-')
-    //   const formatted = `${this.capitalizeFirstLetter(
-    //     splitDash[0]
-    //   )} ${this.capitalizeFirstLetter(splitDash[1])}`
-    //   return formatted
-    // },
     getFormId(url) {
       const splitDash = url.split('/')
       return splitDash.slice(-1)

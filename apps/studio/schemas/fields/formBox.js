@@ -14,6 +14,13 @@ export default {
       name: "boxGroupName",
       title: "Box group name",
       type: "string",
+      description: "Groups related box options",
+    },
+    {
+      name: "boxGroupLabel",
+      title: "Box group label",
+      type: "string",
+      description: "Gives visual context to the box groups",
     },
     {
       name: "boxOptions",

@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       isSubmitted: false,
-      formSchema: null,
+      formSchema: [],
     }
   },
   computed: {
@@ -87,6 +87,9 @@ export default {
     return this.formSchemaParser()
   },
   methods: {
+    jsonSchema() {
+      return JSON.stringify(this.formSchema)
+    },
     formSchemaParser() {
       return this.formInputs.length !== 0
         ? this.formSchemaBuilder(this.formInputs)
@@ -96,7 +99,9 @@ export default {
       if (Array.isArray(fields)) {
         try {
           const transformed = fields.map(this.formTransformer)
-          this.formSchema = transformed
+          // eslint-disable-next-line no-debugger
+          debugger
+          transformed.forEach((field) => this.formSchema.push(field))
           return
         } catch (error) {
           // eslint-disable-next-line no-console
@@ -105,7 +110,7 @@ export default {
       }
     },
     formTransformer(field) {
-      switch (field._type) {
+      switch (field.formFieldType) {
         case 'formGroup':
           return this.formGroupTransformer(field)
         case 'formText':
@@ -120,8 +125,8 @@ export default {
           return this.formSelectTransformer(field)
         case 'formSlider':
           return this.formSliderTransformer(field)
-        case 'textShort':
-          return this.formInfoTextTransformer(field)
+        // case 'textShort':
+        //   return this.formInfoTextTransformer(field)
         default:
           return {}
       }
@@ -178,8 +183,17 @@ export default {
       const data = {
         type: 'submit',
         class: 'text-center',
-        name: field.formButtonLabel,
+        name: field.formButtonLabel ?? 'Submit',
         disabled: this.hasErrors,
+      }
+      return data
+    },
+    formBoxTransformer(field) {
+      const isCheckBox = field?.boxInput.isCheckBox
+      const data = {
+        type: isCheckBox ? 'checkbox' : 'radio',
+        name: field?.boxInput?.boxGroupName,
+        label: field?.boxInput?.boxGroupLabel,
       }
       return data
     },

@@ -1,3 +1,4 @@
+<!-- eslint-disable no-debugger -->
 <!-- eslint-disable vue/no-unused-vars -->
 <!-- eslint-disable vue/v-slot-style -->
 <template>
@@ -82,14 +83,16 @@ export default {
     formSubmissionUrl() {
       return this.options?.linkSubmitUrl ?? '_blank'
     },
-  },
-  created() {
-    return this.formSchemaParser()
-  },
-  methods: {
     jsonSchema() {
       return JSON.stringify(this.formSchema)
     },
+  },
+  mounted() {
+    // eslint-disable-next-line no-debugger
+    // debugger
+    return this.formSchemaParser()
+  },
+  methods: {
     formSchemaParser() {
       return this.formInputs.length !== 0
         ? this.formSchemaBuilder(this.formInputs)
@@ -98,9 +101,8 @@ export default {
     formSchemaBuilder(fields) {
       if (Array.isArray(fields)) {
         try {
-          const transformed = fields.map(this.formTransformer)
-          // eslint-disable-next-line no-debugger
-          debugger
+          const transformed = fields.map((field) => this.formTransformer(field))
+
           transformed.forEach((field) => this.formSchema.push(field))
           return
         } catch (error) {
@@ -110,40 +112,49 @@ export default {
       }
     },
     formTransformer(field) {
+      // eslint-disable-next-line no-debugger
+      // debugger
       switch (field.formFieldType) {
-        case 'formGroup':
+        case 'group':
           return this.formGroupTransformer(field)
-        case 'formText':
+        case 'text':
           return this.formTextTransformer(field)
-        case 'formTextarea':
+        case 'textarea':
           return this.formTextareaTransformer(field)
-        case 'formButton':
+        case 'button':
           return this.formButtonTransformer(field)
-        case 'formBox':
+        case 'box':
           return this.formBoxTransformer(field)
-        case 'formSelect':
+        case 'select':
           return this.formSelectTransformer(field)
-        case 'formSlider':
+        case 'range':
           return this.formSliderTransformer(field)
-        // case 'textShort':
-        //   return this.formInfoTextTransformer(field)
+        case 'textShort':
+          return this.formInfoTextTransformer(field)
+        case 'textLong':
+          return this.formInfoTextTransformer(field)
         default:
           return {}
       }
     },
     formGroupTransformer(field) {
+      // eslint-disable-next-line no-debugger
+      // debugger
       let children
-      if (Array.isArray(field.groupFields)) {
+      const groupFields = field?.groupInput?.groupFields
+      if (Array.isArray(groupFields)) {
         try {
-          const transformed = field.groupFields.map(this.formTransformer)
-          children = transformed
+          const transformedGroup = groupFields.map((field) =>
+            this.formTransformer(field)
+          )
+          children = transformedGroup
           const data = {
             type: 'group',
             component: 'div',
-            class: field.groupFieldAlignment,
-            name: field.formGroupLabel,
+            class: field?.formGroupInput?.groupFieldAlignment,
+            name: field?.groupInput?.formGroupLabel,
             validation: '',
-            repeatable: field?.groupRepeatable ?? false,
+            repeatable: field?.repeatable ?? false,
             'add-label': field?.groupRepeatLabel ?? null,
             children,
             // value: [{}],
@@ -155,12 +166,38 @@ export default {
         }
       }
     },
-    formInfoTextTransformer(field) {},
+    formInfoTextTransformer(field) {
+      // let data
+      let short
+      let long
+      // eslint-disable-next-line no-debugger
+      // debugger
+      switch (field.formFieldType) {
+        case 'textShort':
+          short = {
+            component: 'textShort',
+            options: {
+              ...field?.textShortInput,
+            },
+          }
+          return short
+        case 'textLong':
+          long = {
+            component: 'textLong',
+            options: {
+              ...field?.textLongInput,
+            },
+          }
+          return long
+        default:
+          return {}
+      }
+    },
     formTextTransformer(field) {
       const processedValidations = this.formValidationBuilder(
         field?.textValidations?.validationTypes
       )
-      const textField = field.textFieldDefaults
+      const textField = field?.textInput?.textFieldDefaults
       const data = {
         type: field?.textFieldType,
         name: textField?.fieldName,
@@ -176,6 +213,19 @@ export default {
         'outer-class': 'formulate-input w-full xs:(text-center)',
         debounce: true,
         // labelPosition: 'after',
+      }
+      // eslint-disable-next-line no-debugger
+      // debugger
+      return data
+    },
+    formTextareaTransformer(field) {
+      const textAreaField = field?.textareaInput?.textAreaDefaults
+      const maxLength = field?.textareaInput?.textAreaMax ?? 250
+      const data = {
+        type: field?.formFieldType,
+        name: textAreaField?.fieldName,
+        label: textAreaField?.fieldLabel,
+        validation: `max:${maxLength}`,
       }
       return data
     },
@@ -194,6 +244,27 @@ export default {
         type: isCheckBox ? 'checkbox' : 'radio',
         name: field?.boxInput?.boxGroupName,
         label: field?.boxInput?.boxGroupLabel,
+      }
+      return data
+    },
+    formSelectTransformer(field) {
+      const selectField = field?.selectInput
+      const data = {
+        type: field?.formFieldType,
+        label: selectField?.selectLabel,
+        placeholder: selectField?.selectPlaceholder,
+        options: [...selectField.selectOptions],
+      }
+      return data
+    },
+    formSliderTransformer(field) {
+      const sliderField = field?.sliderInput
+      const data = {
+        type: field?.formFieldType,
+        label: sliderField?.sliderLabel,
+        name: sliderField?.sliderName,
+        min: sliderField?.sliderRange?.sliderMinimum,
+        max: sliderField?.sliderRange?.sliderMax,
       }
       return data
     },

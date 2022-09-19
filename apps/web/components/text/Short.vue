@@ -1,6 +1,8 @@
 <template>
   <div>
-    <component :is="tag" :class="[font, size, color, alignment, spacing]">{{ textContent }}</component>
+    <component :is="tag" :class="[font, size, color, alignment, spacing]">{{
+      textContent
+    }}</component>
     <!-- <h2 :class="headlineFontStyle">
       {{ textContent }}
       <slot></slot>
@@ -20,9 +22,7 @@ export default {
     },
   },
   data() {
-    return {
-      
-    }
+    return {}
   },
   computed: {
     textContent() {
@@ -31,7 +31,7 @@ export default {
     headlineType() {
       return this.options?.shortTextStyle
     },
-    tag(){
+    tag() {
       switch (this.headlineType) {
         case 'head':
           return 'h2'
@@ -41,8 +41,8 @@ export default {
           return 'p'
       }
     },
-        size(){
-       switch (this.headlineType) {
+    size() {
+      switch (this.headlineType) {
         case 'head':
           return 'text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
         case 'subhead':
@@ -67,23 +67,23 @@ export default {
     //   switch (this.headlineType) {
     //     case 'headline-red':
     //       return 'font-display text-center text-firebrick text-8xl 2xl:(text-7xl) xl:(text-6xl) lg:(text-5xl) md:(text-5xl) sm:(text-5xl) xs:(text-5xl)'
-        // case 'lower-med-white':
-        // return 'font-secondary text-center text-firebrick text-6xl'
-        // case 'center-reg-black':
-        // return 'font-secondary text-center text-black text-5xl'
-        // case 'left-med-trans':
-        // return 'font-bold'
+    // case 'lower-med-white':
+    // return 'font-secondary text-center text-firebrick text-6xl'
+    // case 'center-reg-black':
+    // return 'font-secondary text-center text-black text-5xl'
+    // case 'left-med-trans':
+    // return 'font-bold'
     //     default:
     //       return ''
     //   }
     // },
 
-    spacing(){
-       switch (this.headlineType) {
+    spacing() {
+      switch (this.headlineType) {
         case 'head':
-          return this.options?.componentStyle === 'split' 
-          ? 'mt-10 mb-24 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24)'
-          : 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
+          return this.options?.componentStyle === 'split'
+            ? 'mt-10 mb-24 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24)'
+            : 'mt-10 mb-60 lg:(mb-28) md:(mb-28) sm:(mb-28) xs:(mt-24 mb-90)'
         case 'subhead':
           return 'pb-12'
         case 'float':
@@ -92,7 +92,7 @@ export default {
           return 'pb-8'
       }
     },
-    alignment(){
+    alignment() {
       switch (this.options?.shortTextAlign) {
         case 'left':
           return 'text-left'
@@ -104,7 +104,7 @@ export default {
           return 'text-center'
       }
     },
-    color(){
+    color() {
       switch (this.options?.shortTextFontColor) {
         case 'red':
           return 'text-firebrick'
@@ -114,7 +114,7 @@ export default {
           return 'text-black'
       }
     },
-    font(){
+    font() {
       switch (this.headlineType) {
         case 'head':
           return 'font-display'
@@ -126,7 +126,7 @@ export default {
           return 'font-body'
       }
     },
-    weight(){
+    weight() {
       switch (this.headlineType) {
         case 'head':
           return 'font-normal'
@@ -137,7 +137,7 @@ export default {
         default:
           return 'font-medium'
       }
-    }
+    },
   },
 }
 </script>

@@ -8,7 +8,7 @@
 import { formPage } from '../../assets/js/sanityQueries'
 
 export default {
-  layout: 'interior',
+  layout: 'forms',
   validate({ params, store }) {
     const isRoute = store.state.forms.find((form) => form.slug === params.slug)
     // const isPreview = query.preview === 'true' ?? false

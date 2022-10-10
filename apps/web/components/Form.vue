@@ -2,40 +2,14 @@
 <!-- eslint-disable vue/no-unused-vars -->
 <!-- eslint-disable vue/v-slot-style -->
 <template>
-  <section>
+  <section class="flex flex-col justify-center items-center">
     <FormulateForm
       v-if="isSubmitted !== true"
       #default="{ isLoading, hasErrors }"
-      class="flex flex-col justify-center items-center"
+      class="flex flex-col justify-center items-center w-1/2"
       :schema="formSchema"
       @submit="submitHandler"
     ></FormulateForm>
-    <!-- <FormulateForm class="flex flex-col items-center" @submit="submitHandler">
-      <div
-        class="flex flex-row justify-around w-md h-4rem xs:(flex-col items-center w-full h-7rem)"
-      >
-        <div
-          v-for="(field, index) in formInputs"
-          :key="index + 1"
-          class="w-full xs:(text-center)"
-        >
-          <FormulateInput
-            type="email"
-            :placeholder="placeholder(field)"
-            validation="bail|required|email"
-            error-behavior="value"
-            @keypress.enter="hasError !== true ? submitHandler : null"
-          />
-        </div>
-        <div class="xs:(w-full)">
-          <FormulateInput
-            type="submit"
-            :disabled="hasErrors"
-            :name="buttonLabel"
-          />
-        </div>
-      </div>
-    </FormulateForm> -->
     <div v-else-if="bonusAsset !== null">
       <p id="thanks" class="text-center text-2xl mb-8">Thank You!</p>
       <p
@@ -149,6 +123,7 @@ export default {
           )
           children = transformedGroup
           const data = {
+            key: field?._key,
             type: 'group',
             component: 'div',
             class: field?.formGroupInput?.groupFieldAlignment,
@@ -157,6 +132,8 @@ export default {
             repeatable: field?.repeatable ?? false,
             'add-label': field?.groupRepeatLabel ?? null,
             children,
+            'outer-class': 'flex flex-row',
+            'element-class': 'w-full',
             // value: [{}],
           }
           return data
@@ -175,6 +152,7 @@ export default {
       switch (field.formFieldType) {
         case 'textShort':
           short = {
+            key: field?._key,
             component: 'textShort',
             options: {
               ...field?.textShortInput,
@@ -183,6 +161,7 @@ export default {
           return short
         case 'textLong':
           long = {
+            key: field?._key,
             component: 'textLong',
             options: {
               ...field?.textLongInput,
@@ -199,6 +178,7 @@ export default {
       )
       const textField = field?.textInput?.textFieldDefaults
       const data = {
+        key: field?._key,
         type: field?.textFieldType,
         name: textField?.fieldName,
         label: textField?.fieldLabel,
@@ -210,7 +190,8 @@ export default {
         min: null,
         max: null,
         'error-behavior': 'blur',
-        'outer-class': 'formulate-input w-full xs:(text-center)',
+        'outer-class': 'formulate-input w-full text-left xs:(text-center)',
+        'element-class': 'w-full',
         debounce: true,
         // labelPosition: 'after',
       }
@@ -222,44 +203,56 @@ export default {
       const textAreaField = field?.textareaInput?.textAreaDefaults
       const maxLength = field?.textareaInput?.textAreaMax ?? 250
       const data = {
+        key: field?._key,
         type: field?.formFieldType,
         name: textAreaField?.fieldName,
         label: textAreaField?.fieldLabel,
         validation: `max:${maxLength}`,
+        'outer-class': 'formulate-input w-full text-center xs:(text-center)',
+        'element-class': 'w-full',
       }
       return data
     },
     formButtonTransformer(field) {
       const data = {
+        key: field?._key,
         type: 'submit',
         class: 'text-center',
         name: field.formButtonLabel ?? 'Submit',
         disabled: this.hasErrors,
+        'outer-class': 'formulate-input w-full',
+        'element-class': 'w-1/2 text-center xs:(text-center)',
       }
       return data
     },
     formBoxTransformer(field) {
       const isCheckBox = field?.boxInput.isCheckBox
       const data = {
+        key: field?._key,
         type: isCheckBox ? 'checkbox' : 'radio',
         name: field?.boxInput?.boxGroupName,
         label: field?.boxInput?.boxGroupLabel,
+        options: [],
       }
       return data
     },
     formSelectTransformer(field) {
       const selectField = field?.selectInput
       const data = {
+        key: field?._key,
         type: field?.formFieldType,
         label: selectField?.selectLabel,
         placeholder: selectField?.selectPlaceholder,
         options: [...selectField.selectOptions],
+        'outer-class': 'formulate-input w-full text-left xs:(text-center)',
+        'element-class': 'w-full',
       }
       return data
     },
     formSliderTransformer(field) {
       const sliderField = field?.sliderInput
       const data = {
+        key: field?._key,
         type: field?.formFieldType,
         label: sliderField?.sliderLabel,
         name: sliderField?.sliderName,

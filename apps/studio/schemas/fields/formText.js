@@ -21,7 +21,7 @@ export default {
   type: "object",
   fields: [
     {
-      name: "textFieldType",
+      name: "formFieldType",
       title: "Text field type",
       type: "string",
       options: {
@@ -43,7 +43,7 @@ export default {
   // hidden: ({ parent }) => parent?.formFieldType !== "text",
   preview: {
     select: {
-      fieldType: "textFieldType",
+      fieldType: "formFieldType",
       fieldName: "textFieldDefaults.fieldName",
       fieldLabel: "textFieldDefaults.fieldLabel",
       fieldPlaceholder: "textFieldDefaults.fieldPlaceholder",
